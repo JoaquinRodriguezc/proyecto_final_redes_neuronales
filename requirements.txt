@@ -7,3 +7,4 @@ pillow
 tqdm
 jupyter
 kaggle
+gdown

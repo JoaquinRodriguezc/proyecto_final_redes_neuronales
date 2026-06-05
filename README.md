@@ -1,6 +1,6 @@
 # Proyecto Final — Detección/Clasificación de daños en autos con CarDD
 
-Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarDD (Car Damage Detection Dataset)**. En esta etapa se deja lista la preparación del dataset: exploración, lectura de los splits oficiales, CSVs, `Dataset` custom, transforms, `DataLoader`s y notebook de verificación.
+Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarDD (Car Damage Detection Dataset)**. En esta etapa se deja lista la preparación del dataset para detección: exploración, lectura de COCO, registros con boxes, `Dataset` custom, transforms, `DataLoader`s y notebook de verificación.
 
 ## Dataset usado
 
@@ -8,7 +8,7 @@ Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarD
 - **Fuente oficial:** https://cardd-ustc.github.io/
 - **Formato usado en esta entrega:** `CarDD_COCO`
 - **ZIP de descarga directa:** `https://drive.google.com/file/d/1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx/view`
-- **Nota:** CarDD fue publicado para tareas de detección/segmentación de daños. En este repo se deriva una etiqueta global por imagen a partir de las anotaciones COCO para montar una primera versión compatible con clasificación en PyTorch.
+- **Nota:** CarDD fue publicado para tareas de detección/segmentación de daños. En este repo se usa COCO como fuente principal para detección y se conservan CSVs auxiliares de clasificación por compatibilidad.
 
 ## Estructura del repo
 
