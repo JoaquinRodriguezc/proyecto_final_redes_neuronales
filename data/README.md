@@ -6,7 +6,7 @@ Fuente original: https://cardd-ustc.github.io/
 
 ZIP de descarga directa usado en este repo:
 
-`https://drive.usercontent.google.com/download?id=1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx&export=download&authuser=0`
+`https://drive.google.com/file/d/1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx/view`
 
 CarDD contiene imágenes de vehículos con daños y anotaciones para tareas de detección y segmentación de daños. En esta entrega se utiliza específicamente la variante **CarDD_COCO**.
 
