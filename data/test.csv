@@ -1,0 +1,375 @@
+image_path,label
+CarDD_release/CarDD_COCO/test2017/000012.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000015.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000023.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000033.jpg,dent
+CarDD_release/CarDD_COCO/test2017/000040.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000042.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000044.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000057.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000082.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000088.jpg,crack
+CarDD_release/CarDD_COCO/test2017/000090.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000106.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/000128.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000152.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000165.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000175.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000185.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000191.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000204.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000214.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000224.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000233.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000237.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000253.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000267.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000288.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000293.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000297.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/000310.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000320.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000330.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000340.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000348.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000353.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000387.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/000400.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000404.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000415.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000422.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000424.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000433.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000452.jpg,dent
+CarDD_release/CarDD_COCO/test2017/000466.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000468.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000481.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000488.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000513.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000514.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000520.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000541.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000550.jpg,crack
+CarDD_release/CarDD_COCO/test2017/000565.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000567.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000570.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000589.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000603.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000611.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000625.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000638.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000648.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000659.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000670.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000687.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000693.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000696.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000698.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000702.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000720.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000730.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000740.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000749.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000766.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000778.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000787.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000796.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000809.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000811.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000822.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000831.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000834.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/000848.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000856.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000869.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000875.jpg,dent
+CarDD_release/CarDD_COCO/test2017/000883.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000886.jpg,crack
+CarDD_release/CarDD_COCO/test2017/000889.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000905.jpg,dent
+CarDD_release/CarDD_COCO/test2017/000909.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000914.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/000926.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000950.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000965.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000969.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/000988.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/000996.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001016.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001024.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001039.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001040.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001043.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001058.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001071.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001078.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001088.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001098.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001118.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/001122.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001130.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001163.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001168.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001169.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001180.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001196.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001236.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001240.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001256.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001259.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001263.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001267.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/001268.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001272.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001282.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001307.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001314.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001327.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001358.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001367.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001368.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/001372.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001394.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001396.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001402.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001409.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/001424.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001437.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001459.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001483.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001488.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001493.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001502.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001506.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001517.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001524.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001536.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001558.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001562.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001582.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001587.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001594.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001610.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001617.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001627.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001633.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001637.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001641.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001660.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/001665.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001671.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001701.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001709.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001720.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001746.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001751.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001768.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001799.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001800.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001809.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001820.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001832.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001837.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001843.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001874.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001879.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001885.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001899.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001900.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001910.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001917.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001926.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/001939.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001944.jpg,dent
+CarDD_release/CarDD_COCO/test2017/001962.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/001963.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001967.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001979.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/001993.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002006.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002014.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002035.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002045.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002056.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002062.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002072.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002090.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002125.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002138.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002140.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002151.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002163.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002169.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002189.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002194.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002213.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002235.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002240.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002252.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002262.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002267.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002270.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002275.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002294.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002299.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002307.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/002314.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002326.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002330.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002356.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002358.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002380.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002385.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002393.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002407.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002409.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002422.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002439.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002448.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002461.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002467.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002475.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002481.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002483.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002498.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002502.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002508.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002514.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002534.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002545.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002552.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002567.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002590.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002597.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002601.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002612.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002621.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002624.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002628.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/002646.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002661.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002664.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/002694.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002707.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002716.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002728.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002741.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002752.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002766.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002776.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002789.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002801.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002803.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002810.jpg,crack
+CarDD_release/CarDD_COCO/test2017/002814.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002825.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002833.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002849.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002858.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002865.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002879.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002887.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002898.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002908.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002914.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002922.jpg,dent
+CarDD_release/CarDD_COCO/test2017/002931.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002953.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/002961.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002986.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/002991.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003011.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003027.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003039.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003050.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003062.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003071.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003082.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003087.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003099.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003109.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/003115.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003124.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003140.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003156.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003166.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003175.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003187.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003201.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003226.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003233.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003244.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003246.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003256.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003268.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003283.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003289.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003291.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/003296.jpg,tire flat
+CarDD_release/CarDD_COCO/test2017/003301.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003316.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003327.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003338.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003345.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003354.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003367.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003392.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003399.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/003407.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003414.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003418.jpg,crack
+CarDD_release/CarDD_COCO/test2017/003424.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003434.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003441.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003454.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003464.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003472.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003477.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003492.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003516.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003533.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003541.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003542.jpg,crack
+CarDD_release/CarDD_COCO/test2017/003554.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003561.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003573.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003586.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003589.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003612.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003626.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003634.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003649.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003656.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003671.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003683.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003690.jpg,dent
+CarDD_release/CarDD_COCO/test2017/003695.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003703.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003720.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003734.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003743.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003748.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003768.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003782.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003789.jpg,lamp broken
+CarDD_release/CarDD_COCO/test2017/003793.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003804.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003812.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003823.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003829.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003831.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003842.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003872.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003879.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003887.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003905.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003908.jpg,dent
+CarDD_release/CarDD_COCO/test2017/003925.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003935.jpg,dent
+CarDD_release/CarDD_COCO/test2017/003948.jpg,multiple_damage
+CarDD_release/CarDD_COCO/test2017/003956.jpg,scratch
+CarDD_release/CarDD_COCO/test2017/003959.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003977.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003992.jpg,dent
+CarDD_release/CarDD_COCO/test2017/003993.jpg,glass shatter
+CarDD_release/CarDD_COCO/test2017/003994.jpg,crack

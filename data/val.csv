@@ -1,0 +1,811 @@
+image_path,label
+CarDD_release/CarDD_COCO/val2017/000013.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000016.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000017.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000024.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000025.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000034.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000035.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000038.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000047.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000054.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000058.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000059.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000060.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000080.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000083.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000084.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000086.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000089.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000091.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000097.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000102.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000103.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000105.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000107.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000109.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000110.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000130.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000136.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000137.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000146.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000149.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000156.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000157.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000159.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000166.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000167.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000176.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000177.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000186.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000187.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000192.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000193.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000205.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000206.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000215.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000216.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000225.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000226.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000235.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000239.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000241.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000242.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000243.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000244.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000254.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000255.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000259.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000260.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000268.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000270.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000271.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000272.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000278.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000289.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000290.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000294.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000299.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000300.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000301.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000311.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000312.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000321.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000322.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000331.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000332.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000341.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000342.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000343.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000347.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000350.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000352.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000354.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000355.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000356.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000376.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000378.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000381.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000385.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000405.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000407.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000417.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000418.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000423.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000426.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000427.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000439.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000445.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000454.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000469.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000470.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000475.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000482.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000483.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000491.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000492.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000493.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000495.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000497.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000515.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000516.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000517.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000521.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000524.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000531.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000532.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000537.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000538.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000542.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000544.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000552.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000561.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000571.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000572.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000573.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000575.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000576.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000577.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000578.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000579.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000595.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000604.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000605.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000614.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000626.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000631.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000632.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000640.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000641.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000653.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000655.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000660.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000661.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000671.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000672.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000678.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000699.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000700.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000703.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000704.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000707.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000721.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000722.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000731.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000732.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000748.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000750.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000751.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000767.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000769.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000784.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000789.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000790.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000810.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000812.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000824.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000825.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000832.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000835.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000836.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000852.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000853.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000857.jpg,crack
+CarDD_release/CarDD_COCO/val2017/000858.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000859.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000860.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000876.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000890.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000891.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000892.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000906.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000910.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000928.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000929.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000930.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000931.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000932.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000933.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000934.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/000935.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000952.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000957.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000958.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000960.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/000970.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000971.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/000972.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000974.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/000976.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/000989.jpg,dent
+CarDD_release/CarDD_COCO/val2017/000990.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001000.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001002.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/001006.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001007.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001008.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001017.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001018.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001025.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001026.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001045.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001060.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001061.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001062.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001063.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001079.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001087.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001089.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001090.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001099.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001100.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001105.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001108.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001109.jpg,crack
+CarDD_release/CarDD_COCO/val2017/001120.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001124.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001128.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001131.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001134.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001135.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001141.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001152.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/001159.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/001164.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001171.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001172.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001175.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001176.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001182.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001185.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001191.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001192.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001193.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001197.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001198.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001199.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001213.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001215.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001216.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001217.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001219.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001242.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001243.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001244.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001245.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001246.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001248.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001260.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001269.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001270.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001273.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001281.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/001284.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001285.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001286.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001287.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001288.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001289.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001308.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001315.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001316.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001317.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001318.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001328.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001329.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001330.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001331.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001341.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/001345.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001361.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001369.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/001370.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001373.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001374.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/001375.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/001379.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001398.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001400.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001411.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001420.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001422.jpg,tire flat
+CarDD_release/CarDD_COCO/val2017/001428.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001431.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001440.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001442.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001445.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/001453.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001456.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001484.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001489.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001494.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001504.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001505.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001507.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001511.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001525.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001531.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001537.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001538.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001539.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001540.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001541.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001542.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001543.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001559.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001560.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001563.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001583.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001588.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001589.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001595.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001596.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001599.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001612.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001614.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001618.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001619.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001634.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001635.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001642.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001643.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001649.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001652.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001661.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/001670.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001672.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001673.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001674.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001682.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001684.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001686.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001689.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001702.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001704.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001711.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001714.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001716.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001721.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001722.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001727.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001728.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001729.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001747.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001748.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001759.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001770.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001771.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001772.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001794.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001802.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001810.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001811.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001812.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001815.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001822.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001823.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001825.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001838.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001844.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001845.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001846.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001847.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001848.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001849.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001850.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001852.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001853.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001855.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001856.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001880.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001888.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001890.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001909.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001911.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001912.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001927.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001933.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001934.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001937.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001940.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/001945.jpg,dent
+CarDD_release/CarDD_COCO/val2017/001946.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001947.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001968.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001974.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001980.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001981.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001982.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001984.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001994.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/001997.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002001.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002007.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002009.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002011.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002012.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002015.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002016.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002036.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002046.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002057.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002063.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002064.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002065.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002066.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002070.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002073.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002076.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002083.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002086.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002087.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002088.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002091.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002092.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002093.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002094.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002095.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002096.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002098.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002102.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002115.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002126.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002128.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002129.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002130.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002139.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002141.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002152.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002153.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002154.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002155.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002156.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002164.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002170.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002171.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002172.jpg,crack
+CarDD_release/CarDD_COCO/val2017/002176.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002178.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002182.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002190.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002195.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002197.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002199.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002200.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002202.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002203.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002204.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002205.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002206.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002215.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002216.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002241.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002244.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002254.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002255.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002268.jpg,crack
+CarDD_release/CarDD_COCO/val2017/002269.jpg,crack
+CarDD_release/CarDD_COCO/val2017/002272.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002276.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002278.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002279.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002280.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002297.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002298.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002315.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002316.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002325.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002331.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002332.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002333.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002338.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002342.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002343.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002345.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002346.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002351.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002359.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002361.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002363.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002381.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002382.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002389.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002408.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002410.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002411.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002412.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002423.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002427.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002440.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002441.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002442.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002449.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002452.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002462.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002463.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002468.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002486.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002488.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002491.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002503.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002509.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002515.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002516.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002517.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002521.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002536.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002537.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002546.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002547.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002553.jpg,crack
+CarDD_release/CarDD_COCO/val2017/002561.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002562.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002568.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002571.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002573.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002575.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002577.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002579.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002602.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002603.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002604.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002605.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002606.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002609.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002613.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002625.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002627.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002629.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002630.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002631.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002632.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002633.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002636.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002637.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002647.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002654.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002655.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002656.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002662.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002663.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002665.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002667.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002682.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002685.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002695.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002721.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002726.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002729.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002730.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002753.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002754.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002755.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002757.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002767.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002778.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002779.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002781.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002790.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002791.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002804.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002805.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002815.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002816.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002817.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002822.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002826.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002827.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002828.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002829.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002830.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002834.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002852.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002859.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002861.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002866.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002867.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002868.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002869.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002881.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002882.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002892.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002893.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002895.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002899.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002909.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002923.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002924.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002925.jpg,dent
+CarDD_release/CarDD_COCO/val2017/002933.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002934.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002946.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002954.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002962.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/002987.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/002988.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/002992.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/002996.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003017.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003018.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003019.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003020.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003021.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003028.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003029.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003041.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003042.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003051.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003054.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003063.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003064.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003073.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003074.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003083.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003084.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003090.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003100.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003101.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003102.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003110.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003116.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003125.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003127.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003141.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003142.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003143.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003157.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003158.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003167.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003168.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003176.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003180.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003182.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003196.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003200.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003203.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003204.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003205.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003206.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003213.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003214.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003222.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003234.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003235.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003245.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003247.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003248.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003257.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003258.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003259.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003270.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003271.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003274.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003284.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003285.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003290.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003292.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003295.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003297.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003302.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003303.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003309.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003317.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003318.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003328.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003329.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003340.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003348.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003355.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003362.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003368.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003369.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003370.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003371.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003372.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003373.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003382.jpg,crack
+CarDD_release/CarDD_COCO/val2017/003395.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003397.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003402.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003408.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003426.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003427.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003428.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003431.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003432.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003433.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003438.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003442.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003445.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003447.jpg,crack
+CarDD_release/CarDD_COCO/val2017/003448.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003450.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003451.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003457.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003467.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003470.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003474.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003475.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003478.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003479.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003481.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003482.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003493.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003494.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003495.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003496.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003497.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003498.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003510.jpg,crack
+CarDD_release/CarDD_COCO/val2017/003512.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003521.jpg,crack
+CarDD_release/CarDD_COCO/val2017/003534.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003535.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003543.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003550.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003555.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003556.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003562.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003574.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003576.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003577.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003590.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003594.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003613.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003614.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003627.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003635.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003636.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003637.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003650.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003651.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003657.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003658.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003659.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003672.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003673.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003684.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003691.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003696.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003699.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003704.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003705.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003706.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003707.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003708.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003710.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003711.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003712.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003714.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003721.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003722.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003735.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003744.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003745.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003749.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003753.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003769.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003770.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003783.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003785.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003795.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003796.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003805.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003806.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003813.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003818.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003828.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003830.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003832.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003833.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003834.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003836.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003840.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003843.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003849.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003858.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003859.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003874.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003875.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003876.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003889.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003896.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003906.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003909.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003910.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003912.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003929.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003930.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003938.jpg,dent
+CarDD_release/CarDD_COCO/val2017/003947.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003960.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003961.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003962.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003963.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003966.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003967.jpg,lamp broken
+CarDD_release/CarDD_COCO/val2017/003982.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003991.jpg,multiple_damage
+CarDD_release/CarDD_COCO/val2017/003995.jpg,glass shatter
+CarDD_release/CarDD_COCO/val2017/003996.jpg,scratch
+CarDD_release/CarDD_COCO/val2017/003999.jpg,multiple_damage

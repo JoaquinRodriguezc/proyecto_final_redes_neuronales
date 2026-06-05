@@ -1,0 +1,25 @@
+# Dataset pesado
+data/raw/
+data/processed/
+data/CarDD/
+data/*.zip
+
+# Imágenes
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.webp
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Entornos
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store

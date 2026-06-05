@@ -1,0 +1,2817 @@
+image_path,label
+CarDD_release/CarDD_COCO/train2017/000001.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000002.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000003.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000004.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000005.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000006.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000007.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000008.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000009.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000010.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000011.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000014.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000018.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000019.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000020.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000021.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000022.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000026.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000027.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000028.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000029.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000030.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000031.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000032.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000036.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000037.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000039.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000041.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000043.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000045.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000046.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000048.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000049.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000050.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000051.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000052.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000053.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000055.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000056.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000061.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000062.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000063.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000064.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000065.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000066.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000067.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000068.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000069.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000070.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000071.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000072.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000073.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000074.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000075.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000076.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000077.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000078.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000079.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000081.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000085.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000087.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000092.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000093.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000094.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000095.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000096.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000098.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000099.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000100.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000101.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000104.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000108.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000111.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000112.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000113.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000114.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000115.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000116.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000117.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000118.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000119.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000120.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000121.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000122.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000123.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000124.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000125.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000126.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000127.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000129.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000131.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000132.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000133.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000134.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000135.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000138.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000139.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000140.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000141.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000142.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000143.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000144.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000145.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000147.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000148.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000150.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000151.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000153.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000154.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000155.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000158.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000160.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000161.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000162.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000163.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000164.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000168.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000169.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000170.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000171.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000172.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000173.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000174.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000178.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000179.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000180.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000181.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000182.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000183.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000184.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000188.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000189.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000190.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000194.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000195.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000196.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000197.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000198.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000199.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000200.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000201.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000202.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000203.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000207.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000208.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000209.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000210.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000211.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000212.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000213.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000217.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000218.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000219.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000220.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000221.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000222.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000223.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000227.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000228.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000229.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000230.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000231.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000232.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000234.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000236.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000238.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000240.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000245.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000246.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000247.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000248.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000249.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000250.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000251.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000252.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000256.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000257.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000258.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000261.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000262.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000263.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000264.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000265.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000266.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000269.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000273.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000274.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000275.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000276.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000277.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000279.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000280.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000281.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000282.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000283.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000284.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000285.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000286.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000287.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000291.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000292.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000295.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000296.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000298.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000302.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000303.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000304.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000305.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000306.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000307.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000308.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000309.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000313.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000314.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000315.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000316.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000317.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000318.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000319.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000323.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000324.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000325.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000326.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000327.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000328.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000329.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000333.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000334.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000335.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000336.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000337.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000338.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000339.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000344.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000345.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000346.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000349.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000351.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000357.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000358.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000359.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000360.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000361.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000362.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000363.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000364.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000365.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000366.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000367.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000368.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000369.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000370.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000371.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000372.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000373.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000374.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000375.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000377.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000379.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000380.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000382.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000383.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000384.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000386.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000388.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000389.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000390.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000391.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000392.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000393.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000394.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000395.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000396.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000397.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000398.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000399.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000401.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000402.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000403.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000406.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000408.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000409.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000410.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000411.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000412.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000413.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000414.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000416.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000419.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000420.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000421.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000425.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000428.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000429.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000430.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000431.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000432.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000434.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000435.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000436.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000437.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000438.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000440.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000441.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000442.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000443.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000444.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000446.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000447.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000448.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000449.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000450.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000451.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000453.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000455.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000456.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000457.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000458.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000459.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000460.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000461.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000462.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000463.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000464.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000465.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000467.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000471.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000472.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000473.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000474.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000476.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000477.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000478.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000479.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000480.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000484.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000485.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000486.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000487.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000489.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000490.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000494.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000496.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000498.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000499.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000500.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000501.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000502.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000503.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000504.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000505.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000506.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000507.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000508.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000509.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000510.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000511.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000512.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000518.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000519.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000522.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000523.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000525.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000526.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000527.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000528.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000529.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000530.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000533.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000534.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000535.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000536.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000539.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000540.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000543.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000545.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000546.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000547.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000548.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000549.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000551.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000553.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000554.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000555.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000556.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000557.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000558.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000559.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000560.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000562.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000563.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000564.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000566.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000568.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000569.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000574.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000580.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000581.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000582.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000583.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000584.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000585.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000586.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000587.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000588.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000590.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000591.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000592.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000593.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000594.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000596.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000597.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000598.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000599.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000600.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000601.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000602.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000606.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000607.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000608.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000609.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000610.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000612.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000613.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000615.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000616.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000617.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000618.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000619.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000620.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000621.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000622.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000623.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000624.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000627.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000628.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000629.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000630.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000633.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000634.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000635.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000636.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000637.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000639.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000642.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000643.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000644.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000645.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000646.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000647.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000649.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000650.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000651.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000652.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000654.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000656.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000657.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000658.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000662.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000663.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000664.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000665.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000666.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000667.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000668.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000669.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000673.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000674.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000675.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000676.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000677.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000679.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000680.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000681.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000682.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000683.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000684.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000685.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000686.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000688.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000689.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000690.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000691.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000692.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000694.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000695.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000697.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000701.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000705.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000706.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000708.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000709.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000710.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000711.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000712.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000713.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000714.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000715.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000716.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000717.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000718.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000719.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000723.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000724.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000725.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000726.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000727.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000728.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000729.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000733.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000734.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000735.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000736.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000737.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000738.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000739.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000741.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000742.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000743.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000744.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000745.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000746.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000747.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000752.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000753.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000754.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000755.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000756.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000757.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000758.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000759.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000760.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000761.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000762.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000763.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000764.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000765.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000768.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000770.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000771.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000772.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000773.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000774.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000775.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000776.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000777.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000779.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000780.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000781.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000782.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000783.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000785.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000786.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000788.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000791.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000792.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000793.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000794.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000795.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000797.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000798.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000799.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000800.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000801.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000802.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000803.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000804.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000805.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000806.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000807.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000808.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000813.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000814.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000815.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000816.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000817.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000818.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000819.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000820.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000821.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000823.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000826.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000827.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000828.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000829.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000830.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000833.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000837.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000838.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000839.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000840.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000841.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000842.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000843.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000844.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000845.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000846.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000847.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000849.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000850.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000851.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000854.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000855.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000861.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000862.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000863.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000864.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000865.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000866.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000867.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000868.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000870.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000871.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000872.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000873.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000874.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000877.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000878.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000879.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000880.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000881.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000882.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000884.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000885.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000887.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000888.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000893.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000894.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000895.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000896.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000897.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000898.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000899.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000900.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000901.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000902.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000903.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000904.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000907.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000908.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000911.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000912.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000913.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000915.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000916.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000917.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000918.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000919.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000920.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000921.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000922.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000923.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000924.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000925.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000927.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000936.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000937.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000938.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000939.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000940.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000941.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000942.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000943.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000944.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000945.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000946.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000947.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000948.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000949.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/000951.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000953.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000954.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000955.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000956.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000959.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000961.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000962.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000963.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000964.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000966.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000967.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000968.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/000973.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000975.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000977.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000978.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000979.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000980.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000981.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000982.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000983.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000984.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000985.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/000986.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000987.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000991.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000992.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000993.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/000994.jpg,dent
+CarDD_release/CarDD_COCO/train2017/000995.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000997.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/000998.jpg,crack
+CarDD_release/CarDD_COCO/train2017/000999.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001001.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001003.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001004.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001005.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001009.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001010.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001011.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001012.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001013.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001014.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001015.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001019.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001020.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001021.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001022.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001023.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001027.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001028.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001029.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001030.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001031.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001032.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001033.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001034.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001035.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001036.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001037.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001038.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001041.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001042.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001044.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001046.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001047.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001048.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001049.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001050.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001051.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001052.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001053.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001054.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001055.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001056.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001057.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001059.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001064.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001065.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001066.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001067.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001068.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001069.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001070.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001072.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001073.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001074.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001075.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001076.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001077.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001080.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001081.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001082.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001083.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001084.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001085.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001086.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001091.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001092.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001093.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001094.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001095.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001096.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001097.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001101.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001102.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001103.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001104.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001106.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001107.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001110.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001111.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001112.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001113.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001114.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001115.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001116.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001117.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001119.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001121.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001123.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001125.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001126.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001127.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001129.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001132.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001133.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001136.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001137.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001138.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001139.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001140.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001142.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001143.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001144.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001145.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001146.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001147.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001148.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001149.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001150.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001151.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001153.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001154.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001155.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001156.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001157.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001158.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001160.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001161.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001162.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001165.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001166.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001167.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001170.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001173.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001174.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001177.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001178.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001179.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001181.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001183.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001184.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001186.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001187.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001188.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001189.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001190.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001194.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001195.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001200.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001201.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001202.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001203.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001204.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001205.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001206.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001207.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001208.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001209.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001210.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001211.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001212.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001214.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001218.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001220.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001221.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001222.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001223.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001224.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001225.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001226.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001227.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001228.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001229.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001230.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001231.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001232.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001233.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001234.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001235.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001237.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001238.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001239.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001241.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001247.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001249.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001250.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001251.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001252.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001253.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001254.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001255.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001257.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001258.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001261.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001262.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001264.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001265.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001266.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001271.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001274.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001275.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001276.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001277.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001278.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001279.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001280.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001283.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001290.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001291.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001292.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001293.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001294.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001295.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001296.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001297.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001298.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001299.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001300.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001301.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001302.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001303.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001304.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001305.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001306.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001309.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001310.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001311.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001312.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001313.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001319.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001320.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001321.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001322.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001323.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001324.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001325.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001326.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001332.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001333.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001334.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001335.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001336.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001337.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001338.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001339.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001340.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001342.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001343.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001344.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001346.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001347.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001348.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001349.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001350.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001351.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001352.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001353.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001354.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001355.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001356.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001357.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001359.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001360.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001362.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001363.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001364.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001365.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001366.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001371.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001376.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001377.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001378.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001380.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001381.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001382.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001383.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001384.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001385.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001386.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001387.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001388.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001389.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001390.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001391.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001392.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001393.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001395.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001397.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001399.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001401.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001403.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001404.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001405.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001406.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001407.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001408.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001410.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001412.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001413.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001414.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001415.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001416.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001417.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001418.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001419.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001421.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001423.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001425.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001426.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001427.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001429.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001430.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001432.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001433.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001434.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001435.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001436.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001438.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001439.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/001441.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001443.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001444.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001446.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001447.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001448.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001449.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001450.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001451.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001452.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001454.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001455.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001457.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001458.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001460.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001461.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001462.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001463.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001464.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001465.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001466.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001467.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001468.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001469.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001470.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001471.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001472.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001473.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001474.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001475.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001476.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001477.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001478.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001479.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001480.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001481.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001482.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001485.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001486.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001487.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001490.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001491.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001492.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001495.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001496.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001497.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001498.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001499.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001500.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001501.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001503.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001508.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001509.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001510.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001512.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001513.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001514.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001515.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001516.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001518.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001519.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001520.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001521.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001522.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001523.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001526.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001527.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001528.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001529.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001530.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001532.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001533.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001534.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001535.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001544.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001545.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001546.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001547.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001548.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001549.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001550.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001551.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001552.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001553.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001554.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001555.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001556.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001557.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001561.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001564.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001565.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001566.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001567.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001568.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001569.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001570.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001571.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001572.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001573.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001574.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001575.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001576.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001577.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001578.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001579.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001580.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001581.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001584.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001585.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001586.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001590.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001591.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001592.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001593.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001597.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001598.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001600.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001601.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001602.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001603.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001604.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001605.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001606.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001607.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001608.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001609.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001611.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001613.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001615.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001616.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001620.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001621.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001622.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001623.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001624.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001625.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001626.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001628.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001629.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001630.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001631.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001632.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001636.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001638.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001639.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001640.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001644.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001645.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001646.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001647.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001648.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001650.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001651.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001653.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001654.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001655.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001656.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001657.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001658.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001659.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001662.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001663.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001664.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001666.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001667.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001668.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001669.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001675.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001676.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001677.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001678.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001679.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001680.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001681.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001683.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001685.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001687.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001688.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001690.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001691.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001692.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001693.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001694.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001695.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001696.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001697.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001698.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001699.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001700.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001703.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001705.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001706.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001707.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001708.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001710.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001712.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001713.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001715.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001717.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001718.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001719.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001723.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001724.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001725.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001726.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/001730.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001731.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001732.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001733.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001734.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001735.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001736.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001737.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001738.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001739.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001740.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001741.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001742.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001743.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001744.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001745.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001749.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001750.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001752.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001753.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001754.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001755.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001756.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001757.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001758.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001760.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001761.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001762.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001763.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001764.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001765.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001766.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001767.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001769.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001773.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001774.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001775.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001776.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001777.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001778.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001779.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001780.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001781.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001782.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001783.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001784.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001785.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001786.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001787.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001788.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001789.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001790.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001791.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001792.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001793.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001795.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001796.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001797.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001798.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001801.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001803.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001804.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001805.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001806.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001807.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001808.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001813.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001814.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001816.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001817.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001818.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001819.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001821.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001824.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001826.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001827.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001828.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001829.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001830.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001831.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001833.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001834.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001835.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001836.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001839.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001840.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001841.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001842.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001851.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001854.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001857.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001858.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001859.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001860.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001861.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001862.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001863.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001864.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001865.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001866.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001867.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001868.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001869.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001870.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001871.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001872.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001873.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001875.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001876.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001877.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001878.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001881.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001882.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001883.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001884.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001886.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001887.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001889.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001891.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001892.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001893.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001894.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001895.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001896.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001897.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001898.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001901.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001902.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001903.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001904.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001905.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001906.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001907.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001908.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001913.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001914.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001915.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001916.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001918.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001919.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001920.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001921.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001922.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001923.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001924.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001925.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001928.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001929.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001930.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001931.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001932.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001935.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001936.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001938.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001941.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001942.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001943.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001948.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001949.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001950.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001951.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001952.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001953.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001954.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001955.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001956.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001957.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001958.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001959.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001960.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001961.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001964.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001965.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001966.jpg,dent
+CarDD_release/CarDD_COCO/train2017/001969.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/001970.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001971.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001972.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001973.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001975.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001976.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001977.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001978.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001983.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001985.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001986.jpg,crack
+CarDD_release/CarDD_COCO/train2017/001987.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001988.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001989.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001990.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001991.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001992.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/001995.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001996.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001998.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/001999.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002000.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002002.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002003.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002004.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002005.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002008.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002010.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002013.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002017.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002018.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002019.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002020.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002021.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002022.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002023.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002024.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002025.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002026.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002027.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002028.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002029.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002030.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002031.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002032.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002033.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002034.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002037.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002038.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002039.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002040.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002041.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002042.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002043.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002044.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002047.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002048.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002049.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002050.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002051.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002052.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002053.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002054.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002055.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002058.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002059.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002060.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002061.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002067.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002068.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002069.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002071.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002074.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002075.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002077.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002078.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002079.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002080.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002081.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002082.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002084.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002085.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002089.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002097.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002099.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002100.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002101.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002103.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002104.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002105.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002106.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002107.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002108.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002109.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002110.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002111.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002112.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002113.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002114.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002116.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002117.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002118.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002119.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002120.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002121.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002122.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002123.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002124.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002127.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002131.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002132.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002133.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002134.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002135.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002136.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002137.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002142.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002143.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002144.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002145.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002146.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002147.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002148.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002149.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002150.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002157.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002158.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002159.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002160.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002161.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002162.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002165.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002166.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002167.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002168.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002173.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002174.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002175.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002177.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002179.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002180.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002181.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002183.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002184.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002185.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002186.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002187.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002188.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002191.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002192.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002193.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002196.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002198.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002201.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002207.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002208.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002209.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002210.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002211.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002212.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002214.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002217.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002218.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002219.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002220.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002221.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002222.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002223.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002224.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002225.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002226.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002227.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002228.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002229.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002230.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002231.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002232.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002233.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002234.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002236.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002237.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002238.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002239.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002242.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002243.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/002245.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002246.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002247.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002248.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002249.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002250.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002251.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002253.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002256.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002257.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002258.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002259.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002260.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002261.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002263.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002264.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002265.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002266.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/002271.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002273.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002274.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002277.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002281.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002282.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002283.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002284.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002285.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002286.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002287.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002288.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002289.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002290.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002291.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002292.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002293.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002295.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002296.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002300.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002301.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002302.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002303.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002304.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002305.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002306.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002308.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002309.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002310.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002311.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002312.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002313.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002317.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002318.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002319.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002320.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002321.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002322.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002323.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002324.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002327.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002328.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002329.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002334.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002335.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002336.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002337.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002339.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002340.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002341.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002344.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002347.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002348.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002349.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002350.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002352.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002353.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002354.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002355.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002357.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002360.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002362.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002364.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002365.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002366.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002367.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002368.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002369.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002370.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002371.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002372.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002373.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002374.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002375.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002376.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002377.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002378.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002379.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002383.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002384.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002386.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002387.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002388.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002390.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002391.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002392.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002394.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002395.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002396.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002397.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002398.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002399.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002400.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002401.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002402.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002403.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002404.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002405.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002406.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002413.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002414.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002415.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002416.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002417.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002418.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002419.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002420.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002421.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002424.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/002425.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/002426.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/002428.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002429.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002430.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002431.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002432.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002433.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002434.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002435.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002436.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002437.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002438.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002443.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002444.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/002445.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002446.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002447.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002450.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002451.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002453.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002454.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/002455.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002456.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002457.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002458.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002459.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002460.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002464.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002465.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002466.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002469.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002470.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002471.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002472.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002473.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002474.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002476.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002477.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002478.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002479.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002480.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002482.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002484.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002485.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002487.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002489.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002490.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002492.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002493.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002494.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002495.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002496.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002497.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002499.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002500.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002501.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002504.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002505.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002506.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002507.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002510.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002511.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002512.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002513.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002518.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002519.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002520.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002522.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002523.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002524.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002525.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002526.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002527.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002528.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002529.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002530.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002531.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002532.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002533.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002535.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002538.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002539.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002540.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002541.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002542.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002543.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002544.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002548.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/002549.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002550.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002551.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002554.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002555.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002556.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002557.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002558.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002559.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002560.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002563.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002564.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002565.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002566.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002569.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002570.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002572.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002574.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002576.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002578.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002580.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002581.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002582.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002583.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002584.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002585.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002586.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002587.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002588.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002589.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002591.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002592.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002593.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002594.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002595.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002596.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002598.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002599.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002600.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002607.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002608.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002610.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002611.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002614.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002615.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002616.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002617.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002618.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002619.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002620.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002622.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002623.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002626.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002634.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002635.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002638.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002639.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002640.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002641.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002642.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002643.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002644.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002645.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002648.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002649.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002650.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002651.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002652.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002653.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002657.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002658.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002659.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002660.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002666.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002668.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002669.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002670.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002671.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002672.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002673.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002674.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002675.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002676.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002677.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002678.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002679.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002680.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002681.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002683.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002684.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002686.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002687.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002688.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002689.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002690.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002691.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002692.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002693.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002696.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002697.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002698.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002699.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002700.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002701.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002702.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002703.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002704.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002705.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002706.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002708.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/002709.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002710.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002711.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002712.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002713.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002714.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002715.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002717.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002718.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002719.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002720.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002722.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002723.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002724.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002725.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002727.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002731.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002732.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002733.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002734.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002735.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/002736.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/002737.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/002738.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002739.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002740.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002742.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002743.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002744.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002745.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002746.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002747.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002748.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002749.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002750.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002751.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002756.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002758.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002759.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002760.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002761.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002762.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002763.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002764.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002765.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002768.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002769.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002770.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002771.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002772.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002773.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002774.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002775.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002777.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002780.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002782.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002783.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002784.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002785.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002786.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002787.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002788.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002792.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002793.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002794.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002795.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002796.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002797.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002798.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002799.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002800.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002802.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002806.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002807.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002808.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002809.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002811.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002812.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002813.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002818.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002819.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002820.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002821.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002823.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002824.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002831.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002832.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002835.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002836.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002837.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002838.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002839.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002840.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002841.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002842.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002843.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002844.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002845.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002846.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002847.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002848.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002850.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002851.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002853.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002854.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002855.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002856.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002857.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002860.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002862.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002863.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002864.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002870.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002871.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002872.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002873.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002874.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002875.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002876.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002877.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002878.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002880.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002883.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002884.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002885.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002886.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002888.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002889.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002890.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002891.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002894.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002896.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002897.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002900.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002901.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002902.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002903.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002904.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002905.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002906.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002907.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002910.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002911.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002912.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002913.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002915.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002916.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002917.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002918.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002919.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002920.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002921.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002926.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002927.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002928.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002929.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002930.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002932.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002935.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002936.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002937.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002938.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002939.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002940.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002941.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002942.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002943.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002944.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002945.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002947.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002948.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002949.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002950.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002951.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002952.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002955.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002956.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002957.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002958.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002959.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002960.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002963.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002964.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002965.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002966.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002967.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002968.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002969.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002970.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002971.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002972.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002973.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002974.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002975.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002976.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002977.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002978.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002979.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002980.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002981.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002982.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002983.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002984.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002985.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002989.jpg,crack
+CarDD_release/CarDD_COCO/train2017/002990.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002993.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/002994.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002995.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002997.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/002998.jpg,dent
+CarDD_release/CarDD_COCO/train2017/002999.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003000.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003001.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003002.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003003.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003004.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003005.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003006.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003007.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003008.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003009.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003010.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003012.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003013.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003014.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003015.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003016.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003022.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003023.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003024.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003025.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003026.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003030.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003031.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003032.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003033.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003034.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003035.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003036.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003037.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003038.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003040.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003043.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003044.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003045.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003046.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003047.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003048.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003049.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003052.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003053.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003055.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003056.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003057.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003058.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003059.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003060.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003061.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003065.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003066.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003067.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003068.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003069.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003070.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003072.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003075.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003076.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003077.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003078.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003079.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003080.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003081.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003085.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003086.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003088.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003089.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003091.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003092.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003093.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003094.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003095.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003096.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003097.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003098.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003103.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003104.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003105.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003106.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003107.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003108.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003111.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003112.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003113.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003114.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003117.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003118.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003119.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003120.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003121.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003122.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003123.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003126.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003128.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003129.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003130.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003131.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003132.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003133.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003134.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003135.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003136.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003137.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003138.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003139.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003144.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003145.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003146.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003147.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003148.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003149.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003150.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003151.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003152.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003153.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003154.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003155.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003159.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003160.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003161.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003162.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003163.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003164.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003165.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003169.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003170.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003171.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003172.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003173.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003174.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003177.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003178.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003179.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003181.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003183.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003184.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003185.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003186.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003188.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003189.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003190.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003191.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003192.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003193.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003194.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003195.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003197.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003198.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003199.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003202.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003207.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003208.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003209.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003210.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003211.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003212.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003215.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003216.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003217.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003218.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003219.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003220.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003221.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003223.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003224.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003225.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003227.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003228.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003229.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003230.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003231.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003232.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003236.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003237.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003238.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003239.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003240.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003241.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003242.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003243.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003249.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003250.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003251.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003252.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003253.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003254.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003255.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003260.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003261.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003262.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003263.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003264.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003265.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003266.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003267.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003269.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003272.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003273.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003275.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003276.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003277.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003278.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003279.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003280.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003281.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003282.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003286.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003287.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003288.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003293.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003294.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003298.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003299.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003300.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003304.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003305.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003306.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003307.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003308.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003310.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003311.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003312.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003313.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003314.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003315.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003319.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003320.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003321.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003322.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003323.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003324.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003325.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003326.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003330.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003331.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003332.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003333.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003334.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003335.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003336.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003337.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003339.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003341.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003342.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003343.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003344.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003346.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003347.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003349.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003350.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003351.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003352.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003353.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003356.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003357.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003358.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003359.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003360.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003361.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003363.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003364.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003365.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003366.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003374.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003375.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003376.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003377.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003378.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003379.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003380.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003381.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003383.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003384.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003385.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003386.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003387.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003388.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003389.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003390.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003391.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003393.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003394.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003396.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003398.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/003400.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003401.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003403.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003404.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003405.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003406.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003409.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003410.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003411.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003412.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003413.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003415.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003416.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003417.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003419.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003420.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003421.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003422.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003423.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003425.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003429.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003430.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003435.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003436.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003437.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003439.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003440.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003443.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003444.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003446.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003449.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003452.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003453.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003455.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003456.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003458.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003459.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003460.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003461.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003462.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003463.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003465.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003466.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003468.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003469.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003471.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003473.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003476.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003480.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003483.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003484.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003485.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003486.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003487.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003488.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003489.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003490.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003491.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003499.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003500.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003501.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003502.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003503.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003504.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003505.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003506.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003507.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003508.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003509.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003511.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003513.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003514.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003515.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003517.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003518.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003519.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003520.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003522.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003523.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003524.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003525.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003526.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003527.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003528.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003529.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003530.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003531.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003532.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003536.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003537.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003538.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003539.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003540.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003544.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003545.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003546.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003547.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003548.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003549.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003551.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003552.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003553.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003557.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003558.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003559.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003560.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003563.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003564.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003565.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003566.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003567.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003568.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003569.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003570.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003571.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003572.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003575.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003578.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003579.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003580.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003581.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003582.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003583.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003584.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003585.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003587.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003588.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003591.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003592.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003593.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003595.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003596.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003597.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003598.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003599.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003600.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003601.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003602.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003603.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003604.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003605.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003606.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003607.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003608.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003609.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003610.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003611.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003615.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003616.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003617.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003618.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003619.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003620.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003621.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003622.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003623.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003624.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003625.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003628.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003629.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003630.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003631.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003632.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003633.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003638.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003639.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003640.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003641.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003642.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003643.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003644.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003645.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003646.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003647.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003648.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003652.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003653.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003654.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003655.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003660.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003661.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003662.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003663.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003664.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003665.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003666.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003667.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003668.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003669.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003670.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003674.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003675.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003676.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003677.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003678.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003679.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003680.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003681.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003682.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003685.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003686.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003687.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003688.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003689.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003692.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003693.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003694.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003697.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003698.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003700.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003701.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003702.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003709.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003713.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003715.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003716.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003717.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003718.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003719.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003723.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003724.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003725.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003726.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003727.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003728.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003729.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003730.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003731.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003732.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003733.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003736.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003737.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003738.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003739.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003740.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003741.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003742.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003746.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003747.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003750.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003751.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003752.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003754.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003755.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003756.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003757.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003758.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003759.jpg,crack
+CarDD_release/CarDD_COCO/train2017/003760.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003761.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003762.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003763.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003764.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003765.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003766.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003767.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003771.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003772.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003773.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003774.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003775.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003776.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003777.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003778.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003779.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003780.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003781.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003784.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003786.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003787.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003788.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003790.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003791.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003792.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003794.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003797.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003798.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003799.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003800.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003801.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003802.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003803.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003807.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003808.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003809.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003810.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003811.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003814.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003815.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003816.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003817.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003819.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003820.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003821.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003822.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003824.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003825.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003826.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003827.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003835.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003837.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003838.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003839.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003841.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003844.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003845.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003846.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003847.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003848.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003850.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003851.jpg,lamp broken
+CarDD_release/CarDD_COCO/train2017/003852.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003853.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003854.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003855.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003856.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003857.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003860.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003861.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003862.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003863.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003864.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003865.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003866.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003867.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003868.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003869.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003870.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003871.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003873.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003877.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003878.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003880.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003881.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003882.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003883.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003884.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003885.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003886.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003888.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003890.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003891.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003892.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003893.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003894.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003895.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/003897.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003898.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003899.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003900.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003901.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003902.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003903.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003904.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003907.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003911.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003913.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003914.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003915.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003916.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003917.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003918.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003919.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003920.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003921.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003922.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003923.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003924.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003926.jpg,tire flat
+CarDD_release/CarDD_COCO/train2017/003927.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003928.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003931.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003932.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003933.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003934.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003936.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003937.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003939.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003940.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003941.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003942.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003943.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003944.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003945.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003946.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003949.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003950.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003951.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003952.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003953.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003954.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003955.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003957.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003958.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003964.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003965.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003968.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003969.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003970.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003971.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003972.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003973.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003974.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003975.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003976.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003978.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003979.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003980.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003981.jpg,dent
+CarDD_release/CarDD_COCO/train2017/003983.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003984.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003985.jpg,scratch
+CarDD_release/CarDD_COCO/train2017/003986.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/003987.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003988.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003989.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003990.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003997.jpg,glass shatter
+CarDD_release/CarDD_COCO/train2017/003998.jpg,multiple_damage
+CarDD_release/CarDD_COCO/train2017/004000.jpg,multiple_damage
