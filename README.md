@@ -8,7 +8,7 @@ Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarD
 - **Fuente oficial:** https://cardd-ustc.github.io/
 - **Formato usado en esta entrega:** `CarDD_COCO`
 - **ZIP de descarga directa:** `https://drive.google.com/file/d/1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx/view`
-- **Nota:** CarDD fue publicado para tareas de detección/segmentación de daños. En este repo se usa COCO como fuente principal para detección y se conservan CSVs auxiliares de clasificación por compatibilidad.
+- **Nota:** CarDD fue publicado para tareas de detección/segmentación de daños. En este repo se usa COCO como fuente principal para detección usando directamente los JSON COCO como fuente de verdad.
 
 ## Estructura del repo
 
