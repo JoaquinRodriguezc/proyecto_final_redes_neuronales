@@ -1,6 +1,6 @@
 # Proyecto Final — Detección/Clasificación de daños en autos con CarDD
 
-Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarDD (Car Damage Detection Dataset)**. En esta etapa se deja lista la preparación del dataset para detección: exploración, lectura de COCO, registros con boxes, `Dataset` custom, transforms, `DataLoader`s, un módulo reutilizable en `prod/` y notebook de verificación.
+Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarDD (Car Damage Detection Dataset)**. En esta etapa el repo cubre preparación del dataset para detección y una base de entrenamiento con fine-tuning de **Faster R-CNN**: exploración, lectura de COCO, `Dataset` custom, transforms, `DataLoader`s, módulos reutilizables en `prod/` y notebooks de verificación y entrenamiento.
 
 ## Dataset usado
 
@@ -18,10 +18,14 @@ Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarD
 │   ├── README.md
 │   └── CarDD_release/
 ├── dev/
-│   └── 01_dataset_preparation.ipynb
+│   ├── 01_dataset_preparation.ipynb
+│   └── 02_model_training.ipynb
 ├── prod/
 │   ├── __init__.py
-│   └── detection_dataset.py
+│   ├── detection_dataset.py
+│   ├── detection_models.py
+│   ├── detection_training.py
+│   └── detection_metrics.py
 ├── requirements.txt
 ├── .gitignore
 ├── CLAUDE.md
@@ -54,3 +58,4 @@ pip install -r requirements.txt
 - Las imágenes del dataset **no** se suben a GitHub.
 - Se versionan archivos livianos como notebooks, módulos Python y documentación.
 - El notebook arma un manifiesto en memoria a partir de los splits oficiales de CarDD COCO, pero hoy no persiste `data/train.csv`, `data/val.csv` y `data/test.csv` a disco.
+- La base de semana 3 compara tres variantes de `Faster R-CNN` y usa `mAP@50:95` y `mAP@50` como métricas principales para detección.

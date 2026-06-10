@@ -16,6 +16,7 @@ Construir un pipeline reproducible para deteccion de danos en autos sobre CarDD 
 - `README.md` y `data/README.md` describen bien el objetivo, pero no reemplazan al notebook.
 - `app.py` y `utils.py` no contienen logica util hoy.
 - `prod/detection_dataset.py` ya contiene una implementacion activa y reutilizable del dataset de deteccion.
+- `prod/detection_models.py`, `prod/detection_training.py` y `prod/detection_metrics.py` contienen la base de entrenamiento y evaluacion para semana 3.
 - El repo esta en etapa de preparacion de datos, no de producto final.
 
 ## Orden de lectura recomendado
@@ -82,6 +83,13 @@ Si una duda no queda resuelta en los README, casi seguro la respuesta esta en el
 - `show_augmentations`
 - `show_batch`
 
+### Modelos, entrenamiento y métricas de semana 3
+
+- `prod/detection_models.py`
+- `prod/detection_training.py`
+- `prod/detection_metrics.py`
+- `dev/02_model_training.ipynb`
+
 ## Estructura real del repo
 
 ### Archivos raiz
@@ -94,6 +102,9 @@ Si una duda no queda resuelta en los README, casi seguro la respuesta esta en el
 - `app.py`: placeholder vacio.
 - `utils.py`: placeholder vacio.
 - `prod/detection_dataset.py`: implementacion reutilizable del pipeline de datos para deteccion.
+- `prod/detection_models.py`: factory y configuraciones de Faster R-CNN.
+- `prod/detection_training.py`: entrenamiento, validacion y checkpoints.
+- `prod/detection_metrics.py`: mAP para deteccion.
 
 ### Carpetas
 
@@ -170,8 +181,9 @@ Si una tarea falla porque no encuentra datos, primero revisar `find_dataset_root
 
 ### Si te piden entrenamiento de modelo
 
-- Hoy no existe implementacion base en archivos Python.
-- Lo correcto es crearla sin romper el notebook actual, usando el notebook como referencia para datos y formato de targets.
+- La base de entrenamiento actual esta pensada para Faster R-CNN.
+- El notebook principal para esta etapa es `dev/02_model_training.ipynb`.
+- Reutiliza `prod/detection_models.py`, `prod/detection_training.py` y `prod/detection_metrics.py`.
 
 ### Si te piden una app o script de inferencia
 
@@ -185,6 +197,7 @@ Si una tarea falla porque no encuentra datos, primero revisar `find_dataset_root
 - `README.md` menciona archivos que hoy no estan presentes; documenta eso en vez de asumir que faltan por error.
 - `app.py` y `utils.py` no son la fuente de verdad actual.
 - Para datos de deteccion, la implementacion reusable ahora esta en `prod/detection_dataset.py`.
+- Para semana 3, las metricas principales son `mAP@50:95` y `mAP@50`, no accuracy.
 
 ## Checklist de trabajo seguro
 

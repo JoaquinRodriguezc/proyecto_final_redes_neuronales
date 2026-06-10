@@ -1,5 +1,6 @@
 torch
 torchvision
+torchmetrics
 pandas
 numpy
 matplotlib
@@ -8,3 +9,4 @@ tqdm
 jupyter
 kaggle
 gdown
+faster-coco-eval

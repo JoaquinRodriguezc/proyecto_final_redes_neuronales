@@ -12,6 +12,8 @@ El foco actual del repo no es una app final ni un pipeline de entrenamiento comp
 - definicion de un `Dataset` custom para deteccion
 - definicion de transforms compatibles con bounding boxes
 - construccion de `DataLoader`s para train, val y test
+- base de entrenamiento para tres variantes de Faster R-CNN
+- evaluacion con `mAP@50:95` y `mAP@50`
 - visualizacion y verificacion manual de batches y augmentations
 
 Hoy, la fuente principal de verdad sigue siendo el notebook `dev/01_dataset_preparation.ipynb`, pero la implementacion reutilizable de datos ya se extrajo a `prod/detection_dataset.py`.
@@ -24,7 +26,7 @@ Hoy, la fuente principal de verdad sigue siendo el notebook `dev/01_dataset_prep
 - `app.py` esta vacio.
 - `utils.py` esta vacio.
 - `prod/detection_dataset.py` contiene ahora la implementacion reutilizable del dataset de deteccion, transforms y `collate_fn`.
-- No hay entrenamiento de modelo implementado en archivos Python versionados.
+- `prod/detection_models.py`, `prod/detection_training.py` y `prod/detection_metrics.py` contienen la base reutilizable para la semana 3.
 - No hay tests automaticos versionados.
 - El repo menciona `data/train.csv`, `data/val.csv` y `data/test.csv`, pero en el estado actual esos archivos no estan presentes y el notebook tampoco los persiste a disco todavia.
 
@@ -57,8 +59,9 @@ El notebook arma tambien la clase `background` con indice `0` para compatibilida
 ### `dev/`
 
 - `01_dataset_preparation.ipynb`: activo principal del repo.
-- Este notebook contiene toda la logica real del proyecto hoy.
-- Si queres entender el pipeline de datos, arranca aca.
+- `02_model_training.ipynb`: notebook base para semana 3 con tres experimentos de Faster R-CNN.
+- Si queres entender el pipeline de datos, arranca en `01_dataset_preparation.ipynb`.
+- Si queres entender el entrenamiento, segui con `02_model_training.ipynb`.
 
 ### `data/`
 
@@ -73,6 +76,9 @@ El notebook arma tambien la clase `background` con indice `0` para compatibilida
 - Carpeta para codigo reutilizable fuera del notebook.
 - `detection_dataset.py`: dataset de deteccion, transforms y `collate_fn` reutilizables.
 - `__init__.py`: exporta los componentes principales del modulo.
+- `detection_models.py`: factory y variantes de Faster R-CNN.
+- `detection_training.py`: loops de entrenamiento y checkpoints.
+- `detection_metrics.py`: evaluacion con mAP.
 
 ## Que va en cada carpeta
 
@@ -104,6 +110,7 @@ Zona del dataset local, manifests y documentacion de datos. No deberia llenarse 
 
 - Leer `dev/01_dataset_preparation.ipynb`.
 - Leer `prod/detection_dataset.py` para la version reutilizable del dataset.
+- Leer `dev/02_model_training.ipynb` y `prod/detection_training.py` para la semana 3.
 
 ### Si queres saber como se detecta o descarga el dataset
 
@@ -131,6 +138,17 @@ Zona del dataset local, manifests y documentacion de datos. No deberia llenarse 
 ### Si queres saber como se construyen los `DataLoader`s
 
 - Ir a la seccion `## 9. DataLoaders` del notebook y a `collate_fn` en `prod/detection_dataset.py`.
+
+### Si queres saber como se entrena el modelo
+
+- Ir a `prod/detection_models.py`.
+- Ir a `prod/detection_training.py`.
+- Ir a `dev/02_model_training.ipynb`.
+
+### Si queres saber como se evalua con mAP
+
+- Ir a `prod/detection_metrics.py`.
+- La metrica principal es `mAP@50:95` y la secundaria `mAP@50`.
 
 ### Si queres inspeccionar visualmente samples y boxes
 
@@ -262,8 +280,10 @@ El `target` que devuelve el dataset esta alineado con el formato comun de detecc
 - `jupyter`
 - `kaggle`
 - `gdown`
+- `torchmetrics`
+- `faster-coco-eval`
 
-`kaggle` esta instalado pero no forma parte del flujo principal implementado hoy. `gdown` si se usa activamente para descarga automatica.
+`kaggle` esta instalado pero no forma parte del flujo principal implementado hoy. `gdown` si se usa activamente para descarga automatica. `torchmetrics` y `faster-coco-eval` se usan para la evaluacion de deteccion con mAP.
 
 ## Comandos utiles
 
@@ -284,13 +304,13 @@ jupyter notebook dev/01_dataset_preparation.ipynb
 - `README.md` y `data/README.md` mencionan CSVs versionados que hoy no estan presentes.
 - El notebook construye `csv_manifest_df`, pero no hace `to_csv(...)`.
 - `app.py` y `utils.py` existen pero no concentran logica real todavia.
-- La logica reutilizable de datos ya vive en `prod/detection_dataset.py`, pero el entrenamiento de modelos todavia no esta modularizado.
+- La logica reutilizable de datos ya vive en `prod/` y el entrenamiento base de semana 3 esta modularizado para Faster R-CNN.
 - El dataset local presente en este workspace incluye anotaciones y archivos auxiliares, pero las imagenes no estan versionadas en Git.
 
 ## Recomendaciones para evolucionar el repo
 
-- Mantener `dev/01_dataset_preparation.ipynb` como referencia funcional y `prod/detection_dataset.py` como implementacion reutilizable actual.
-- Cuando una parte adicional del notebook quede estable, moverla a modulos reutilizables, idealmente en `prod/`.
+- Mantener `dev/01_dataset_preparation.ipynb` como referencia funcional de datos y `dev/02_model_training.ipynb` como referencia funcional de entrenamiento.
+- Mantener `prod/` como lugar principal para codigo reutilizable de datos, modelos, entrenamiento y metricas.
 - Si se agregan scripts de entrenamiento, separar claramente preparacion de datos, definicion de modelo, entrenamiento, evaluacion e inferencia.
 
 ## Regla practica para cualquiera que entre al repo
@@ -300,4 +320,4 @@ Si necesitas entender algo rapido:
 1. Lee `README.md` para el panorama general.
 2. Lee `data/README.md` para el dataset.
 3. Lee `dev/01_dataset_preparation.ipynb` para la implementacion real.
-4. Asumi que `app.py` y `utils.py` todavia no son la fuente principal de verdad, pero que `prod/detection_dataset.py` ya concentra la implementacion reutilizable del pipeline de datos.
+4. Asumi que `app.py` y `utils.py` todavia no son la fuente principal de verdad, y que la implementacion reutilizable actual vive en `prod/`.
