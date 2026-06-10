@@ -1,6 +1,6 @@
 # Proyecto Final — Detección/Clasificación de daños en autos con CarDD
 
-Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarDD (Car Damage Detection Dataset)**. En esta etapa se deja lista la preparación del dataset para detección: exploración, lectura de COCO, registros con boxes, `Dataset` custom, transforms, `DataLoader`s y notebook de verificación.
+Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarDD (Car Damage Detection Dataset)**. En esta etapa se deja lista la preparación del dataset para detección: exploración, lectura de COCO, registros con boxes, `Dataset` custom, transforms, `DataLoader`s, un módulo reutilizable en `prod/` y notebook de verificación.
 
 ## Dataset usado
 
@@ -16,17 +16,16 @@ Repositorio base para preparar un pipeline reproducible en PyTorch usando **CarD
 .
 ├── data/
 │   ├── README.md
-│   ├── train.csv
-│   ├── val.csv
-│   ├── test.csv
-│   ├── raw/
-│   └── processed/
+│   └── CarDD_release/
 ├── dev/
 │   └── 01_dataset_preparation.ipynb
 ├── prod/
-│   └── .gitkeep
+│   ├── __init__.py
+│   └── detection_dataset.py
 ├── requirements.txt
 ├── .gitignore
+├── CLAUDE.md
+├── AGENTS.md
 └── README.md
 ```
 
@@ -53,5 +52,5 @@ pip install -r requirements.txt
 ## Notas importantes
 
 - Las imágenes del dataset **no** se suben a GitHub.
-- Se versionan archivos livianos como notebooks, CSVs y documentación.
-- Los archivos `data/train.csv`, `data/val.csv` y `data/test.csv` se reconstruyen a partir de los splits oficiales de CarDD COCO una vez que el dataset está disponible localmente.
+- Se versionan archivos livianos como notebooks, módulos Python y documentación.
+- El notebook arma un manifiesto en memoria a partir de los splits oficiales de CarDD COCO, pero hoy no persiste `data/train.csv`, `data/val.csv` y `data/test.csv` a disco.
