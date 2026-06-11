@@ -18,6 +18,8 @@ from .detection_models import (
     count_total_parameters,
     count_trainable_parameters,
     create_fasterrcnn_model,
+    create_fcos_model,
+    create_retinanet_model,
     create_model_from_config,
     describe_parameter_counts,
 )
@@ -48,6 +50,8 @@ __all__ = [
     "count_total_parameters",
     "count_trainable_parameters",
     "create_fasterrcnn_model",
+    "create_fcos_model",
+    "create_retinanet_model",
     "create_model_from_config",
     "describe_parameter_counts",
     "evaluate_detection_loss",

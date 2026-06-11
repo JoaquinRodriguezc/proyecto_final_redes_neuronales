@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+from datetime import datetime
 from pathlib import Path
 
 import torch
@@ -174,13 +175,21 @@ def run_detection_experiment(
         output_path.mkdir(parents=True, exist_ok=True)
 
     model.to(device)
+    training_started_at = datetime.now()
 
     if verbose:
         print(
-            f"[{experiment_name}] Starting training for {num_epochs} epoch(s)"
+            f"[{experiment_name}] Starting training for {num_epochs} epoch(s) "
+            f"at {training_started_at.isoformat(timespec='seconds')}"
         )
 
     for epoch in range(1, num_epochs + 1):
+        epoch_started_at = datetime.now()
+        if verbose:
+            print(
+                f"[{experiment_name}] Epoch {epoch}/{num_epochs} started at "
+                f"{epoch_started_at.isoformat(timespec='seconds')}"
+            )
         train_metrics = train_one_epoch(
             model=model,
             dataloader=train_loader,
@@ -205,16 +214,25 @@ def run_detection_experiment(
 
         epoch_metrics = {
             "epoch": epoch,
+            "epoch_start_time": epoch_started_at.isoformat(timespec="seconds"),
             "train_loss": train_metrics["train_loss"],
             "val_loss": val_loss_metrics["val_loss"],
             "lr": float(optimizer.param_groups[0]["lr"]),
             **extract_main_map_metrics(map_metrics),
         }
+        epoch_finished_at = datetime.now()
+        epoch_metrics["epoch_end_time"] = epoch_finished_at.isoformat(timespec="seconds")
+        epoch_metrics["epoch_duration_seconds"] = (
+            epoch_finished_at - epoch_started_at
+        ).total_seconds()
         history.append(epoch_metrics)
 
         if verbose:
             print(
                 f"[{experiment_name}] Epoch {epoch}/{num_epochs} - "
+                f"start={epoch_metrics['epoch_start_time']} - "
+                f"end={epoch_metrics['epoch_end_time']} - "
+                f"duration_s={epoch_metrics['epoch_duration_seconds']:.2f} - "
                 f"train_loss={epoch_metrics['train_loss']:.4f} - "
                 f"val_loss={epoch_metrics['val_loss']:.4f} - "
                 f"map={epoch_metrics.get('map', 0.0):.4f} - "
@@ -247,9 +265,13 @@ def run_detection_experiment(
 
         _scheduler_step(scheduler, epoch_metrics)
 
+    training_finished_at = datetime.now()
     if verbose:
         print(
             f"[{experiment_name}] Training finished. "
+            f"start={training_started_at.isoformat(timespec='seconds')} - "
+            f"end={training_finished_at.isoformat(timespec='seconds')} - "
+            f"duration_s={(training_finished_at - training_started_at).total_seconds():.2f} - "
             f"best_epoch={best_epoch}, best_map={best_metric:.4f}"
         )
 
@@ -259,6 +281,11 @@ def run_detection_experiment(
         "best_epoch": best_epoch,
         "best_checkpoint_path": str(best_checkpoint_path) if best_checkpoint_path else None,
         "best_payload": best_payload,
+        "training_start_time": training_started_at.isoformat(timespec="seconds"),
+        "training_end_time": training_finished_at.isoformat(timespec="seconds"),
+        "training_duration_seconds": (
+            training_finished_at - training_started_at
+        ).total_seconds(),
     }
 
 
