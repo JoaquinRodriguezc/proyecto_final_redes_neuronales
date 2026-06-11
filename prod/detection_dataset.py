@@ -148,6 +148,17 @@ def find_coco_root(data_dir) -> Path:
     raise FileNotFoundError("No se encontro CarDD_COCO. Rutas verificadas:\n" + checked)
 
 
+def ensure_cardd_dataset(data_dir, file_id=CARDD_FILE_ID, zip_filename="CarDD_release.zip") -> Path:
+    data_dir = Path(data_dir)
+
+    try:
+        return find_coco_root(data_dir)
+    except FileNotFoundError:
+        zip_path = download_cardd_zip(file_id=file_id, zip_path=data_dir / zip_filename)
+        extract_cardd_zip(zip_path, extract_dir=data_dir)
+        return find_coco_root(data_dir)
+
+
 class ComposeDetection:
     def __init__(self, transforms_list):
         self.transforms_list = transforms_list
