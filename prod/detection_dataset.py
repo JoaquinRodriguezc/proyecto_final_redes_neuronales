@@ -2,7 +2,11 @@ from __future__ import annotations
 
 import json
 import random
+import subprocess
+import sys
+import zipfile
 from collections import defaultdict
+from itertools import groupby
 from pathlib import Path
 
 import torch
@@ -11,6 +15,9 @@ from torch.utils.data import Dataset
 from torchvision.transforms import functional as TF
 
 
+CARDD_VIEW_URL = "https://drive.google.com/file/d/1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx/view"
+CARDD_FILE_ID = "1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx"
+IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 OFFICIAL_SPLIT_FILES = {
     "train": "instances_train2017.json",
     "val": "instances_val2017.json",
@@ -24,6 +31,7 @@ def normalize_split(split: str) -> str:
         expected = ", ".join(sorted(OFFICIAL_SPLIT_FILES))
         raise ValueError(f"Split invalido: {split}. Esperados: {expected}")
     return normalized
+
 
 
 def normalize_image_size(image_size):
@@ -40,6 +48,77 @@ def normalize_image_size(image_size):
         return (height, width)
 
     raise ValueError("image_size debe ser None, un int o una tupla/lista (alto, ancho)")
+
+
+
+def ensure_gdown():
+    try:
+        import gdown
+
+        return gdown
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "gdown"])
+        import gdown
+
+        return gdown
+
+
+
+def download_cardd_zip(file_id=CARDD_FILE_ID, zip_path=None):
+    zip_path = Path(zip_path) if zip_path is not None else Path("data") / "CarDD_release.zip"
+
+    if zip_path.exists() and zipfile.is_zipfile(zip_path):
+        return zip_path
+
+    if zip_path.exists() and not zipfile.is_zipfile(zip_path):
+        zip_path.unlink()
+
+    gdown = ensure_gdown()
+    zip_path.parent.mkdir(parents=True, exist_ok=True)
+    gdown.download(id=file_id, output=str(zip_path), quiet=False)
+
+    if not zipfile.is_zipfile(zip_path):
+        raise zipfile.BadZipFile("La descarga no produjo un archivo ZIP válido.")
+
+    return zip_path
+
+
+
+def extract_cardd_zip(zip_path, extract_dir=None):
+    zip_path = Path(zip_path)
+    extract_dir = Path(extract_dir) if extract_dir is not None else zip_path.parent
+
+    if not zip_path.exists():
+        raise FileNotFoundError(f"No existe el ZIP en {zip_path}")
+
+    if not zipfile.is_zipfile(zip_path):
+        raise zipfile.BadZipFile(f"{zip_path} no es un ZIP válido")
+
+    extract_dir.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(zip_path, "r") as zip_ref:
+        zip_ref.extractall(extract_dir)
+
+    return extract_dir
+
+
+
+def find_dataset_root(data_dir) -> Path:
+    base_dir = Path(data_dir)
+    candidates = [
+        base_dir / "raw" / "CarDD",
+        base_dir / "CarDD",
+        base_dir / "CarDD_release",
+        base_dir / "CarDD_release" / "CarDD_COCO",
+        base_dir / "CarDD" / "CarDD_COCO",
+    ]
+
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+
+    checked = "\n".join(str(path) for path in candidates)
+    raise FileNotFoundError("No se encontro el dataset CarDD. Rutas verificadas:\n" + checked)
+
 
 
 def find_coco_root(data_dir) -> Path:
@@ -66,177 +145,7 @@ def find_coco_root(data_dir) -> Path:
             return coco_candidate
 
     checked = "\n".join(str(path) for path in checked_paths)
-    raise FileNotFoundError(
-        "No se encontro CarDD_COCO. Rutas verificadas:\n" + checked
-    )
-
-
-def _resolve_annotation_file(coco_root: Path, split: str, annotation_file=None) -> Path:
-    if annotation_file is not None:
-        path = Path(annotation_file)
-        if not path.exists():
-            raise FileNotFoundError(f"No existe el archivo de anotaciones: {path}")
-        return path
-
-    annotation_path = coco_root / "annotations" / OFFICIAL_SPLIT_FILES[split]
-    if not annotation_path.exists():
-        raise FileNotFoundError(f"No existe el archivo de anotaciones: {annotation_path}")
-    return annotation_path
-
-
-def _load_category_mappings(annotation_paths):
-    categories = {}
-
-    for annotation_path in annotation_paths:
-        if not annotation_path.exists():
-            continue
-
-        data = json.loads(annotation_path.read_text(encoding="utf-8"))
-        for category in data.get("categories", []):
-            categories[category["id"]] = category["name"]
-
-    if not categories:
-        raise ValueError("No se pudieron cargar categorias desde las anotaciones COCO.")
-
-    class_to_idx = {"background": 0}
-    idx_to_class = {0: "background"}
-
-    for idx, category_id in enumerate(sorted(categories), start=1):
-        class_name = categories[category_id]
-        class_to_idx[class_name] = idx
-        idx_to_class[idx] = class_name
-
-    return categories, class_to_idx, idx_to_class
-
-
-def _relative_to_base(image_path: Path, base_dir: Path) -> str:
-    try:
-        return str(image_path.relative_to(base_dir))
-    except ValueError:
-        return str(image_path)
-
-
-def build_split_records(
-    data_dir,
-    splits=None,
-    include_empty=False,
-    annotation_files=None,
-    coco_root=None,
-):
-    base_dir = Path(data_dir)
-    coco_root = find_coco_root(base_dir) if coco_root is None else Path(coco_root)
-
-    requested_splits = splits or tuple(OFFICIAL_SPLIT_FILES)
-    requested_splits = [normalize_split(split) for split in requested_splits]
-
-    resolved_annotation_files = {}
-    annotation_files = annotation_files or {}
-    for split in requested_splits:
-        resolved_annotation_files[split] = _resolve_annotation_file(
-            coco_root=coco_root,
-            split=split,
-            annotation_file=annotation_files.get(split),
-        )
-
-    all_annotation_paths = [
-        coco_root / "annotations" / filename
-        for filename in OFFICIAL_SPLIT_FILES.values()
-    ]
-    all_annotation_paths.extend(path for path in resolved_annotation_files.values())
-    category_id_to_name, class_to_idx, idx_to_class = _load_category_mappings(all_annotation_paths)
-
-    split_records = {}
-    skipped_images = defaultdict(int)
-    all_box_labels = []
-    csv_rows = []
-
-    for split in requested_splits:
-        annotation_path = resolved_annotation_files[split]
-        data = json.loads(annotation_path.read_text(encoding="utf-8"))
-
-        images_by_id = {image["id"]: image for image in data.get("images", [])}
-        annotations_by_image = defaultdict(list)
-        for annotation in data.get("annotations", []):
-            annotations_by_image[annotation["image_id"]].append(annotation)
-
-        records = []
-        for image_id, image_info in images_by_id.items():
-            filename = image_info.get("file_name")
-            image_path = coco_root / f"{split}2017" / filename
-
-            if not image_path.exists():
-                skipped_images[split] += 1
-                continue
-
-            boxes = []
-            labels = []
-            areas = []
-            iscrowd = []
-            label_names = []
-
-            for annotation in annotations_by_image.get(image_id, []):
-                x, y, width, height = annotation["bbox"]
-                xmin = float(x)
-                ymin = float(y)
-                xmax = float(x + width)
-                ymax = float(y + height)
-
-                if xmax <= xmin or ymax <= ymin:
-                    continue
-
-                category_name = category_id_to_name[annotation["category_id"]]
-                label_idx = class_to_idx[category_name]
-
-                boxes.append([xmin, ymin, xmax, ymax])
-                labels.append(label_idx)
-                areas.append(float(annotation.get("area", width * height)))
-                iscrowd.append(int(annotation.get("iscrowd", 0)))
-                label_names.append(category_name)
-                all_box_labels.append(category_name)
-
-            if not boxes and not include_empty:
-                skipped_images[split] += 1
-                continue
-
-            record = {
-                "image_path": _relative_to_base(image_path, base_dir),
-                "image_id": int(image_id),
-                "boxes": boxes,
-                "labels": labels,
-                "label_names": label_names,
-                "area": areas,
-                "iscrowd": iscrowd,
-                "split": split,
-                "width": int(image_info.get("width", 0)),
-                "height": int(image_info.get("height", 0)),
-            }
-            records.append(record)
-
-            unique_label_names = sorted(set(label_names))
-            image_label = (
-                unique_label_names[0]
-                if len(unique_label_names) == 1
-                else "multiple_damage"
-            )
-            csv_rows.append(
-                {
-                    "image_path": record["image_path"],
-                    "label": image_label,
-                    "split": split,
-                }
-            )
-
-        split_records[split] = records
-
-    metadata = {
-        "coco_root": coco_root,
-        "class_to_idx": class_to_idx,
-        "idx_to_class": idx_to_class,
-        "skipped_images": dict(skipped_images),
-        "csv_rows": csv_rows,
-        "all_box_labels": all_box_labels,
-    }
-    return split_records, metadata
+    raise FileNotFoundError("No se encontro CarDD_COCO. Rutas verificadas:\n" + checked)
 
 
 class ComposeDetection:
@@ -307,34 +216,190 @@ class CarDamageDetectionDataset(Dataset):
         if self.resize and self.image_size is None:
             raise ValueError("Si resize=True, image_size no puede ser None")
 
-        split_records, metadata = build_split_records(
-            data_dir=self.data_dir,
-            splits=[self.split],
-            include_empty=self.include_empty,
-            annotation_files={self.split: self.annotation_file} if self.annotation_file else None,
+        self.coco_root = self._find_coco_root()
+        self.annotation_path = self._resolve_annotation_file()
+        self.annotation_data = self._load_json(self.annotation_path)
+        self.images = self.annotation_data.get("images", [])
+        self.image_ids = [int(image["id"]) for image in self.images]
+        self.images_by_id = {int(image["id"]): image for image in self.images}
+        self.annotations_by_image = self._group_annotations_by_image(
+            self.annotation_data.get("annotations", [])
         )
-
-        self.coco_root = metadata["coco_root"]
-        self.class_to_idx = metadata["class_to_idx"]
-        self.idx_to_class = metadata["idx_to_class"]
-        self.skipped_images = metadata["skipped_images"]
-        self.records = split_records[self.split]
+        self.class_to_idx = self._build_class_to_idx()
+        self.idx_to_class = {idx: name for name, idx in self.class_to_idx.items()}
+        self.category_id_to_name = self._load_category_id_to_name()
+        self.skipped_images = {}
 
     def __len__(self):
-        return len(self.records)
+        return len(self.image_ids)
 
-    def _build_target(self, record):
-        if record["boxes"]:
-            boxes = torch.tensor(record["boxes"], dtype=torch.float32)
+    def __getitem__(self, idx):
+        image, target = self.get_raw_sample(idx)
+
+        image, target = self._apply_resize(image, target)
+
+        if self.transform:
+            image, target = self.transform(image, target)
         else:
-            boxes = torch.zeros((0, 4), dtype=torch.float32)
+            image = TF.to_tensor(image)
+
+        return image, target
+
+    def get_raw_sample(self, idx):
+        image_info = self.images[idx]
+        image_id = int(image_info["id"])
+        image_path = self._image_path_from_info(image_info)
+
+        if not image_path.exists():
+            raise FileNotFoundError(f"No existe la imagen: {image_path}")
+
+        image = Image.open(image_path).convert("RGB")
+        target = self._build_target(image_id)
+        return image, target
+
+    def _find_coco_root(self) -> Path:
+        return find_coco_root(self.data_dir)
+
+    def _resolve_annotation_file(self) -> Path:
+        if self.annotation_file is not None:
+            path = Path(self.annotation_file)
+            if not path.exists():
+                raise FileNotFoundError(f"No existe el archivo de anotaciones: {path}")
+            return path
+
+        annotation_path = self.coco_root / "annotations" / OFFICIAL_SPLIT_FILES[self.split]
+        if not annotation_path.exists():
+            raise FileNotFoundError(f"No existe el archivo de anotaciones: {annotation_path}")
+        return annotation_path
+
+    def _annotation_paths_for_categories(self):
+        paths = [
+            self.coco_root / "annotations" / filename
+            for filename in OFFICIAL_SPLIT_FILES.values()
+            if (self.coco_root / "annotations" / filename).exists()
+        ]
+
+        resolved_path = self._resolve_annotation_file()
+        if resolved_path not in paths:
+            paths.append(resolved_path)
+
+        return paths
+
+    def _load_json(self, path: Path):
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def _build_class_to_idx(self):
+        categories = {}
+        category_lists = [
+            self._load_json(annotation_path).get("categories", [])
+            for annotation_path in self._annotation_paths_for_categories()
+        ]
+        categories = {
+            int(category["id"]): category["name"]
+            for category_list in category_lists
+            for category in category_list
+        }
+
+        if not categories:
+            raise ValueError("No se pudieron cargar categorias desde las anotaciones COCO.")
+
+        class_to_idx = {"background": 0}
+        for idx, category_id in enumerate(sorted(categories), start=1):
+            class_to_idx[categories[category_id]] = idx
+        return class_to_idx
+
+    def _load_category_id_to_name(self):
+        category_lists = [
+            self._load_json(annotation_path).get("categories", [])
+            for annotation_path in self._annotation_paths_for_categories()
+        ]
+        category_id_to_name = {
+            int(category["id"]): category["name"]
+            for category_list in category_lists
+            for category in category_list
+        }
+
+        if not category_id_to_name:
+            raise ValueError("No se pudieron cargar categorias desde las anotaciones COCO.")
+
+        return category_id_to_name
+
+    def _relative_to_base(self, image_path: Path) -> str:
+        try:
+            return str(image_path.relative_to(self.data_dir))
+        except ValueError:
+            return str(image_path)
+
+    def _group_annotations_by_image(self, annotations):
+        ordered_annotations = sorted(
+            annotations,
+            key=lambda annotation: int(annotation["image_id"]),
+        )
+        return {
+            int(image_id): list(group)
+            for image_id, group in groupby(
+                ordered_annotations,
+                key=lambda annotation: int(annotation["image_id"]),
+            )
+        }
+
+    def _convert_bbox_xywh_to_xyxy(self, bbox):
+        x, y, width, height = bbox
+        xmin = float(x)
+        ymin = float(y)
+        xmax = float(x + width)
+        ymax = float(y + height)
+        return xmin, ymin, xmax, ymax, float(width), float(height)
+
+    def _image_path_from_info(self, image_info):
+        filename = image_info.get("file_name")
+        return self.coco_root / f"{self.split}2017" / filename
+
+    def _build_target(self, image_id):
+        annotations = self.annotations_by_image.get(int(image_id), [])
+        converted_annotations = [
+            (annotation, *self._convert_bbox_xywh_to_xyxy(annotation["bbox"]))
+            for annotation in annotations
+        ]
+        valid_annotations = [
+            (annotation, xmin, ymin, xmax, ymax, width, height)
+            for annotation, xmin, ymin, xmax, ymax, width, height in converted_annotations
+            if xmax > xmin and ymax > ymin
+        ]
+
+        boxes = (
+            torch.tensor(
+                [[xmin, ymin, xmax, ymax] for _, xmin, ymin, xmax, ymax, _, _ in valid_annotations],
+                dtype=torch.float32,
+            )
+            if valid_annotations
+            else torch.zeros((0, 4), dtype=torch.float32)
+        )
+        labels = torch.tensor(
+            [
+                self.class_to_idx[self.category_id_to_name[int(annotation["category_id"])]]
+                for annotation, *_ in valid_annotations
+            ],
+            dtype=torch.int64,
+        )
+        area = torch.tensor(
+            [
+                float(annotation.get("area", width * height))
+                for annotation, _, _, _, _, width, height in valid_annotations
+            ],
+            dtype=torch.float32,
+        )
+        iscrowd = torch.tensor(
+            [int(annotation.get("iscrowd", 0)) for annotation, *_ in valid_annotations],
+            dtype=torch.int64,
+        )
 
         return {
             "boxes": boxes,
-            "labels": torch.tensor(record["labels"], dtype=torch.int64),
-            "image_id": torch.tensor([record["image_id"]], dtype=torch.int64),
-            "area": torch.tensor(record["area"], dtype=torch.float32),
-            "iscrowd": torch.tensor(record["iscrowd"], dtype=torch.int64),
+            "labels": labels,
+            "image_id": torch.tensor([int(image_id)], dtype=torch.int64),
+            "area": area,
+            "iscrowd": iscrowd,
         }
 
     def _apply_resize(self, image, target):
@@ -363,20 +428,6 @@ class CarDamageDetectionDataset(Dataset):
 
         return image, target
 
-    def __getitem__(self, idx):
-        record = self.records[idx]
-        image_path = self.data_dir / record["image_path"]
-        image = Image.open(image_path).convert("RGB")
-        target = self._build_target(record)
-
-        image, target = self._apply_resize(image, target)
-
-        if self.transform:
-            image, target = self.transform(image, target)
-        else:
-            image = TF.to_tensor(image)
-
-        return image, target
 
 
 def collate_fn(batch):

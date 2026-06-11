@@ -4,6 +4,7 @@ import copy
 from pathlib import Path
 
 import torch
+from tqdm.auto import tqdm
 
 from .detection_metrics import evaluate_map, extract_main_map_metrics
 
@@ -33,7 +34,18 @@ def train_one_epoch(model, dataloader, optimizer, device, epoch_index, max_batch
     running_loss = 0.0
     running_steps = 0
 
-    for batch_index, (images, targets) in enumerate(dataloader):
+    total_batches = len(dataloader)
+    if max_batches is not None:
+        total_batches = min(total_batches, max_batches)
+
+    progress_bar = tqdm(
+        dataloader,
+        total=total_batches,
+        desc=f"Train Epoch {epoch_index}",
+        leave=False,
+    )
+
+    for batch_index, (images, targets) in enumerate(progress_bar):
         if max_batches is not None and batch_index >= max_batches:
             break
 
@@ -48,6 +60,12 @@ def train_one_epoch(model, dataloader, optimizer, device, epoch_index, max_batch
 
         running_loss += float(total_loss.item())
         running_steps += 1
+        progress_bar.set_postfix(
+            batch_loss=f"{float(total_loss.item()):.4f}",
+            avg_loss=f"{running_loss / running_steps:.4f}",
+        )
+
+    progress_bar.close()
 
     average_loss = running_loss / max(running_steps, 1)
     return {
@@ -63,8 +81,19 @@ def evaluate_detection_loss(model, dataloader, device, max_batches=None):
     running_loss = 0.0
     running_steps = 0
 
+    total_batches = len(dataloader)
+    if max_batches is not None:
+        total_batches = min(total_batches, max_batches)
+
     with torch.no_grad():
-        for batch_index, (images, targets) in enumerate(dataloader):
+        progress_bar = tqdm(
+            dataloader,
+            total=total_batches,
+            desc="Validation Loss",
+            leave=False,
+        )
+
+        for batch_index, (images, targets) in enumerate(progress_bar):
             if max_batches is not None and batch_index >= max_batches:
                 break
 
@@ -74,6 +103,12 @@ def evaluate_detection_loss(model, dataloader, device, max_batches=None):
 
             running_loss += float(total_loss.item())
             running_steps += 1
+            progress_bar.set_postfix(
+                batch_loss=f"{float(total_loss.item()):.4f}",
+                avg_loss=f"{running_loss / running_steps:.4f}",
+            )
+
+        progress_bar.close()
 
     if not was_training:
         model.eval()
@@ -126,6 +161,7 @@ def run_detection_experiment(
     max_train_batches=None,
     max_val_batches=None,
     class_metrics=True,
+    verbose=True,
 ):
     history = []
     best_metric = float("-inf")
@@ -138,6 +174,11 @@ def run_detection_experiment(
         output_path.mkdir(parents=True, exist_ok=True)
 
     model.to(device)
+
+    if verbose:
+        print(
+            f"[{experiment_name}] Starting training for {num_epochs} epoch(s)"
+        )
 
     for epoch in range(1, num_epochs + 1):
         train_metrics = train_one_epoch(
@@ -171,6 +212,16 @@ def run_detection_experiment(
         }
         history.append(epoch_metrics)
 
+        if verbose:
+            print(
+                f"[{experiment_name}] Epoch {epoch}/{num_epochs} - "
+                f"train_loss={epoch_metrics['train_loss']:.4f} - "
+                f"val_loss={epoch_metrics['val_loss']:.4f} - "
+                f"map={epoch_metrics.get('map', 0.0):.4f} - "
+                f"map_50={epoch_metrics.get('map_50', 0.0):.4f} - "
+                f"lr={epoch_metrics['lr']:.6f}"
+            )
+
         current_metric = epoch_metrics.get("map")
         if current_metric is not None and current_metric > best_metric:
             best_metric = current_metric
@@ -188,8 +239,19 @@ def run_detection_experiment(
             if output_path is not None:
                 best_checkpoint_path = output_path / f"{experiment_name}_best.pth"
                 torch.save(best_payload, best_checkpoint_path)
+            if verbose:
+                print(
+                    f"[{experiment_name}] New best checkpoint at epoch {epoch} "
+                    f"with map={best_metric:.4f}"
+                )
 
         _scheduler_step(scheduler, epoch_metrics)
+
+    if verbose:
+        print(
+            f"[{experiment_name}] Training finished. "
+            f"best_epoch={best_epoch}, best_map={best_metric:.4f}"
+        )
 
     return {
         "history": history,
