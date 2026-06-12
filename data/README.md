@@ -8,17 +8,17 @@ ZIP de descarga directa usado en este repo:
 
 `https://drive.google.com/file/d/1bbyqVCKZX5Ur5Zg-uKj0jD0maWAVeOLx/view`
 
-CarDD contiene imágenes de vehículos con daños y anotaciones para tareas de detección y segmentación de daños. En esta entrega se utiliza específicamente la variante **CarDD_COCO**.
+CarDD contiene imagenes de vehiculos con danos y anotaciones para tareas de deteccion y segmentacion de danos. En esta entrega se utiliza especificamente la variante **CarDD_COCO**.
 
 ## Descarga
 
-El notebook `dev/01_dataset_preparation.ipynb` incluye funciones para:
+El notebook `dev/01_dataset_preparation.ipynb` y el modulo `prod/detection_dataset.py` incluyen funciones para:
 
 - descargar `CarDD_release.zip`
 - extraerlo en `data/`
-- detectar automáticamente la estructura resultante
+- detectar automaticamente la estructura resultante
 
-Ubicaciones válidas detectadas por el notebook:
+Ubicaciones validas detectadas por el proyecto:
 
 - `data/raw/CarDD/`
 - `data/CarDD/`
@@ -30,35 +30,41 @@ La estructura esperada para la variante COCO es:
 
 ```text
 data/CarDD_release/CarDD_COCO/
-├── annotations/
-│   ├── instances_train2017.json
-│   ├── instances_val2017.json
-│   └── instances_test2017.json
-├── train2017/
-├── val2017/
-└── test2017/
+|-- annotations/
+|   |-- instances_train2017.json
+|   |-- instances_val2017.json
+|   `-- instances_test2017.json
+|-- train2017/
+|-- val2017/
+`-- test2017/
 ```
-
-Las imágenes no se versionan en GitHub. Solo se versionan los CSV que reflejan los splits oficiales del dataset:
-
-- `train.csv`
-- `val.csv`
-- `test.csv`
 
 ## Archivos versionados
 
 - `data/README.md`
-- `data/train.csv`
-- `data/val.csv`
-- `data/test.csv`
+- anotaciones COCO livianas, si estan presentes en el workspace
 
-## Reproducción de la estructura
+## Estado actual de los CSVs
+
+En el estado actual del repo:
+
+- el notebook construye `csv_manifest_df` en memoria
+- no se persisten `data/train.csv`, `data/val.csv` ni `data/test.csv` a disco
+- si en el futuro se agregan esos archivos, la documentacion debe actualizarse junto con el codigo
+
+## Reproduccion de la estructura
 
 1. Ejecutar `dev/01_dataset_preparation.ipynb`.
-2. Si el dataset no existe localmente, el notebook descargará `CarDD_release.zip` y lo extraerá automáticamente en `data/`.
-3. Ejecutar el resto del notebook para reconstruir los CSVs respetando los splits oficiales de CarDD COCO.
-
+2. Si el dataset no existe localmente, el notebook descargara `CarDD_release.zip` y lo extraera automaticamente en `data/`.
+3. Ejecutar el resto del notebook para reconstruir los registros y manifiestos en memoria respetando los splits oficiales de CarDD COCO.
 
 ## Google Colab
 
-En Colab, el notebook usa automáticamente `DATA_DIR = /content/data` y descarga/extracción automática si el dataset no está presente.
+En Colab, el notebook usa automaticamente `DATA_DIR = /content/data` y descarga/extraccion automatica si el dataset no esta presente.
+
+## Referencias utiles
+
+- `README.md`: setup del repo y contexto general
+- `CLAUDE.md`: mapa tecnico del proyecto
+- `docs/setup_windows_gpu.md`: guia de entorno local en Windows
+- `docs/python/prod/detection_dataset.md`: detalle del modulo reusable de datos
