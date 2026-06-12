@@ -200,6 +200,37 @@ class RandomHorizontalFlipDetection:
         return image, target
 
 
+class Rotate90Detection:
+    def __init__(self, p=0.5):
+        self.p = p
+
+    def __call__(self, image, target):
+        if random.random() >= self.p:
+            return image, target
+
+        if isinstance(image, torch.Tensor):
+            _, height, _ = image.shape
+            image = torch.rot90(image, k=3, dims=[1, 2])
+        else:
+            height = image.height
+            image = image.transpose(Image.ROTATE_270)
+
+        boxes = target["boxes"].clone()
+        if boxes.numel() > 0:
+            xmin = boxes[:, 0].clone()
+            ymin = boxes[:, 1].clone()
+            xmax = boxes[:, 2].clone()
+            ymax = boxes[:, 3].clone()
+
+            boxes[:, 0] = height - ymax
+            boxes[:, 1] = xmin
+            boxes[:, 2] = height - ymin
+            boxes[:, 3] = xmax
+            target["boxes"] = boxes
+
+        return image, target
+
+
 class CarDamageDetectionDataset(Dataset):
     def __init__(
         self,
