@@ -1,0 +1,47 @@
+{
+  "run_id": "20260612_153757_fasterrcnn_mobilenet_v3_large_partial_backbone_sgd",
+  "best_experiment": "fasterrcnn_mobilenet_v3_large_partial_backbone",
+  "checkpoint_path": "C:\\Users\\Usuario\\Documents\\Proyecto Final Joaco\\dev\\experiments\\20260612_153757_fasterrcnn_mobilenet_v3_large_partial_backbone_sgd_best.pth",
+  "test_map": 0.4466760754585266,
+  "test_map_50": 0.6470946073532104,
+  "test_map_75": 0.47774797677993774,
+  "test_mar_100": 0.5718297958374023,
+  "class_metrics": [
+    {
+      "class_id": 4,
+      "class_name": "glass shatter",
+      "map_per_class": 0.8056,
+      "mar_100_per_class": 0.838
+    },
+    {
+      "class_id": 6,
+      "class_name": "tire flat",
+      "map_per_class": 0.7512,
+      "mar_100_per_class": 0.7781
+    },
+    {
+      "class_id": 5,
+      "class_name": "lamp broken",
+      "map_per_class": 0.5539,
+      "mar_100_per_class": 0.6725
+    },
+    {
+      "class_id": 1,
+      "class_name": "dent",
+      "map_per_class": 0.247,
+      "mar_100_per_class": 0.4254
+    },
+    {
+      "class_id": 2,
+      "class_name": "scratch",
+      "map_per_class": 0.2357,
+      "mar_100_per_class": 0.4169
+    },
+    {
+      "class_id": 3,
+      "class_name": "crack",
+      "map_per_class": 0.0866,
+      "mar_100_per_class": 0.3
+    }
+  ]
+}

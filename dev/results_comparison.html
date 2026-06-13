@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparación de resultados</title>
+    <title>Comparacion de resultados</title>
     <style>
         :root {
             color-scheme: light;
@@ -17,7 +17,11 @@
             --accent: #0f8b8d;
             --shadow: 0 22px 50px rgba(24, 48, 63, 0.10);
         }
-        * { box-sizing: border-box; }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 40px 24px 56px;
@@ -27,7 +31,12 @@
                 radial-gradient(circle at top left, #ffffff 0%, rgba(255, 255, 255, 0) 34%),
                 linear-gradient(135deg, var(--bg) 0%, var(--bg-accent) 100%);
         }
-        .page { max-width: 1500px; margin: 0 auto; }
+
+        .page {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
         .hero {
             margin-bottom: 20px;
             padding: 28px 30px;
@@ -37,13 +46,20 @@
             box-shadow: var(--shadow);
             backdrop-filter: blur(18px);
         }
+
         h1 {
             margin: 0 0 10px;
             font-size: clamp(1.9rem, 3vw, 2.8rem);
             line-height: 1.05;
             letter-spacing: 0;
         }
-        .subtitle { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
         .table-shell {
             border: 1px solid var(--border);
             border-radius: 18px;
@@ -52,14 +68,19 @@
             overflow: hidden;
             backdrop-filter: blur(18px);
         }
-        .table-wrap { overflow: auto; }
-        table {
+
+        .table-wrap {
+            overflow: auto;
+        }
+
+        table.results-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
             background: var(--surface-strong);
         }
-        thead th {
+
+        .results-table thead th {
             position: sticky;
             top: 0;
             z-index: 1;
@@ -74,22 +95,54 @@
             border-bottom: 1px solid var(--border);
             white-space: nowrap;
         }
-        tbody td {
+
+        .results-table tbody td {
             padding: 14px 16px;
             font-size: 0.95rem;
             border-bottom: 1px solid rgba(20, 48, 64, 0.08);
             vertical-align: top;
         }
-        tbody tr:nth-child(even) { background: rgba(244, 249, 250, 0.72); }
-        tbody tr:hover { background: rgba(15, 139, 141, 0.08); }
-        tbody tr:last-child td { border-bottom: 0; }
-        td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(11) {
+
+        .results-table tbody tr:nth-child(even) {
+            background: rgba(244, 249, 250, 0.72);
+        }
+
+        .results-table tbody tr:hover {
+            background: rgba(15, 139, 141, 0.08);
+        }
+
+        .results-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .results-table td:nth-child(1),
+        .results-table td:nth-child(2),
+        .results-table td:nth-child(3),
+        .results-table td:nth-child(4),
+        .results-table td:nth-child(5),
+        .results-table td:nth-child(11) {
             font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
             font-size: 0.88rem;
         }
-        td:nth-child(3) { color: var(--accent); font-weight: 700; }
-        td:nth-child(2), td:nth-child(6), td:nth-child(7), td:nth-child(8), td:nth-child(9), td:nth-child(10) { white-space: nowrap; }
-        td:nth-child(11) { min-width: 360px; color: var(--muted); word-break: break-all; }
+
+        .results-table td:nth-child(3) {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .results-table td:nth-child(2),
+        .results-table td:nth-child(6),
+        .results-table td:nth-child(7),
+        .results-table td:nth-child(8) {
+            white-space: nowrap;
+        }
+
+        .results-table td:nth-child(11) {
+            min-width: 360px;
+            color: var(--muted);
+            word-break: break-all;
+        }
+
         .footer-note {
             padding: 14px 18px 18px;
             color: var(--muted);
@@ -97,24 +150,172 @@
             border-top: 1px solid var(--border);
             background: linear-gradient(180deg, rgba(250, 252, 253, 0.86), rgba(244, 248, 249, 0.95));
         }
+
         @media (max-width: 900px) {
-            body { padding: 20px 14px 32px; }
-            .hero, .table-shell { border-radius: 14px; }
-            thead th, tbody td { padding: 12px 13px; }
+            body {
+                padding: 20px 14px 32px;
+            }
+
+            .hero,
+            .table-shell {
+                border-radius: 14px;
+            }
+
+            .results-table thead th,
+            .results-table tbody td {
+                padding: 12px 13px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page">
         <section class="hero">
-            <h1>Comparación de resultados</h1>
-            <p class="subtitle">9 corrida(s) registradas en la comparación actual.</p>
+            <h1>Comparacion de resultados</h1>
+            <p class="subtitle">9 corrida(s) registradas en la comparacion actual.</p>
         </section>
         <section class="table-shell">
             <div class="table-wrap">
-                <table> <colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup> <tr><th>Experimento</th><th>Duracion</th><th>Optimizer</th><th>Capas backbone</th><th>Epocas</th><th>Mejor epoca</th><th>mAP</th><th>mAP@50</th><th>mAP@75</th><th>Val loss</th><th>Checkpoint</th></tr> <tr><td>fasterrcnn_mobilenet_v3_large_partial_backbone</td><td>00:14:44</td><td>sgd</td><td>2</td><td>5</td><td>5</td><td>0,44</td><td>0,62</td><td>0,47</td><td>0,63</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_144006_fasterrcnn_mobilenet_v3_large_partial_backbone_sgd_best.pth</td></tr> <tr><td>fasterrcnn_mobilenet_v3_large_partial_backbone</td><td>00:32:18</td><td>sgd</td><td>2</td><td>10</td><td>7</td><td>0,44</td><td>0,63</td><td>0,48</td><td>0,65</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_153757_fasterrcnn_mobilenet_v3_large_partial_backbone_sgd_best.pth</td></tr> <tr><td>fcos_partial_backbone_fixed_size</td><td>00:33:54</td><td>sgd</td><td>2</td><td>5</td><td>5</td><td>0,44</td><td>0,58</td><td>0,46</td><td>1,25</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_121844_fcos_partial_backbone_fixed_size_best.pth</td></tr> <tr><td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td><td>00:20:19</td><td>sgd</td><td>2</td><td>10</td><td>9</td><td>0,40</td><td>0,58</td><td>0,43</td><td>0,57</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_155817_fasterrcnn_mobilenet_v3_large_320_partial_backbone_sgd_best.pth</td></tr> <tr><td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td><td>00:09:17</td><td>sgd</td><td>2</td><td>5</td><td>5</td><td>0,39</td><td>0,57</td><td>0,42</td><td>0,57</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_150327_fasterrcnn_mobilenet_v3_large_320_partial_backbone_sgd_best.pth</td></tr> <tr><td>retinanet_partial_backbone_fixed_size</td><td>00:25:58</td><td>sgd</td><td>2</td><td>5</td><td>5</td><td>0,37</td><td>0,47</td><td>0,39</td><td>0,68</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_124444_retinanet_partial_backbone_fixed_size_best.pth</td></tr> <tr><td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td><td>00:09:21</td><td>sgd</td><td>0</td><td>5</td><td>5</td><td>0,33</td><td>0,51</td><td>0,37</td><td>0,47</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_141634_fasterrcnn_mobilenet_v3_large_320_partial_backbone_sgd_best.pth</td></tr> <tr><td>fcos_partial_backbone_fixed_size</td><td>00:33:57</td><td>adamw</td><td>2</td><td>5</td><td>3</td><td>0,01</td><td>0,04</td><td>0,00</td><td>1,78</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_131843_fcos_partial_backbone_fixed_size_best.pth</td></tr> <tr><td>retinanet_partial_backbone_fixed_size</td><td>00:25:58</td><td>adamw</td><td>2</td><td>5</td><td>1</td><td></td><td></td><td></td><td>1,67</td><td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_134443_retinanet_partial_backbone_fixed_size_best.pth</td></tr> </table>
+                <table class="dataframe results-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Experimento</th>
+      <th>Duracion</th>
+      <th>Optimizer</th>
+      <th>Capas backbone</th>
+      <th>Epocas</th>
+      <th>Mejor epoca</th>
+      <th>mAP</th>
+      <th>mAP@50</th>
+      <th>mAP@75</th>
+      <th>Val loss</th>
+      <th>Checkpoint</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_partial_backbone</td>
+      <td>0:32:18</td>
+      <td>sgd</td>
+      <td>2</td>
+      <td>10</td>
+      <td>7</td>
+      <td>0.44</td>
+      <td>0.63</td>
+      <td>0.48</td>
+      <td>0.65</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_153757_fasterrcnn_mobilenet_v3_large_partial_backbone_sgd_best.pth</td>
+    </tr>
+    <tr>
+      <td>fcos_partial_backbone_fixed_size</td>
+      <td>0:33:54</td>
+      <td>sgd</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0.44</td>
+      <td>0.58</td>
+      <td>0.46</td>
+      <td>1.25</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_121844_fcos_partial_backbone_fixed_size_best.pth</td>
+    </tr>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_partial_backbone</td>
+      <td>0:14:44</td>
+      <td>sgd</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0.44</td>
+      <td>0.62</td>
+      <td>0.47</td>
+      <td>0.63</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_144006_fasterrcnn_mobilenet_v3_large_partial_backbone_sgd_best.pth</td>
+    </tr>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td>
+      <td>0:20:19</td>
+      <td>sgd</td>
+      <td>2</td>
+      <td>10</td>
+      <td>9</td>
+      <td>0.40</td>
+      <td>0.58</td>
+      <td>0.43</td>
+      <td>0.57</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_155817_fasterrcnn_mobilenet_v3_large_320_partial_backbone_sgd_best.pth</td>
+    </tr>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td>
+      <td>0:09:17</td>
+      <td>sgd</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0.39</td>
+      <td>0.57</td>
+      <td>0.42</td>
+      <td>0.57</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_150327_fasterrcnn_mobilenet_v3_large_320_partial_backbone_sgd_best.pth</td>
+    </tr>
+    <tr>
+      <td>retinanet_partial_backbone_fixed_size</td>
+      <td>0:25:58</td>
+      <td>sgd</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0.37</td>
+      <td>0.47</td>
+      <td>0.39</td>
+      <td>0.68</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_124444_retinanet_partial_backbone_fixed_size_best.pth</td>
+    </tr>
+    <tr>
+      <td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td>
+      <td>0:09:21</td>
+      <td>sgd</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0.33</td>
+      <td>0.51</td>
+      <td>0.37</td>
+      <td>0.47</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_141634_fasterrcnn_mobilenet_v3_large_320_partial_backbone_sgd_best.pth</td>
+    </tr>
+    <tr>
+      <td>fcos_partial_backbone_fixed_size</td>
+      <td>0:33:57</td>
+      <td>adamw</td>
+      <td>2</td>
+      <td>5</td>
+      <td>3</td>
+      <td>0.01</td>
+      <td>0.04</td>
+      <td>0.00</td>
+      <td>1.78</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_131843_fcos_partial_backbone_fixed_size_best.pth</td>
+    </tr>
+    <tr>
+      <td>retinanet_partial_backbone_fixed_size</td>
+      <td>0:25:58</td>
+      <td>adamw</td>
+      <td>2</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.67</td>
+      <td>C:\Users\Usuario\Documents\Proyecto Final Joaco\dev\experiments\20260612_134443_retinanet_partial_backbone_fixed_size_best.pth</td>
+    </tr>
+  </tbody>
+</table>
             </div>
-            <div class="footer-note">Tabla generada automaticamente a partir del manifest de corridas.</div>
+            <div class="footer-note">
+                Tabla generada automaticamente a partir del manifest de corridas.
+            </div>
         </section>
     </div>
 </body>
