@@ -7,6 +7,8 @@
 ## Estado actual
 
 - Exporta tablas de comparacion de resultados a HTML.
+- Exporta reportes HTML detallados para el mejor resultado en test.
+- Persiste resultados finales de test por corrida sin pisar el baseline canonico.
 - Guarda y lee corridas de experimentos en formato JSONL.
 - Arma registros serializables a partir de los resultados de entrenamiento.
 - Normaliza y resuelve rutas de checkpoints para que las corridas sean portables entre Windows y Linux.
@@ -83,6 +85,65 @@ Hace lo mismo con `trainable_backbone_layers` y `num_epochs` cuando esos campos 
 Exporta un `DataFrame` a una tabla HTML estilizada, con contenedor responsive, encabezado sticky y formato visual mas legible para comparar corridas.
 
 Cuando existe `training_duration_seconds`, la exportacion agrega una columna visible `duration_hms` en formato `HH:MM:SS` y prioriza esa vista compacta para la tabla comparativa.
+
+### `is_detection_test_report_complete(report)`
+
+Valida si un JSON de `best_test_result` ya tiene todas las secciones requeridas por el nuevo reporte final:
+
+- `summary`
+- `class_metrics`
+- `pr_curves`
+- `dataset_diagnostics`
+- `nms_sensitivity`
+
+Se usa para decidir si una cache vieja debe recalcularse.
+
+### `export_detection_test_report_html(report, output_path, title="Reporte final de deteccion en test")`
+
+Genera un reporte HTML mas rico para el mejor checkpoint evaluado en test.
+
+Incluye:
+
+- tarjetas con metricas globales
+- tabla de metricas por clase
+- tabla de diagnostico del dataset
+- tabla de sensibilidad a `NMS`
+- una curva precision-recall SVG por clase
+
+### `detection_test_result_paths(run_id, output_dir)`
+
+Devuelve las rutas esperadas para los artefactos por corrida:
+
+- `{run_id}_test_result.json`
+- `{run_id}_test_result_report.html`
+
+### `save_detection_test_result_artifacts(report, output_dir, ..., update_canonical=False)`
+
+Guarda el JSON y HTML de test dentro de `dev/test_results/`.
+
+Por defecto no actualiza `dev/best_test_result.json`. Solo lo hace si `update_canonical=True`.
+
+### `archive_canonical_detection_test_result(canonical_json_path, output_dir, overwrite=False)`
+
+Copia el baseline canonico actual a la carpeta de resultados por corrida usando su `run_id`.
+
+Sirve para comparar corridas nuevas contra el baseline historico sin pisarlo.
+
+### `build_detection_test_results_comparison_df(runs_manifest_path, test_results_dir)`
+
+Lee `runs_manifest.jsonl` y todos los `*_test_result.json` guardados por corrida.
+
+Devuelve una tabla con:
+
+- `run_id`
+- experimento
+- checkpoint
+- `test_map`
+- `test_map_50`
+- `dent_map`
+- `scratch_map`
+- `crack_map`
+- rutas al JSON y HTML del reporte
 
 ## Relacion con el proyecto actual
 

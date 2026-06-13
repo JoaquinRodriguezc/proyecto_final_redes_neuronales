@@ -20,6 +20,8 @@ Configuracion principal:
 
 Primero intenta usar el backend `faster_coco_eval`. Si la version instalada de `torchmetrics` no acepta ese argumento, hace fallback al constructor sin `backend`.
 
+La version actual tambien puede activar `extended_summary=True` para recuperar tensores de precision y recall usados en reportes diagnosticos.
+
 ### `_move_dict_to_cpu(d: dict) -> dict`
 
 Helper interno que mueve a CPU todos los tensores de un diccionario.
@@ -55,6 +57,20 @@ Flujo:
 
 Devuelve un diccionario con metricas agregadas de deteccion.
 
+### `collect_detection_report(model, dataloader, device, idx_to_class=None, dataset=None, nms_thresholds=(0.3, 0.5, 0.7), pr_iou=0.5, pr_area="all", pr_max_dets=100, max_batches=None)`
+
+Construye un reporte final de evaluacion mas rico que el usado epoca a epoca.
+
+Ademas de las metricas principales, devuelve:
+
+- `summary`: mAP y mAR globales
+- `class_metrics`: AP y AR por clase observada
+- `pr_curves`: una curva precision-recall por clase a `IoU=0.50`
+- `dataset_diagnostics`: conteos y tamanos relativos de bounding boxes por clase
+- `nms_sensitivity`: barrido de `NMS` con varias `thresholds` sobre el mismo checkpoint
+
+Se usa para explicar mejor por que algunas clases salen mucho mejor o peor que otras sin tocar el flujo rapido de validacion durante entrenamiento.
+
 ### `extract_main_map_metrics(results)`
 
 Extrae del resultado completo un subconjunto de metricas principales:
@@ -69,3 +85,5 @@ Es util para guardar historiales compactos por epoca.
 ## Como se usa en el proyecto
 
 `run_detection_experiment(...)` en `prod/detection_training.py` usa este modulo para evaluar el conjunto de validacion al final de cada epoca y decidir el mejor checkpoint.
+
+`dev/02_model_training.ipynb` usa `collect_detection_report(...)` solo en la evaluacion final sobre test para persistir `best_test_result.json` y el reporte HTML complementario.

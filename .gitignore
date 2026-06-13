@@ -28,6 +28,8 @@ tests/*
 !tests/test_utils_export_html.py
 !tests/test_utils_portable_paths.py
 !tests/test_detection_training.py
+!tests/test_detection_dataset.py
+!tests/test_detection_metrics.py
 
 dev/experiments/*
 !dev/experiments/*.pth

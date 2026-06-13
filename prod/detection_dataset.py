@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 from PIL import Image
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, WeightedRandomSampler
 from torchvision.transforms import functional as TF
 
 
@@ -227,6 +227,208 @@ class Rotate90Detection:
             target["boxes"] = boxes
 
         return image, target
+
+
+def _clone_detection_target(target: dict) -> dict:
+    return {
+        key: value.clone() if torch.is_tensor(value) else value
+        for key, value in target.items()
+    }
+
+
+class RandomObjectCropDetection:
+    # Recorta alrededor de objetos objetivo y reajusta/remueve cajas fuera del crop.
+    def __init__(
+        self,
+        p=0.5,
+        target_class_ids=None,
+        crop_scale_range=(2.0, 4.0),
+        min_crop_size=(320, 320),
+        min_visible_fraction=0.3,
+        center_jitter=0.15,
+    ):
+        self.p = float(p)
+        self.target_class_ids = set(int(class_id) for class_id in target_class_ids or [])
+        self.crop_scale_range = tuple(float(value) for value in crop_scale_range)
+        self.min_crop_size = normalize_image_size(min_crop_size)
+        self.min_visible_fraction = float(min_visible_fraction)
+        self.center_jitter = float(center_jitter)
+
+    def __call__(self, image, target):
+        if random.random() >= self.p:
+            return image, target
+
+        boxes = target.get("boxes")
+        labels = target.get("labels")
+        if boxes is None or labels is None or boxes.numel() == 0:
+            return image, target
+
+        image_width, image_height = self._image_size(image)
+        candidate_indices = self._candidate_indices(labels)
+        if not candidate_indices:
+            candidate_indices = list(range(len(boxes)))
+        if not candidate_indices:
+            return image, target
+
+        selected_index = random.choice(candidate_indices)
+        selected_box = boxes[selected_index].detach().cpu()
+        crop_box = self._sample_crop_box(selected_box, image_width, image_height)
+        if crop_box is None:
+            return image, target
+
+        cropped_image = self._crop_image(image, crop_box)
+        cropped_target = self._crop_target(target, crop_box)
+        if cropped_target["boxes"].numel() == 0:
+            return image, target
+
+        return cropped_image, cropped_target
+
+    def _candidate_indices(self, labels):
+        if not self.target_class_ids:
+            return list(range(len(labels)))
+        return [
+            index
+            for index, label in enumerate(labels.detach().cpu().tolist())
+            if int(label) in self.target_class_ids
+        ]
+
+    def _image_size(self, image):
+        if isinstance(image, torch.Tensor):
+            _, image_height, image_width = image.shape
+            return int(image_width), int(image_height)
+        return int(image.width), int(image.height)
+
+    def _sample_crop_box(self, selected_box, image_width, image_height):
+        x1, y1, x2, y2 = [float(value) for value in selected_box.tolist()]
+        box_width = max(x2 - x1, 1.0)
+        box_height = max(y2 - y1, 1.0)
+        min_height, min_width = self.min_crop_size
+        min_scale, max_scale = self.crop_scale_range
+        crop_scale = random.uniform(min_scale, max_scale)
+
+        crop_width = min(float(image_width), max(float(min_width), box_width * crop_scale))
+        crop_height = min(float(image_height), max(float(min_height), box_height * crop_scale))
+        if crop_width <= 1 or crop_height <= 1:
+            return None
+
+        center_x = (x1 + x2) / 2.0
+        center_y = (y1 + y2) / 2.0
+        jitter_x = random.uniform(-self.center_jitter, self.center_jitter) * crop_width
+        jitter_y = random.uniform(-self.center_jitter, self.center_jitter) * crop_height
+        center_x += jitter_x
+        center_y += jitter_y
+
+        crop_x1 = min(max(center_x - crop_width / 2.0, 0.0), max(float(image_width) - crop_width, 0.0))
+        crop_y1 = min(max(center_y - crop_height / 2.0, 0.0), max(float(image_height) - crop_height, 0.0))
+        crop_x2 = crop_x1 + crop_width
+        crop_y2 = crop_y1 + crop_height
+
+        return (
+            int(round(crop_x1)),
+            int(round(crop_y1)),
+            int(round(crop_x2)),
+            int(round(crop_y2)),
+        )
+
+    def _crop_image(self, image, crop_box):
+        crop_x1, crop_y1, crop_x2, crop_y2 = crop_box
+        if isinstance(image, torch.Tensor):
+            return image[:, crop_y1:crop_y2, crop_x1:crop_x2]
+        return image.crop(crop_box)
+
+    def _crop_target(self, target, crop_box):
+        crop_x1, crop_y1, crop_x2, crop_y2 = [float(value) for value in crop_box]
+        crop_width = max(crop_x2 - crop_x1, 1.0)
+        crop_height = max(crop_y2 - crop_y1, 1.0)
+        cropped_target = _clone_detection_target(target)
+        boxes = cropped_target["boxes"].clone()
+        original_widths = (boxes[:, 2] - boxes[:, 0]).clamp(min=0)
+        original_heights = (boxes[:, 3] - boxes[:, 1]).clamp(min=0)
+        original_area = (original_widths * original_heights).clamp(min=1e-6)
+
+        boxes[:, [0, 2]] -= crop_x1
+        boxes[:, [1, 3]] -= crop_y1
+        boxes[:, [0, 2]] = boxes[:, [0, 2]].clamp(min=0, max=crop_width)
+        boxes[:, [1, 3]] = boxes[:, [1, 3]].clamp(min=0, max=crop_height)
+
+        new_widths = (boxes[:, 2] - boxes[:, 0]).clamp(min=0)
+        new_heights = (boxes[:, 3] - boxes[:, 1]).clamp(min=0)
+        new_area = new_widths * new_heights
+        visible_fraction = new_area / original_area
+        keep_mask = (
+            (new_widths > 1.0)
+            & (new_heights > 1.0)
+            & (visible_fraction >= self.min_visible_fraction)
+        )
+
+        cropped_target["boxes"] = boxes[keep_mask]
+        if "labels" in cropped_target:
+            cropped_target["labels"] = cropped_target["labels"][keep_mask]
+        if "iscrowd" in cropped_target:
+            cropped_target["iscrowd"] = cropped_target["iscrowd"][keep_mask]
+        if "area" in cropped_target:
+            cropped_target["area"] = new_area[keep_mask].to(dtype=torch.float32)
+
+        return cropped_target
+
+
+def resolve_target_class_ids(dataset, target_classes) -> set[int]:
+    class_ids = set()
+    for target_class in target_classes or []:
+        if isinstance(target_class, str):
+            if target_class not in dataset.class_to_idx:
+                raise ValueError(f"Clase objetivo desconocida: {target_class}")
+            class_ids.add(int(dataset.class_to_idx[target_class]))
+        else:
+            class_ids.add(int(target_class))
+    return class_ids
+
+
+def sample_contains_target_classes(dataset, sample_index: int, target_classes) -> bool:
+    target_class_ids = resolve_target_class_ids(dataset, target_classes)
+    if not target_class_ids:
+        return False
+
+    image_id = int(dataset.image_ids[int(sample_index)])
+    annotations = dataset.annotations_by_image.get(image_id, [])
+    for annotation in annotations:
+        category_name = dataset.category_id_to_name[int(annotation["category_id"])]
+        class_id = int(dataset.class_to_idx[category_name])
+        if class_id in target_class_ids:
+            return True
+    return False
+
+
+def build_oversampling_weights(
+    dataset,
+    target_classes=("dent", "scratch"),
+    target_factor=2.5,
+    base_weight=1.0,
+):
+    weights = []
+    for sample_index in range(len(dataset)):
+        has_target_class = sample_contains_target_classes(dataset, sample_index, target_classes)
+        weights.append(float(target_factor) if has_target_class else float(base_weight))
+    return torch.as_tensor(weights, dtype=torch.double)
+
+
+def build_oversampling_sampler(
+    dataset,
+    target_classes=("dent", "scratch"),
+    target_factor=2.5,
+    num_samples=None,
+    replacement=True,
+):
+    weights = build_oversampling_weights(
+        dataset=dataset,
+        target_classes=target_classes,
+        target_factor=target_factor,
+    )
+    return WeightedRandomSampler(
+        weights=weights,
+        num_samples=int(num_samples or len(weights)),
+        replacement=bool(replacement),
+    )
 
 
 class CarDamageDetectionDataset(Dataset):

@@ -9,6 +9,7 @@ Incluye:
 - utilidades para descargar o localizar CarDD
 - normalizacion de argumentos de dataset
 - transforms compatibles con deteccion
+- oversampling para clases objetivo
 - el dataset `CarDamageDetectionDataset`
 - `collate_fn` para `DataLoader`s de deteccion
 
@@ -137,6 +138,47 @@ Comportamiento:
 - si la imagen no es tensor, la convierte a tensor
 - invierte la imagen horizontalmente
 - recalcula `xmin` y `xmax` de cada box en funcion del ancho de la imagen
+
+### `class RandomObjectCropDetection`
+
+Recorta aleatoriamente alrededor de un objeto objetivo y ajusta las boxes al nuevo crop.
+
+Uso principal:
+
+- mejorar la resolucion efectiva de clases chicas o ambiguas
+- se aplica solo en entrenamiento
+- normalmente se configura con `target_class_ids` para `dent` y `scratch`
+
+Comportamiento:
+
+- si no aplica por probabilidad, devuelve la muestra original
+- elige preferentemente una box de las clases objetivo
+- recorta alrededor de esa box con contexto aleatorio
+- reubica las coordenadas de todas las boxes al crop
+- elimina boxes con visibilidad insuficiente
+- si el crop dejara la muestra sin boxes validas, devuelve la muestra original
+
+## Oversampling
+
+### `resolve_target_class_ids(dataset, target_classes)`
+
+Convierte nombres o IDs de clases objetivo al índice interno usado por el dataset.
+
+### `sample_contains_target_classes(dataset, sample_index, target_classes)`
+
+Indica si una imagen contiene al menos una anotación de las clases objetivo.
+
+### `build_oversampling_weights(dataset, target_classes=("dent", "scratch"), target_factor=2.5, base_weight=1.0)`
+
+Construye un tensor de pesos para muestreo ponderado.
+
+Las imágenes que contienen `dent` o `scratch` reciben `target_factor`; el resto recibe `base_weight`.
+
+### `build_oversampling_sampler(dataset, target_classes=("dent", "scratch"), target_factor=2.5, num_samples=None, replacement=True)`
+
+Crea un `WeightedRandomSampler` listo para pasar al `DataLoader` de entrenamiento.
+
+Cuando se usa este sampler, el `DataLoader` debe tener `shuffle=False`, porque el sampler controla el orden.
 
 ## Dataset principal
 
