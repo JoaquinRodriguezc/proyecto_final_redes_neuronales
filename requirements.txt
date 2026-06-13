@@ -1,0 +1,12 @@
+torch
+torchvision
+torchmetrics
+pandas
+numpy
+matplotlib
+pillow
+tqdm
+jupyter
+kaggle
+gdown
+faster-coco-eval
