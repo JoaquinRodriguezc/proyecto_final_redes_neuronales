@@ -2,6 +2,7 @@ from __future__ import annotations
 import torch
 from torchmetrics.detection.mean_ap import MeanAveragePrecision
 
+# Crea la métrica mAP intentando usar `faster_coco_eval` cuando está disponible.
 def create_map_metric(class_metrics: bool = True):
     try:
         return MeanAveragePrecision(box_format="xyxy", iou_type="bbox",
@@ -10,6 +11,7 @@ def create_map_metric(class_metrics: bool = True):
         return MeanAveragePrecision(box_format="xyxy", iou_type="bbox",
                                     class_metrics=class_metrics)
 
+# Lleva todas las tensores de un diccionario al CPU antes de pasarlos a torchmetrics.
 def _move_dict_to_cpu(d: dict) -> dict:
     return {
         k: v.detach().cpu() if torch.is_tensor(v) else v
@@ -17,6 +19,7 @@ def _move_dict_to_cpu(d: dict) -> dict:
     }
 
 
+# Convierte los tensores del resultado final a tipos Python serializables.
 def summarize_map_results(results: dict) -> dict:
     def _detach(value):
         if torch.is_tensor(value):
@@ -32,43 +35,43 @@ def evaluate_map(
     class_metrics: bool = True,
     max_batches=None,
 ):
-    # Acumulador de métricas — recibe batches, calcula mAP al final
+    # Acumulador de métricas — recibe batches y calcula mAP al final.
     metric = create_map_metric(class_metrics=class_metrics)
 
-    # Guarda el modo actual y pone el modelo en evaluación (desactiva Dropout, etc.)
+    # Guarda el modo actual y pone el modelo en evaluación.
     was_training = model.training
     model.eval()
 
-    # Sin grafo de gradientes — no se necesitan en inferencia
+    # En evaluación no hace falta construir gradientes.
     with torch.no_grad():
         for batch_index, (images, targets) in enumerate(dataloader):
 
-            # Corte anticipado si se pasó un límite de batches
+            # Permite acotar la evaluación para pruebas rápidas.
             if max_batches is not None and batch_index >= max_batches:
                 break
 
-            # Mueve imágenes al dispositivo (GPU/CPU)
+            # Mueve imágenes al dispositivo antes del forward.
             images = [image.to(device) for image in images]
 
-            # Forward pass
+            # Genera predicciones del detector para el batch actual.
             predictions = model(images)
 
-            # torchmetrics espera tensores en CPU
+            # torchmetrics espera tensores en CPU para acumular la métrica.
             predictions_cpu = [_move_dict_to_cpu(p) for p in predictions]
             targets_cpu = [_move_dict_to_cpu(t) for t in targets]
 
-            # Acumula el batch — aún no calcula
+            # Acumula el batch; el cálculo final ocurre al salir del loop.
             metric.update(predictions_cpu, targets_cpu)
 
-    # Restaura el modo training si correspondía
+    # Restaura el modo original del modelo al terminar la evaluación.
     if was_training:
         model.train()
 
-    # Calcula mAP sobre todos los batches y serializa a Python
+    # Calcula el resumen final y lo deja listo para logging/JSON.
     return summarize_map_results(metric.compute())
 
 
-
+# Extrae las métricas principales usadas en las tablas comparativas del proyecto.
 def extract_main_map_metrics(results):
     return {
         "map": results.get("map"),

@@ -25,6 +25,7 @@ OFFICIAL_SPLIT_FILES = {
 }
 
 
+# Normaliza el nombre del split para trabajar siempre con train/val/test.
 def normalize_split(split: str) -> str:
     normalized = split.strip().lower()
     if normalized not in OFFICIAL_SPLIT_FILES:
@@ -32,8 +33,7 @@ def normalize_split(split: str) -> str:
         raise ValueError(f"Split invalido: {split}. Esperados: {expected}")
     return normalized
 
-
-
+# Valida el formato de `image_size` y lo convierte a tupla (alto, ancho).
 def normalize_image_size(image_size):
     if image_size is None:
         return None
@@ -49,8 +49,7 @@ def normalize_image_size(image_size):
 
     raise ValueError("image_size debe ser None, un int o una tupla/lista (alto, ancho)")
 
-
-
+# Instala e importa gdown solo cuando hace falta descargar el dataset.
 def ensure_gdown():
     try:
         import gdown
@@ -62,8 +61,7 @@ def ensure_gdown():
 
         return gdown
 
-
-
+# Descarga el ZIP de CarDD si todavía no existe un archivo válido local.
 def download_cardd_zip(file_id=CARDD_FILE_ID, zip_path=None):
     zip_path = Path(zip_path) if zip_path is not None else Path("data") / "CarDD_release.zip"
 
@@ -82,8 +80,7 @@ def download_cardd_zip(file_id=CARDD_FILE_ID, zip_path=None):
 
     return zip_path
 
-
-
+# Extrae el ZIP del dataset en la carpeta elegida.
 def extract_cardd_zip(zip_path, extract_dir=None):
     zip_path = Path(zip_path)
     extract_dir = Path(extract_dir) if extract_dir is not None else zip_path.parent
@@ -100,8 +97,7 @@ def extract_cardd_zip(zip_path, extract_dir=None):
 
     return extract_dir
 
-
-
+# Busca la raíz general del dataset probando varias estructuras posibles.
 def find_dataset_root(data_dir) -> Path:
     base_dir = Path(data_dir)
     candidates = [
@@ -119,8 +115,7 @@ def find_dataset_root(data_dir) -> Path:
     checked = "\n".join(str(path) for path in candidates)
     raise FileNotFoundError("No se encontro el dataset CarDD. Rutas verificadas:\n" + checked)
 
-
-
+# Busca específicamente la raíz de CarDD_COCO, usada por el pipeline actual.
 def find_coco_root(data_dir) -> Path:
     base_dir = Path(data_dir)
 
@@ -146,8 +141,7 @@ def find_coco_root(data_dir) -> Path:
 
     checked = "\n".join(str(path) for path in checked_paths)
     raise FileNotFoundError("No se encontro CarDD_COCO. Rutas verificadas:\n" + checked)
-
-
+# Garantiza que CarDD_COCO exista; si no está, lo descarga y lo extrae.
 def ensure_cardd_dataset(data_dir, file_id=CARDD_FILE_ID, zip_filename="CarDD_release.zip") -> Path:
     data_dir = Path(data_dir)
 
@@ -160,6 +154,7 @@ def ensure_cardd_dataset(data_dir, file_id=CARDD_FILE_ID, zip_filename="CarDD_re
 
 
 class ComposeDetection:
+    # Encadena transforms que reciben y devuelven `(image, target)`.
     def __init__(self, transforms_list):
         self.transforms_list = transforms_list
 
@@ -170,12 +165,14 @@ class ComposeDetection:
 
 
 class ToTensorDetection:
+    # Convierte la imagen PIL a tensor sin modificar el target.
     def __call__(self, image, target):
         image = TF.to_tensor(image)
         return image, target
 
 
 class RandomHorizontalFlipDetection:
+    # Aplica flip horizontal y reajusta las bounding boxes en consecuencia.
     def __init__(self, p=0.5):
         self.p = p
 
@@ -201,6 +198,7 @@ class RandomHorizontalFlipDetection:
 
 
 class Rotate90Detection:
+    # Rota 90° en sentido horario y corrige las cajas anotadas.
     def __init__(self, p=0.5):
         self.p = p
 
@@ -232,6 +230,7 @@ class Rotate90Detection:
 
 
 class CarDamageDetectionDataset(Dataset):
+    # Dataset reusable para detección en formato compatible con torchvision.
     def __init__(
         self,
         data_dir,
@@ -276,6 +275,7 @@ class CarDamageDetectionDataset(Dataset):
         return len(self.image_ids)
 
     def __getitem__(self, idx):
+        # Toma una muestra cruda, ajusta tamaño si corresponde y aplica transforms.
         image, target = self.get_raw_sample(idx)
 
         image, target = self._apply_resize(image, target)
@@ -288,6 +288,7 @@ class CarDamageDetectionDataset(Dataset):
         return image, target
 
     def get_raw_sample(self, idx):
+        # Devuelve la imagen PIL original junto al target de detección sin transforms.
         image_info = self.images[idx]
         image_id = int(image_info["id"])
         image_path = self._image_path_from_info(image_info)
@@ -303,6 +304,7 @@ class CarDamageDetectionDataset(Dataset):
         return find_coco_root(self.data_dir)
 
     def _resolve_annotation_file(self) -> Path:
+        # Prioriza un archivo de anotaciones explícito; si no, usa el oficial del split.
         if self.annotation_file is not None:
             path = Path(self.annotation_file)
             if not path.exists():
@@ -315,6 +317,7 @@ class CarDamageDetectionDataset(Dataset):
         return annotation_path
 
     def _annotation_paths_for_categories(self):
+        # Reúne todas las anotaciones disponibles para construir un mapa de clases estable.
         paths = [
             self.coco_root / "annotations" / filename
             for filename in OFFICIAL_SPLIT_FILES.values()
@@ -331,6 +334,7 @@ class CarDamageDetectionDataset(Dataset):
         return json.loads(path.read_text(encoding="utf-8"))
 
     def _build_class_to_idx(self):
+        # Crea índices consecutivos para las clases dejando `background=0`.
         categories = {}
         category_lists = [
             self._load_json(annotation_path).get("categories", [])
@@ -351,6 +355,7 @@ class CarDamageDetectionDataset(Dataset):
         return class_to_idx
 
     def _load_category_id_to_name(self):
+        # Recupera el nombre original de cada categoría COCO.
         category_lists = [
             self._load_json(annotation_path).get("categories", [])
             for annotation_path in self._annotation_paths_for_categories()
@@ -373,6 +378,7 @@ class CarDamageDetectionDataset(Dataset):
             return str(image_path)
 
     def _group_annotations_by_image(self, annotations):
+        # Agrupa las anotaciones por `image_id` para acceso rápido dentro de __getitem__.
         ordered_annotations = sorted(
             annotations,
             key=lambda annotation: int(annotation["image_id"]),
@@ -386,6 +392,7 @@ class CarDamageDetectionDataset(Dataset):
         }
 
     def _convert_bbox_xywh_to_xyxy(self, bbox):
+        # Convierte cajas COCO `(x, y, width, height)` al formato `(xmin, ymin, xmax, ymax)`.
         x, y, width, height = bbox
         xmin = float(x)
         ymin = float(y)
@@ -394,10 +401,12 @@ class CarDamageDetectionDataset(Dataset):
         return xmin, ymin, xmax, ymax, float(width), float(height)
 
     def _image_path_from_info(self, image_info):
+        # Reconstruye la ruta física de la imagen a partir del split y el file_name.
         filename = image_info.get("file_name")
         return self.coco_root / f"{self.split}2017" / filename
 
     def _build_target(self, image_id):
+        # Construye el diccionario target que esperan los detectores de torchvision.
         annotations = self.annotations_by_image.get(int(image_id), [])
         converted_annotations = [
             (annotation, *self._convert_bbox_xywh_to_xyxy(annotation["bbox"]))
@@ -445,6 +454,7 @@ class CarDamageDetectionDataset(Dataset):
         }
 
     def _apply_resize(self, image, target):
+        # Redimensiona imagen y reescala cajas/áreas cuando el experimento lo requiere.
         if not self.resize or self.image_size is None:
             return image, target
 
@@ -471,7 +481,7 @@ class CarDamageDetectionDataset(Dataset):
         return image, target
 
 
-
+# `DataLoader` usa este helper para agrupar listas de imágenes y targets variables.
 def collate_fn(batch):
     images, targets = zip(*batch)
     return list(images), list(targets)

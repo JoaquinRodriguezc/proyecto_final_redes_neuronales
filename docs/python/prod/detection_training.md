@@ -146,6 +146,17 @@ El mejor checkpoint se define por el valor de `map` del conjunto de validacion.
 
 Carga un checkpoint desde disco con `torch.load`, restaura `model_state_dict` en el modelo recibido y devuelve el checkpoint completo.
 
+Como los checkpoints de este proyecto guardan un diccionario amplio con:
+
+- `model_state_dict`
+- `optimizer_state_dict`
+- `history`
+- `config`
+
+la funcion fuerza `weights_only=False`.
+
+Esto evita el error introducido por PyTorch 2.6+, donde `torch.load(...)` paso a usar `weights_only=True` por defecto y deja de poder deserializar este formato de checkpoint del proyecto.
+
 ## Como se usa en el proyecto
 
 Este modulo permite sacar del notebook la logica repetible de entrenamiento y dejarlo enfocado en configuracion, comparacion de experimentos y analisis de resultados.

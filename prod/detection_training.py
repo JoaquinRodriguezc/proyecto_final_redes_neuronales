@@ -9,6 +9,7 @@ from tqdm.auto import tqdm
 
 from .detection_metrics import evaluate_map, extract_main_map_metrics
 
+# Fuerza modo eval solo durante el bloque y luego restaura el estado previo.
 @contextmanager
 def eval_mode(model):
     was_training = model.training
@@ -19,6 +20,7 @@ def eval_mode(model):
         if was_training:
             model.train()
 
+# Fuerza modo train solo durante el bloque y luego restaura el estado previo.
 @contextmanager
 def train_mode(model):
     was_training = model.training
@@ -29,6 +31,7 @@ def train_mode(model):
         if not was_training:
             model.eval()
 
+# Mueve imágenes y tensores de target al dispositivo elegido.
 def move_batch_to_device(images, targets, device):
     images = [image.to(device) for image in images]
     targets = [
@@ -37,6 +40,7 @@ def move_batch_to_device(images, targets, device):
     ]
     return images, targets
 
+# Imprime logs solo cuando el experimento está en modo verbose.
 def _log(experiment_name, message, verbose):
     if verbose:
         print(f"[{experiment_name}] {message}")
@@ -44,14 +48,14 @@ def _log(experiment_name, message, verbose):
 
 @contextmanager
 def _timed():
+    # Mide hora de inicio, fin y duración del bloque encapsulado.
     started_at = datetime.now()
     result = {"start": started_at}
     yield result
     finished_at = datetime.now()
     result["end"] = finished_at
     result["duration_seconds"] = (finished_at - started_at).total_seconds()
-
-
+# Ejecuta una época completa de entrenamiento y devuelve la loss promedio.
 def train_one_epoch(model, dataloader, optimizer, device, epoch_index, max_batches=None):
     model.train()
     running_loss = 0.0
@@ -69,12 +73,14 @@ def train_one_epoch(model, dataloader, optimizer, device, epoch_index, max_batch
     )
 
     for images, targets in islice(progress_bar, max_batches):
-
+        # Prepara el batch en GPU/CPU antes del forward.
         images, targets = move_batch_to_device(images, targets, device)
 
+        # Los detectores de torchvision devuelven un dict con varias losses parciales.
         loss_dict = model(images, targets)
         total_loss = sum(loss for loss in loss_dict.values())
 
+        # Backprop clásico sobre la loss agregada del batch.
         optimizer.zero_grad()
         total_loss.backward()
         optimizer.step()
@@ -95,13 +101,14 @@ def train_one_epoch(model, dataloader, optimizer, device, epoch_index, max_batch
         "train_steps": running_steps,
     }
 
+# Calcula loss de validación sin actualizar pesos ni construir grafo.
 def evaluate_detection_loss(model, dataloader, device, max_batches=None):
     total_batches = min(len(dataloader), max_batches or len(dataloader))
     running_loss = 0.0
     running_steps = 0
 
+    # torchvision solo devuelve losses con targets cuando el modelo está en train().
     with train_mode(model), torch.no_grad():
-        
         progress_bar = tqdm(dataloader, total=total_batches, desc="Validation Loss", leave=False)
         for images, targets in islice(progress_bar, max_batches):
             images, targets = move_batch_to_device(images, targets, device)
@@ -122,6 +129,7 @@ def evaluate_detection_loss(model, dataloader, device, max_batches=None):
         "val_steps": running_steps,
     }
 
+# Empaqueta el estado suficiente para reanudar o evaluar una corrida.
 def _checkpoint_payload(model, optimizer, scheduler, history, epoch, experiment_name, config):
     payload = {
         "experiment_name": experiment_name,
@@ -137,6 +145,7 @@ def _checkpoint_payload(model, optimizer, scheduler, history, epoch, experiment_
 
     return payload
 
+# Orquesta entrenamiento, validación, mAP y persistencia del mejor checkpoint.
 def run_detection_experiment(
     model,
     train_loader,
@@ -160,6 +169,7 @@ def run_detection_experiment(
 
     output_path = Path(output_dir) if output_dir is not None else None
     if output_path is not None:
+        # Crea la carpeta de artefactos si el experimento debe persistir checkpoints.
         output_path.mkdir(parents=True, exist_ok=True)
 
     model.to(device)
@@ -218,6 +228,7 @@ def run_detection_experiment(
 
             current_metric = epoch_metrics.get("map")
             if current_metric is not None and current_metric > best_metric:
+                # Cuando mejora el mAP, se guarda una instantánea completa del experimento.
                 best_metric = current_metric
                 best_epoch = epoch
                 best_payload = _checkpoint_payload(
@@ -252,7 +263,16 @@ def run_detection_experiment(
         "training_duration_seconds": training_time["duration_seconds"],
     }
 
+# Restaura el state_dict del modelo a partir de un checkpoint confiable del proyecto.
 def load_checkpoint(model, checkpoint_path, device="cpu"):
-    checkpoint = torch.load(checkpoint_path, map_location=device)
+    # Estos checkpoints los genera el propio proyecto con torch.save(...)
+    # y contienen mas que solo tensores (config, history, optimizer state).
+    # En PyTorch 2.6 torch.load usa weights_only=True por defecto, lo que
+    # rompe este formato. Forzamos weights_only=False para restaurarlos.
+    checkpoint = torch.load(
+        checkpoint_path,
+        map_location=device,
+        weights_only=False,
+    )
     model.load_state_dict(checkpoint["model_state_dict"])
     return checkpoint

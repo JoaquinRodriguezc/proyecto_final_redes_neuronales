@@ -9,6 +9,7 @@
 - Exporta tablas de comparacion de resultados a HTML.
 - Guarda y lee corridas de experimentos en formato JSONL.
 - Arma registros serializables a partir de los resultados de entrenamiento.
+- Normaliza y resuelve rutas de checkpoints para que las corridas sean portables entre Windows y Linux.
 - Participa en `dev/02_model_training.ipynb` y `dev/03_model_selection.ipynb`.
 
 ## Helpers disponibles
@@ -46,6 +47,28 @@ Incluye:
 - `history`
 
 No incluye `best_payload`, porque contiene tensores y pesos no serializables.
+
+### `to_portable_path(path, base_dir=None)`
+
+Convierte una ruta de archivo a un formato portable para persistencia.
+
+Cuando `base_dir` esta definido y la ruta cae dentro de esa base, devuelve una ruta relativa en formato POSIX, por ejemplo:
+
+- `dev/experiments/model_best.pth`
+
+Esto evita guardar rutas absolutas dependientes de Windows o Linux dentro del manifest.
+
+### `resolve_portable_path(path, base_dir=None, fallback_dir=None)`
+
+Resuelve una ruta persistida de checkpoint a una ruta real del filesystem actual.
+
+Soporta:
+
+- rutas relativas guardadas contra el repo
+- rutas POSIX normales
+- rutas historicas de Windows con backslashes y drive letter
+
+Si recibe una ruta vieja de Windows y `fallback_dir` apunta a `dev/experiments`, intenta recuperar el archivo local usando el nombre del checkpoint.
 
 ### `load_experiment_runs(path)`
 

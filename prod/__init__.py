@@ -1,3 +1,4 @@
+# Reexporta utilidades de dataset y transforms para notebooks y scripts.
 from .detection_dataset import (
     CarDamageDetectionDataset,
     ComposeDetection,
@@ -13,6 +14,8 @@ from .detection_dataset import (
     find_dataset_root,
 )
 from .detection_metrics import create_map_metric, evaluate_map, extract_main_map_metrics
+
+# Reexporta fábricas de modelos y helpers de optimización/conteo de parámetros.
 from .detection_models import (
     build_fasterrcnn_variants,
     build_optimizer,
@@ -21,6 +24,8 @@ from .detection_models import (
     create_model_from_config,
     describe_parameter_counts,
 )
+
+# Reexporta la lógica principal de entrenamiento y restauración de checkpoints.
 from .detection_training import (
     evaluate_detection_loss,
     load_checkpoint,
@@ -28,6 +33,7 @@ from .detection_training import (
     train_one_epoch,
 )
 
+# Expone una API pública compacta para importar desde `prod` directamente.
 __all__ = [
     "CarDamageDetectionDataset",
     "ComposeDetection",

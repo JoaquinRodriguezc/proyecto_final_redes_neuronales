@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import json
 from html import escape
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from datetime import timedelta
 
 import pandas as pd
 
 
+# Permite serializar valores frecuentes del proyecto al guardar JSON.
 def _json_default(value):
     if hasattr(value, "item"):
         return value.item()
@@ -18,6 +19,7 @@ def _json_default(value):
     raise TypeError(f"Object of type {type(value).__name__} is not JSON serializable")
 
 
+# Agrega una línea JSON al manifest sin pisar corridas anteriores.
 def append_jsonl_record(path, record: dict) -> Path:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -27,6 +29,7 @@ def append_jsonl_record(path, record: dict) -> Path:
     return path
 
 
+# Lee un archivo JSONL y devuelve una lista de diccionarios.
 def load_jsonl_records(path) -> list[dict]:
     path = Path(path)
     if not path.exists():
@@ -41,6 +44,59 @@ def load_jsonl_records(path) -> list[dict]:
     return records
 
 
+# Convierte una ruta absoluta a un formato portable relativo al repo cuando es posible.
+def to_portable_path(path, base_dir=None) -> str:
+    path = Path(path)
+    if base_dir is not None:
+        base_path = Path(base_dir).resolve()
+        try:
+            return path.resolve().relative_to(base_path).as_posix()
+        except ValueError:
+            pass
+    if not path.is_absolute():
+        return path.as_posix()
+    return str(path)
+
+
+# Resuelve rutas históricas de Windows o rutas relativas guardadas en manifests.
+def resolve_portable_path(path, base_dir=None, fallback_dir=None) -> Path:
+    raw_path = str(path)
+    candidate = Path(raw_path)
+    portable_candidate = Path(PureWindowsPath(raw_path).as_posix())
+
+    # Evalúa variantes POSIX y Windows para reutilizar manifests viejos.
+    candidates = []
+
+    for item in (candidate, portable_candidate):
+        if item not in candidates:
+            candidates.append(item)
+
+    if base_dir is not None:
+        base_path = Path(base_dir)
+        for item in (candidate, portable_candidate):
+            combined = base_path / item
+            if combined not in candidates:
+                candidates.append(combined)
+
+    looks_like_windows_path = (
+        "\\" in raw_path
+        or (len(raw_path) >= 2 and raw_path[1] == ":")
+    )
+    if fallback_dir is not None and looks_like_windows_path:
+        filename_candidate = Path(fallback_dir) / PureWindowsPath(raw_path).name
+        if filename_candidate not in candidates:
+            candidates.append(filename_candidate)
+
+    # Devuelve la primera ruta candidata que realmente exista en disco.
+    for item in candidates:
+        if item.exists():
+            return item.resolve()
+
+    tried_paths = ", ".join(str(item) for item in candidates)
+    raise FileNotFoundError(f"Checkpoint path not found: {raw_path}. Tried: {tried_paths}")
+
+
+# Construye el registro serializable de una corrida a partir del resultado del entrenamiento.
 def make_experiment_run_record(experiment: dict, run_result: dict, best_row: dict) -> dict:
     created_at = run_result["training_end_time"]
     optimizer_name = str(experiment.get("optimizer_name", "unknown")).strip().lower()
@@ -69,6 +125,7 @@ def make_experiment_run_record(experiment: dict, run_result: dict, best_row: dic
     }
 
 
+# Carga el manifest histórico y normaliza columnas útiles para análisis en pandas.
 def load_experiment_runs(path) -> pd.DataFrame:
     records = load_jsonl_records(path)
     if not records:
@@ -95,6 +152,7 @@ def load_experiment_runs(path) -> pd.DataFrame:
     return pd.DataFrame(normalized_records)
 
 
+# Formatea duración en segundos como HH:MM:SS para tablas comparativas.
 def _format_duration_hms(total_seconds) -> str:
     if pd.isna(total_seconds):
         return ""
@@ -102,12 +160,14 @@ def _format_duration_hms(total_seconds) -> str:
     return str(timedelta(seconds=rounded_seconds))
 
 
+# Redondea métricas numéricas para mostrarlas de forma compacta.
 def _format_metric_2_decimals(value):
     if pd.isna(value):
         return ""
     return f"{float(value):.2f}"
 
 
+# Exporta una tabla HTML estilizada con el resumen de corridas registradas.
 def export_results_comparison_html(
     results_df: pd.DataFrame,
     output_path,
@@ -115,6 +175,7 @@ def export_results_comparison_html(
 ) -> Path:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Trabaja sobre una copia para no mutar el DataFrame original del notebook.
     display_df = results_df.copy()
     if "training_duration_seconds" in display_df.columns:
         display_df["duration_hms"] = display_df["training_duration_seconds"].apply(_format_duration_hms)
@@ -122,6 +183,7 @@ def export_results_comparison_html(
         if metric_column in display_df.columns:
             display_df[metric_column] = display_df[metric_column].apply(_format_metric_2_decimals)
 
+    # Prioriza las columnas que mejor explican la comparación experimental.
     preferred_columns = [
         "name",
         "duration_hms",
@@ -139,6 +201,7 @@ def export_results_comparison_html(
     if available_columns:
         display_df = display_df[available_columns]
 
+    # Renombra encabezados para la versión visual del reporte.
     display_df = display_df.rename(
         columns={
             "name": "Experimento",

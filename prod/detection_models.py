@@ -18,12 +18,14 @@ from torchvision.models.detection.fcos import FCOSClassificationHead
 from torchvision.models.detection.retinanet import RetinaNetClassificationHead
 
 
+# Reemplaza la cabeza clasificadora de Faster R-CNN para adaptar la cantidad de clases.
 def replace_fasterrcnn_predictor(model, num_classes: int):
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     return model
 
 
+# Reconfigura la cabeza de RetinaNet manteniendo el número original de anchors.
 def replace_retinanet_head(model, num_classes: int):
     classification_head = model.head.classification_head
     in_channels = classification_head.cls_logits.in_channels
@@ -36,6 +38,7 @@ def replace_retinanet_head(model, num_classes: int):
     return model
 
 
+# Ajusta la cabeza de FCOS al número de clases del proyecto.
 def replace_fcos_head(model, num_classes: int):
     classification_head = model.head.classification_head
     in_channels = classification_head.cls_logits.in_channels
@@ -50,6 +53,7 @@ def replace_fcos_head(model, num_classes: int):
     return model
 
 
+# Registro central de fábricas, pesos preentrenados y función de reemplazo de cabeza.
 _MODEL_REGISTRY = {
     "fasterrcnn_mobilenet_v3_large_fpn": (
         fasterrcnn_mobilenet_v3_large_fpn,
@@ -67,6 +71,7 @@ _MODEL_REGISTRY = {
 }
 
 
+# Construye un detector preentrenado y sustituye la cabeza final según el caso.
 def _create_model(
     model_name: str,
     num_classes: int,
@@ -88,6 +93,7 @@ def _create_model(
     return replace_head(factory(**model_kwargs), num_classes=num_classes)
 
 
+# Traduce una configuración serializable a una instancia concreta del modelo.
 def create_model_from_config(config: dict):
     model_name = config.get("model_name", "fasterrcnn")
     if model_name not in _MODEL_REGISTRY:
@@ -101,14 +107,17 @@ def create_model_from_config(config: dict):
     )
 
 
+# Cuenta solo los parámetros que efectivamente reciben gradientes.
 def count_trainable_parameters(model) -> int:
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
+# Cuenta todos los parámetros del modelo, congelados o no.
 def count_total_parameters(model) -> int:
     return sum(p.numel() for p in model.parameters())
 
 
+# Resume cuántos parámetros están entrenables y cuántos permanecen congelados.
 def describe_parameter_counts(model) -> dict:
     trainable = count_trainable_parameters(model)
     total = count_total_parameters(model)
@@ -119,6 +128,7 @@ def describe_parameter_counts(model) -> dict:
     }
 
 
+# Devuelve variantes típicas de Faster R-CNN para comparar cuánto backbone liberar.
 def build_fasterrcnn_variants(num_classes: int) -> dict:
     return {
         "fasterrcnn_head_only": {
@@ -139,10 +149,12 @@ def build_fasterrcnn_variants(num_classes: int) -> dict:
     }
 
 
+# Filtra los parámetros que sí debe optimizar el optimizador.
 def get_trainable_parameters(model) -> list:
     return [p for p in model.parameters() if p.requires_grad]
 
 
+# Crea el optimizador elegido a partir del nombre guardado en la configuración.
 def build_optimizer(model, optimizer_name="sgd", lr=0.005, weight_decay=0.0005, momentum=0.9):
     parameters = get_trainable_parameters(model)
 
