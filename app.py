@@ -6,7 +6,7 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 
-from app_utils import CLASS_NAMES, CHECKPOINT_PATH, draw_predictions, load_model, run_inference, run_inference_tiled
+from app_utils import CLASS_NAMES, CHECKPOINT_PATH, draw_predictions, load_model, run_inference
 
 REPAIR_COST_RANGE: dict[int, tuple[int, int]] = {
     1: (200, 800),
@@ -54,13 +54,6 @@ with st.sidebar:
     )
 
     st.divider()
-    use_tiles = st.toggle(
-        "Modo tiles (4 cuadrantes)",
-        value=False,
-        help="Divide la imagen en 4 partes superpuestas antes de inferir. Mejora la detección de daños pequeños como dents y scratches.",
-    )
-
-    st.divider()
     st.subheader("Clases detectadas")
     for class_id, name in CLASS_NAMES.items():
         st.markdown(f"**{class_id}.** {name}")
@@ -97,11 +90,7 @@ with camera_tab:
 if pil_image is not None:
     st.divider()
 
-    if use_tiles:
-        with st.spinner("Analizando imagen en 4 cuadrantes..."):
-            detections = run_inference_tiled(model, pil_image, score_threshold=score_threshold)
-    else:
-        detections = run_inference(model, pil_image, score_threshold=score_threshold)
+    detections = run_inference(model, pil_image, score_threshold=score_threshold)
     result_image = draw_predictions(pil_image, detections)
 
     col_orig, col_result = st.columns(2)
