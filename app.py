@@ -6,7 +6,22 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 
-from app_utils import CLASS_NAMES, CHECKPOINT_PATH, draw_predictions, load_model, run_inference
+from app_utils import CLASS_NAMES, CHECKPOINT_PATH, draw_predictions, load_model, run_inference, run_inference_tiled
+
+REPAIR_COST_RANGE: dict[int, tuple[int, int]] = {
+    1: (200, 800),
+    2: (100, 500),
+    3: (50, 200),
+    4: (300, 1500),
+    5: (150, 600),
+    6: (50, 200),
+}
+
+INSURANCE_COVERAGE: dict[str, set[int]] = {
+    "Responsabilidad Civil": set(),
+    "Terceros completo": {4, 5, 6},
+    "Todo riesgo": {1, 2, 3, 4, 5, 6},
+}
 
 st.set_page_config(
     page_title="Detección de daños en autos",
@@ -36,6 +51,13 @@ with st.sidebar:
         - **mAP@50**: 0.648
         - **mAP@50:95**: 0.447
         """
+    )
+
+    st.divider()
+    use_tiles = st.toggle(
+        "Modo tiles (4 cuadrantes)",
+        value=False,
+        help="Divide la imagen en 4 partes superpuestas antes de inferir. Mejora la detección de daños pequeños como dents y scratches.",
     )
 
     st.divider()
@@ -75,7 +97,11 @@ with camera_tab:
 if pil_image is not None:
     st.divider()
 
-    detections = run_inference(model, pil_image, score_threshold=score_threshold)
+    if use_tiles:
+        with st.spinner("Analizando imagen en 4 cuadrantes..."):
+            detections = run_inference_tiled(model, pil_image, score_threshold=score_threshold)
+    else:
+        detections = run_inference(model, pil_image, score_threshold=score_threshold)
     result_image = draw_predictions(pil_image, detections)
 
     col_orig, col_result = st.columns(2)
@@ -121,5 +147,42 @@ if pil_image is not None:
             f"No se detectaron daños con un umbral de confianza de {score_threshold:.0%}. "
             "Probá bajando el umbral en la barra lateral o usá otra imagen."
         )
+
+    if detections:
+        st.divider()
+        st.subheader("Estimación de costos y cobertura de seguro")
+        st.caption("Valores orientativos en USD. No constituyen una cotización oficial.")
+
+        detected_labels = {d["label"] for d in detections}
+
+        cost_min = sum(REPAIR_COST_RANGE[d["label"]][0] for d in detections if d["label"] in REPAIR_COST_RANGE)
+        cost_max = sum(REPAIR_COST_RANGE[d["label"]][1] for d in detections if d["label"] in REPAIR_COST_RANGE)
+
+        col_cost, col_ins = st.columns(2)
+
+        with col_cost:
+            st.markdown("**Costo estimado de reparación**")
+            cost_rows = []
+            for det in detections:
+                label = det["label"]
+                if label in REPAIR_COST_RANGE:
+                    lo, hi = REPAIR_COST_RANGE[label]
+                    cost_rows.append({"Daño": det["class_name"], "Rango (USD)": f"${lo} – ${hi}"})
+            st.dataframe(pd.DataFrame(cost_rows), use_container_width=True, hide_index=True)
+            st.markdown(f"**Total estimado: ${cost_min:,} – ${cost_max:,} USD**")
+
+        with col_ins:
+            st.markdown("**Cobertura según tipo de seguro**")
+            ins_rows = []
+            for policy, covered_labels in INSURANCE_COVERAGE.items():
+                covered = [CLASS_NAMES[l] for l in detected_labels if l in covered_labels]
+                not_covered = [CLASS_NAMES[l] for l in detected_labels if l not in covered_labels]
+                ins_rows.append({
+                    "Seguro": policy,
+                    "Cubre": ", ".join(covered) if covered else "Ninguno",
+                    "No cubre": ", ".join(not_covered) if not_covered else "—",
+                })
+            st.dataframe(pd.DataFrame(ins_rows), use_container_width=True, hide_index=True)
+
 else:
     st.info("Subí una imagen de un auto para comenzar.")

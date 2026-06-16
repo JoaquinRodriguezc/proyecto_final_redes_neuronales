@@ -78,6 +78,47 @@ def run_inference(
     return detections
 
 
+def apply_nms(detections: list[dict], iou_threshold: float = 0.5) -> list[dict]:
+    if len(detections) < 2:
+        return detections
+
+    import torchvision.ops as ops
+
+    boxes = torch.tensor([d["box"] for d in detections], dtype=torch.float32)
+    scores = torch.tensor([d["score"] for d in detections], dtype=torch.float32)
+    keep = ops.nms(boxes, scores, iou_threshold)
+    return [detections[i] for i in keep.tolist()]
+
+
+def run_inference_tiled(
+    model,
+    pil_image: Image.Image,
+    score_threshold: float = 0.4,
+    overlap: float = 0.1,
+) -> list[dict]:
+    w, h = pil_image.size
+    half_w = int(w * (0.5 + overlap / 2))
+    half_h = int(h * (0.5 + overlap / 2))
+    offset_x = int(w * (0.5 - overlap / 2))
+    offset_y = int(h * (0.5 - overlap / 2))
+
+    tiles = [
+        (pil_image.crop((0,        0,        half_w, half_h)), 0,        0),
+        (pil_image.crop((offset_x, 0,        w,      half_h)), offset_x, 0),
+        (pil_image.crop((0,        offset_y, half_w, h)),      0,        offset_y),
+        (pil_image.crop((offset_x, offset_y, w,      h)),      offset_x, offset_y),
+    ]
+
+    all_detections = []
+    for tile_img, ox, oy in tiles:
+        tile_dets = run_inference(model, tile_img, score_threshold=score_threshold)
+        for det in tile_dets:
+            x0, y0, x1, y1 = det["box"]
+            all_detections.append({**det, "box": [x0 + ox, y0 + oy, x1 + ox, y1 + oy]})
+
+    return apply_nms(all_detections)
+
+
 def draw_predictions(pil_image: Image.Image, detections: list[dict]) -> Image.Image:
     result = pil_image.copy().convert("RGB")
     if not detections:
