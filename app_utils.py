@@ -119,6 +119,33 @@ def run_inference_tiled(
     return apply_nms(all_detections)
 
 
+def run_inference_two_pass(
+    model,
+    pil_image: Image.Image,
+    score_threshold: float = 0.4,
+    padding: float = 0.5,
+) -> list[dict]:
+    # Primera pasada al mismo umbral — solo verificamos las detecciones que ya superan el threshold
+    candidates = run_inference(model, pil_image, score_threshold=score_threshold)
+    if not candidates:
+        return []
+
+    w, h = pil_image.size
+    confirmed = []
+    for det in candidates:
+        x0, y0, x1, y1 = det["box"]
+        bw, bh = x1 - x0, y1 - y0
+        cx0 = max(0, int(x0 - bw * padding))
+        cy0 = max(0, int(y0 - bh * padding))
+        cx1 = min(w, int(x1 + bw * padding))
+        cy1 = min(h, int(y1 + bh * padding))
+        crop = pil_image.crop((cx0, cy0, cx1, cy1))
+        if run_inference(model, crop, score_threshold=score_threshold):
+            confirmed.append(det)
+
+    return confirmed
+
+
 def draw_predictions(pil_image: Image.Image, detections: list[dict]) -> Image.Image:
     result = pil_image.copy().convert("RGB")
     if not detections:
