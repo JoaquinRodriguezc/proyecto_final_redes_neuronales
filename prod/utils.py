@@ -768,6 +768,8 @@ def draw_predictions(pil_image: Image.Image, detections: list[dict]) -> Image.Im
     except OSError:
         font = ImageFont.load_default()
 
+    img_width, img_height = pil_image.size
+    label_padding = 5
     for det in detections:
         x0, y0, x1, y1 = det["box"]
         color = CLASS_COLORS.get(det["label"], "#ffffff")
@@ -776,13 +778,17 @@ def draw_predictions(pil_image: Image.Image, detections: list[dict]) -> Image.Im
         draw.rectangle([x0, y0, x1, y1], outline=color, width=max(3, pil_image.width // 320))
         draw.rectangle([x0, y0, x1, y1], fill=color + "20")
 
-        text_bbox = draw.textbbox((x0, max(y0 - 26, 0)), label_text, font=font)
-        padding = 5
+        text_size = draw.textbbox((0, 0), label_text, font=font)
+        text_width = text_size[2] - text_size[0]
+        text_anchor_x = max(0, min(x0, img_width - text_width - 2 * label_padding))
+        text_anchor_y = max(0, y0 - 26)
+
+        text_bbox = draw.textbbox((text_anchor_x, text_anchor_y), label_text, font=font)
         bg_bbox = [
-            text_bbox[0] - padding,
-            text_bbox[1] - padding,
-            text_bbox[2] + padding,
-            text_bbox[3] + padding,
+            text_bbox[0] - label_padding,
+            text_bbox[1] - label_padding,
+            text_bbox[2] + label_padding,
+            text_bbox[3] + label_padding,
         ]
         draw.rectangle(bg_bbox, fill=color)
         draw.text((text_bbox[0], text_bbox[1]), label_text, fill="#101820", font=font)
