@@ -733,7 +733,7 @@ def build_impact_report_html(
     </head>
     <body>
         <h1>Peritaje Visual Inteligente</h1>
-        <p class="muted">Reporte exportado desde la cabina de inspeccion visual asistida.</p>
+        <p class="muted">Reporte exportado desde la cabina de analisis visual.</p>
         <div class="kpi"><strong>Hallazgos</strong><br>{int(latest_summary.get("count", 0))}</div>
         <div class="kpi"><strong>Severidad maxima</strong><br>{escape(str(latest_summary.get("max_severity", "Sin hallazgos")))}</div>
         <div class="kpi"><strong>Rango total</strong><br>{escape(format_currency_range(int(summary.get("total_min", 0)), int(summary.get("total_max", 0))))}</div>
@@ -802,27 +802,17 @@ def render_metric_strip(cards: list[dict]) -> None:
 
 
 def render_hero(evaluation_result: dict) -> None:
-    summary = evaluation_result.get("summary", {})
-    chips = [
-        "CarDD",
-        MODEL_NAME,
-        "6 clases",
-        f"mAP@50 {format_metric(summary.get('map_50'), 3)}",
-    ]
-    chips_html = "".join(f'<span class="hero-chip">{escape(chip)}</span>' for chip in chips)
     st.markdown(
-        f"""
+        """
         <section class="hero-shell">
             <div class="hero-grid">
                 <div class="hero-main">
-                    <div class="hero-kicker">Inspeccion visual asistida</div>
+                    <div class="hero-kicker">Analisis visual</div>
                     <h1 class="hero-title">Peritaje Visual Inteligente</h1>
-                    <p class="hero-subtitle">Deteccion de danos vehiculares con Faster R-CNN</p>
+                    <p class="hero-subtitle">Deteccion de danos vehiculares</p>
                     <p class="hero-description">
-                        La aplicacion convierte la salida del detector en una lectura clara: hallazgos visibles,
-                        severidad estimada y referencia economica orientativa.
+                        Lectura visual clara de hallazgos detectados sobre imagenes de vehiculos.
                     </p>
-                    <div class="chip-row">{chips_html}</div>
                 </div>
             </div>
         </section>
@@ -835,7 +825,7 @@ def render_sidebar(evaluation_result: dict) -> tuple[float, bool]:
     summary = evaluation_result.get("summary", {})
     with st.sidebar:
         st.markdown("### :material/tune: Consola tecnica")
-        st.caption("Controles globales de la inspeccion.")
+        st.caption("Controles globales.")
 
         score_threshold = st.slider(
             "Umbral de score del detector",
@@ -886,20 +876,6 @@ def render_sidebar(evaluation_result: dict) -> tuple[float, bool]:
                 )
             st.markdown(f'<div class="chip-row">{"".join(class_chips)}</div>', unsafe_allow_html=True)
 
-        st.markdown(
-            """
-            <div class="sidebar-note">
-                <strong>Nota honesta</strong><br>
-                <span class="small muted">
-                    El score del detector no es una probabilidad calibrada. Sirve para ordenar confianza relativa entre hallazgos.
-                </span><br>
-                <span class="small muted">
-                    La app usa el checkpoint entrenado solo para inferencia. No reentrena ni modifica pesos.
-                </span>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
 
     return score_threshold, high_detail
 
@@ -910,7 +886,7 @@ def render_empty_state() -> None:
         <div class="empty-state">
             <div class="empty-grid">
                 <div>
-                    <h3>Empeza una inspeccion visual</h3>
+                    <h3>Carga una imagen</h3>
                     <p>
                         Carga una foto del vehiculo para obtener detecciones, severidad estimada y una lectura economica orientativa.
                     </p>
@@ -939,12 +915,12 @@ def render_empty_state() -> None:
 
 def render_input_panel() -> tuple[Image.Image | None, str | None, str | None]:
     render_section_header(
-        ":material/upload: Carga de evidencia visual",
-        "La inspeccion acepta imagenes por archivo o por camara. La app procesa la ultima imagen cargada.",
+        ":material/upload: Cargar imagen",
+        "Arrastra una imagen JPG o PNG al panel, o usa la camara si prefieres capturarla en el momento.",
     )
     upload_tab, camera_tab = st.tabs(
         [
-            ":material/upload_file: Subir imagen",
+            ":material/upload_file: Arrastrar o subir",
             ":material/photo_camera: Camara",
         ]
     )
@@ -953,17 +929,18 @@ def render_input_panel() -> tuple[Image.Image | None, str | None, str | None]:
     source_label: str | None = None
 
     with upload_tab:
+        st.caption("Arrastra y suelta una imagen en el panel de abajo, o haz clic para buscarla en tu equipo.")
         uploaded = st.file_uploader(
-            "Imagen del vehiculo",
+            "Arrastra una imagen aqui o haz clic para subirla",
             type=["jpg", "jpeg", "png"],
-            help="Usa imagenes donde el dano sea visible y el vehiculo ocupe buena parte del cuadro.",
+            help="Formatos admitidos: JPG, JPEG y PNG. Conviene que el vehiculo ocupe buena parte del cuadro.",
         )
         if uploaded is not None:
             image_bytes = uploaded.getvalue()
             source_label = "archivo"
 
     with camera_tab:
-        camera_photo = st.camera_input("Tomar foto")
+        camera_photo = st.camera_input("Usar camara")
         if camera_photo is not None and image_bytes is None:
             image_bytes = camera_photo.getvalue()
             source_label = "camara"
@@ -1098,7 +1075,7 @@ def render_interpretation_panel(detections: list[dict], summary: dict) -> None:
             "No hubo hallazgos visibles con la configuracion actual. Eso no prueba ausencia de dano: puede ser un caso borde, una imagen de baja calidad o un caso fuera del dominio del dataset.",
             icon=":material/warning:",
         )
-        st.caption("Limitacion: esta lectura no reemplaza inspeccion profesional ni diagnostico mecanico.")
+        st.caption("Limitacion: esta lectura no reemplaza revision profesional ni diagnostico mecanico.")
         return
 
     sorted_detections = sort_detections(detections)
@@ -1129,7 +1106,7 @@ def render_interpretation_panel(detections: list[dict], summary: dict) -> None:
                 st.markdown(f"**{title}**")
                 st.write(text)
     st.caption(f"Revision manual sugerida: {review_message}")
-    st.caption("Limitacion: esta salida no reemplaza inspeccion profesional ni diagnostico mecanico.")
+    st.caption("Limitacion: esta salida no reemplaza revision profesional ni diagnostico mecanico.")
 
 
 def render_download(result_image: Image.Image) -> None:
@@ -1163,7 +1140,7 @@ def run_analysis_flow(
             st.session_state.get("inspection_summary", {}),
         )
 
-    with st.spinner("Ejecutando inspeccion visual asistida..."):
+    with st.spinner("Analizando imagen..."):
         model = load_model()
         if high_detail:
             detections = run_inference_two_pass(model, pil_image, score_threshold=score_threshold)
@@ -1188,8 +1165,8 @@ def run_analysis_flow(
 
 def render_inspection_tab(score_threshold: float, high_detail: bool) -> None:
     render_section_header(
-        ":material/car_crash: Inspeccion",
-        "Cabina principal para cargar evidencia, ejecutar inferencia y leer la salida del modelo.",
+        ":material/car_crash: Analizar imagen",
+        "Carga una imagen, ejecuta el detector y revisa los hallazgos encontrados.",
     )
     try:
         pil_image, image_signature, source_label = render_input_panel()
@@ -1214,7 +1191,7 @@ def render_inspection_tab(score_threshold: float, high_detail: bool) -> None:
         )
     except Exception as exc:
         st.session_state["inspection_error"] = str(exc)
-        st.error(f"No se pudo ejecutar la inspeccion: {exc}", icon=":material/error:")
+        st.error(f"No se pudo ejecutar el analisis: {exc}", icon=":material/error:")
         return
 
     render_kpi_cards(summary)
@@ -1563,7 +1540,7 @@ def render_project_story() -> None:
             st.markdown("**Alcance y limites**")
             st.write("Funciona mejor con danos visibles y fotos similares al dominio del dataset.")
             st.write("Rayones finos, grietas pequenas y fondos complejos son mas exigentes.")
-            st.write("No reemplaza inspeccion profesional ni diagnostico mecanico.")
+            st.write("No reemplaza revision profesional ni diagnostico mecanico.")
 
     latest_summary = st.session_state.get("inspection_summary", {})
     if latest_summary:
@@ -1602,10 +1579,9 @@ def main() -> None:
     render_hero(evaluation_result)
     st.space("small")
 
-    inspection_tab, impact_tab, performance_tab, project_tab = st.tabs(
+    inspection_tab, performance_tab, project_tab = st.tabs(
         [
-            ":material/car_crash: Inspeccion",
-            ":material/paid: Impacto estimado",
+            ":material/car_crash: Analizar imagen",
             ":material/query_stats: Rendimiento del modelo",
             ":material/school: Sistema y alcance",
         ]
@@ -1613,8 +1589,6 @@ def main() -> None:
 
     with inspection_tab:
         render_inspection_tab(score_threshold, high_detail)
-    with impact_tab:
-        render_impact_dashboard()
     with performance_tab:
         render_model_metrics(evaluation_result)
     with project_tab:
