@@ -604,19 +604,24 @@ def run_inference_tiled(
     pil_image: Image.Image,
     score_threshold: float = 0.4,
     overlap: float = 0.1,
+    grid_size: int = 2,
 ) -> list[dict]:
     width, height = pil_image.size
-    tile_width = int(width * (0.5 + overlap / 2))
-    tile_height = int(height * (0.5 + overlap / 2))
-    offset_x = int(width * (0.5 - overlap / 2))
-    offset_y = int(height * (0.5 - overlap / 2))
+    step_x = width / grid_size
+    step_y = height / grid_size
+    tile_width = int(step_x * (1 + overlap))
+    tile_height = int(step_y * (1 + overlap))
 
-    tiles = [
-        (pil_image.crop((0, 0, tile_width, tile_height)), 0, 0),
-        (pil_image.crop((offset_x, 0, width, tile_height)), offset_x, 0),
-        (pil_image.crop((0, offset_y, tile_width, height)), 0, offset_y),
-        (pil_image.crop((offset_x, offset_y, width, height)), offset_x, offset_y),
-    ]
+    tiles = []
+    for row in range(grid_size):
+        for col in range(grid_size):
+            ox = int(step_x * col)
+            oy = int(step_y * row)
+            tiles.append((
+                pil_image.crop((ox, oy, min(width, ox + tile_width), min(height, oy + tile_height))),
+                ox,
+                oy,
+            ))
 
     detections = []
     for tile_image, ox, oy in tiles:
@@ -631,14 +636,13 @@ def run_inference_tiled(
     return apply_nms(detections, iou_threshold=0.5)
 
 
-def run_inference_two_pass(
+def verify_detections(
     model,
     pil_image: Image.Image,
+    candidates: list[dict],
     score_threshold: float = 0.4,
     padding: float = 0.5,
 ) -> list[dict]:
-    # Primera pasada: usamos el detector completo y solo verificamos candidatos ya aceptados.
-    candidates = run_inference(model, pil_image, score_threshold=score_threshold)
     if not candidates:
         return []
 
@@ -653,16 +657,21 @@ def run_inference_two_pass(
         crop_x1 = min(width, int(x1 + box_width * padding))
         crop_y1 = min(height, int(y1 + box_height * padding))
         crop = pil_image.crop((crop_x0, crop_y0, crop_x1, crop_y1))
-
         crop_detections = run_inference(model, crop, score_threshold=score_threshold)
-        same_label_confirmed = any(
-            int(crop_det.get("label", -1)) == int(det["label"])
-            for crop_det in crop_detections
-        )
-        if same_label_confirmed:
+        if any(int(d.get("label", -1)) == int(det["label"]) for d in crop_detections):
             confirmed.append(det)
 
     return confirmed
+
+
+def run_inference_two_pass(
+    model,
+    pil_image: Image.Image,
+    score_threshold: float = 0.4,
+    padding: float = 0.5,
+) -> list[dict]:
+    candidates = run_inference(model, pil_image, score_threshold=score_threshold)
+    return verify_detections(model, pil_image, candidates, score_threshold=score_threshold, padding=padding)
 
 
 def estimate_severity(label_id: int, area_pct: float) -> tuple[int, str]:

@@ -33,6 +33,7 @@ from prod.utils import (  # noqa: E402
     run_inference_two_pass,
     run_inference_tiled,
     summarize_detections,
+    verify_detections,
 )
 
 
@@ -767,7 +768,7 @@ def persist_inspection_state(
     detections: list[dict],
     summary: dict,
     threshold: float,
-    high_detail: bool,
+    scan_mode: str,
     signature: str,
     source_label: str,
 ) -> None:
@@ -776,7 +777,7 @@ def persist_inspection_state(
     st.session_state["inspection_detections"] = detections
     st.session_state["inspection_summary"] = summary
     st.session_state["inspection_threshold"] = threshold
-    st.session_state["inspection_mode"] = "High-detail scan" if high_detail else "Scan estandar"
+    st.session_state["inspection_mode"] = scan_mode
     st.session_state["inspection_error"] = None
     st.session_state["inspection_signature"] = signature
     st.session_state["inspection_source"] = source_label
@@ -835,19 +836,54 @@ def render_sidebar(evaluation_result: dict) -> tuple[float, bool]:
             step=0.05,
             help="Filtra detecciones con score menor al umbral configurado.",
         )
+        scan_mode = st.segmented_control(
+            "Modo de escaneo",
+            options=["Estandar", "Tiled"],
+            default="Estandar",
+            selection_mode="single",
+            help="Estandar: lectura directa de la imagen completa. Tiled: divide la imagen en una grilla de cuadrantes con overlap para detectar danos en distintas zonas.",
+        ) or "Estandar"
+
+        grid_size = 2
+        if scan_mode == "Tiled":
+            grid_size = st.slider(
+                "Cuadrantes",
+                min_value=2,
+                max_value=4,
+                value=2,
+                step=1,
+                help="Tamano de la grilla. 2 → 2×2 (4 tiles), 3 → 3×3 (9 tiles), 4 → 4×4 (16 tiles).",
+            )
+            st.caption(f"Grilla: {grid_size}×{grid_size} = {grid_size ** 2} cuadrantes con overlap del 10%")
+
         high_detail = st.toggle(
-            "High-detail scan",
+            "High-detail",
             value=False,
-            help="Reverifica cada hallazgo en una segunda pasada local. No agrega detecciones nuevas: solo confirma o descarta las ya encontradas.",
+            help="Reverifica cada hallazgo en una segunda pasada local. Funciona con Estandar y Tiled. No agrega detecciones nuevas: solo confirma o descarta las ya encontradas.",
         )
 
+        _mode_parts = []
+        if scan_mode == "Tiled":
+            _mode_parts.append(f"Tiled {grid_size}×{grid_size}")
+        else:
+            _mode_parts.append("Estandar")
+        if high_detail:
+            _mode_parts.append("High-detail")
+        _mode_label = " + ".join(_mode_parts)
+
+        _base_desc = (
+            f"Division en {grid_size}×{grid_size} cuadrantes con overlap y NMS global."
+            if scan_mode == "Tiled"
+            else "Lectura directa de la imagen completa."
+        )
+        _hd_note = " Segunda verificacion local activada." if high_detail else ""
         st.markdown(
             f"""
             <div class="sidebar-note">
                 <strong>Modo activo</strong><br>
-                {"High-detail scan" if high_detail else "Scan estandar"}<br>
+                {escape(_mode_label)}<br>
                 <span class="small muted">
-                    {"Segunda verificacion sobre hallazgos ya detectados." if high_detail else "Lectura directa de la imagen completa."}
+                    {escape(_base_desc + _hd_note)}
                 </span>
             </div>
             """,
@@ -877,7 +913,7 @@ def render_sidebar(evaluation_result: dict) -> tuple[float, bool]:
             st.markdown(f'<div class="chip-row">{"".join(class_chips)}</div>', unsafe_allow_html=True)
 
 
-    return score_threshold, high_detail
+    return score_threshold, scan_mode, high_detail, grid_size
 
 
 def render_empty_state() -> None:
@@ -1126,9 +1162,16 @@ def run_analysis_flow(
     image_signature: str,
     source_label: str,
     score_threshold: float,
+    scan_mode: str,
     high_detail: bool,
+    grid_size: int,
 ) -> tuple[list[dict], Image.Image, dict]:
-    analysis_signature = f"{image_signature}|{score_threshold:.2f}|{int(high_detail)}"
+    mode_parts = [f"Tiled {grid_size}x{grid_size}" if scan_mode == "Tiled" else "Estandar"]
+    if high_detail:
+        mode_parts.append("High-detail")
+    mode_label = " + ".join(mode_parts)
+
+    analysis_signature = f"{image_signature}|{score_threshold:.2f}|{mode_label}"
     if (
         st.session_state.get("inspection_signature") == analysis_signature
         and st.session_state.get("inspection_result_image") is not None
@@ -1142,10 +1185,12 @@ def run_analysis_flow(
 
     with st.spinner("Analizando imagen..."):
         model = load_model()
-        if high_detail:
-            detections = run_inference_two_pass(model, pil_image, score_threshold=score_threshold)
+        if scan_mode == "Tiled":
+            detections = run_inference_tiled(model, pil_image, score_threshold=score_threshold, grid_size=grid_size)
         else:
             detections = run_inference(model, pil_image, score_threshold=score_threshold)
+        if high_detail:
+            detections = verify_detections(model, pil_image, detections, score_threshold=score_threshold)
 
     detections = sort_detections(detections)
     result_image = draw_predictions(pil_image, detections)
@@ -1156,14 +1201,14 @@ def run_analysis_flow(
         detections=detections,
         summary=summary,
         threshold=score_threshold,
-        high_detail=high_detail,
+        scan_mode=mode_label,
         signature=analysis_signature,
         source_label=source_label,
     )
     return detections, result_image, summary
 
 
-def render_inspection_tab(score_threshold: float, high_detail: bool) -> None:
+def render_inspection_tab(score_threshold: float, scan_mode: str, high_detail: bool, grid_size: int) -> None:
     render_section_header(
         ":material/car_crash: Analizar imagen",
         "Carga una imagen, ejecuta el detector y revisa los hallazgos encontrados.",
@@ -1187,7 +1232,9 @@ def render_inspection_tab(score_threshold: float, high_detail: bool) -> None:
             image_signature=image_signature,
             source_label=source_label,
             score_threshold=score_threshold,
+            scan_mode=scan_mode,
             high_detail=high_detail,
+            grid_size=grid_size,
         )
     except Exception as exc:
         st.session_state["inspection_error"] = str(exc)
@@ -1198,7 +1245,7 @@ def render_inspection_tab(score_threshold: float, high_detail: bool) -> None:
     render_image_comparison(
         pil_image,
         result_image,
-        "High-detail scan" if high_detail else "Scan estandar",
+        scan_mode,
     )
 
     if detections:
@@ -1575,7 +1622,7 @@ def main() -> None:
     inject_custom_css()
     ensure_session_defaults()
     evaluation_result = load_evaluation_summary()
-    score_threshold, high_detail = render_sidebar(evaluation_result)
+    score_threshold, scan_mode, high_detail, grid_size = render_sidebar(evaluation_result)
     render_hero(evaluation_result)
     st.space("small")
 
@@ -1588,7 +1635,7 @@ def main() -> None:
     )
 
     with inspection_tab:
-        render_inspection_tab(score_threshold, high_detail)
+        render_inspection_tab(score_threshold, scan_mode, high_detail, grid_size)
     with performance_tab:
         render_model_metrics(evaluation_result)
     with project_tab:
