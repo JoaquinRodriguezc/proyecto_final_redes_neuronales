@@ -652,7 +652,6 @@ def _build_dataset_transform_rows(config: dict, comparison_split: str = "val") -
         target_classes_value = str(target_classes)
 
     return [
-        {"item": "Transform entrenamiento base", "valor": "RandomHorizontalFlipDetection(p=0.5)"},
         {"item": "resize", "valor": config.get("resize")},
         {"item": "image_size", "valor": config.get("image_size")},
         {
@@ -718,7 +717,7 @@ def _format_target_classes_label(target_classes) -> str:
 
 def _build_augmentation_title_parts(config: dict) -> list[str]:
     config = config or {}
-    augmentation_parts = ["Flip horizontal"]
+    augmentation_parts = []
 
     if config.get("use_object_crop", False):
         augmentation_parts.append("Object crop")
@@ -744,7 +743,10 @@ def _build_comparison_run_title(run: dict) -> str:
         config.get("trainable_backbone_layers", run.get("trainable_backbone_layers"))
     )
     augmentations_label = " + ".join(_build_augmentation_title_parts(config))
-    return f"{model_label} · {optimizer_label} · {layers_label} · {augmentations_label}"
+    title_parts = [model_label, optimizer_label, layers_label]
+    if augmentations_label:
+        title_parts.append(augmentations_label)
+    return " · ".join(title_parts)
 
 
 def _make_pr_curve_svg(curve: dict, width: int = 420, height: int = 260) -> str:
@@ -855,9 +857,6 @@ def _build_nms_section_html(nms_sensitivity: dict) -> str:
             <div class="table-wrap">{nms_html}</div>
             <div>{nms_chart_html}</div>
         </div>
-        <p class="summary-note">
-            {escape(nms_sensitivity.get('conclusion') or 'Sin conclusion disponible para el barrido de NMS.')}
-        </p>
     </section>
     """
 
@@ -986,52 +985,58 @@ def export_model_comparison_html(
                     </div>
                     {selected_badge}
                 </div>
-                <div class="metric-grid">
-                    {_build_comparison_metric_cards_html(summary)}
-                </div>
-                <div class="two-column">
-                    <section class="nested-section">
-                        <div class="nested-header">
-                            <h3>Configuracion de la corrida</h3>
-                            <p>Arquitectura, optimizador y duracion del entrenamiento.</p>
+                <div class="run-content-layout">
+                    <div class="run-tables-column">
+                        <div class="metric-grid">
+                            {_build_comparison_metric_cards_html(summary)}
                         </div>
-                        <div class="table-wrap">{run_meta_html}</div>
-                    </section>
-                    <section class="nested-section">
-                        <div class="nested-header">
-                            <h3>Dataset y transforms</h3>
-                            <p>Las augmentations listadas corresponden a entrenamiento.</p>
+                        <section class="nested-section class-charts-section">
+                            <div class="nested-header">
+                                <h3>Curvas precision-recall por clase</h3>
+                                <p>Calculadas sobre validacion a IoU=0.50, area=all y max_dets=100.</p>
+                            </div>
+                            <div class="pr-grid">
+                                {pr_cards_html or '<p class="empty-state">No se generaron curvas precision-recall.</p>'}
+                            </div>
+                        </section>
+                        <div class="table-pair-grid">
+                            <section class="nested-section">
+                                <div class="nested-header">
+                                    <h3>Configuracion de la corrida</h3>
+                                    <p>Arquitectura, optimizador y duracion del entrenamiento.</p>
+                                </div>
+                                <div class="table-wrap">{run_meta_html}</div>
+                            </section>
+                            <section class="nested-section">
+                                <div class="nested-header">
+                                    <h3>Dataset y transforms</h3>
+                                    <p>Las augmentations listadas corresponden a entrenamiento.</p>
+                                </div>
+                                <div class="table-wrap">{transforms_html}</div>
+                            </section>
                         </div>
-                        <div class="table-wrap">{transforms_html}</div>
-                    </section>
+                        <section class="nested-section">
+                            <div class="nested-header">
+                                <h3>mAP por clase en validacion</h3>
+                                <p>Metricas por clase del checkpoint de esta prueba.</p>
+                            </div>
+                            <div class="table-wrap">{class_metrics_html}</div>
+                        </section>
+                        {nms_section_html}
+                    </div>
+                    <div class="run-charts-column">
+                        <section class="nested-section training-charts-section">
+                            <div class="nested-header">
+                                <h3>Curvas de entrenamiento</h3>
+                                <p>Las mismas curvas usadas en el notebook para leer la dinamica por epoca.</p>
+                            </div>
+                            <div class="chart-stack">
+                                <article>{loss_chart_html}</article>
+                                <article>{map_chart_html}</article>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <section class="nested-section">
-                    <div class="nested-header">
-                        <h3>mAP por clase en validacion</h3>
-                        <p>Metricas por clase del checkpoint de esta prueba.</p>
-                    </div>
-                    <div class="table-wrap">{class_metrics_html}</div>
-                </section>
-                <section class="nested-section">
-                    <div class="nested-header">
-                        <h3>Curvas de entrenamiento</h3>
-                        <p>Las mismas curvas usadas en el notebook para leer la dinamica por epoca.</p>
-                    </div>
-                    <div class="chart-grid">
-                        <article>{loss_chart_html}</article>
-                        <article>{map_chart_html}</article>
-                    </div>
-                </section>
-                <section class="nested-section">
-                    <div class="nested-header">
-                        <h3>Curvas precision-recall por clase</h3>
-                        <p>Calculadas sobre validacion a IoU=0.50, area=all y max_dets=100.</p>
-                    </div>
-                    <div class="pr-grid">
-                        {pr_cards_html or '<p class="empty-state">No se generaron curvas precision-recall.</p>'}
-                    </div>
-                </section>
-                {nms_section_html}
             </section>
             """
         )
@@ -1075,7 +1080,7 @@ def export_model_comparison_html(
 
         body {{
             margin: 0;
-            padding: 32px 20px 48px;
+            padding: 18px 12px 36px;
             font-family: Aptos, Manrope, "Segoe UI", sans-serif;
             color: var(--text);
             background:
@@ -1084,7 +1089,8 @@ def export_model_comparison_html(
         }}
 
         .page {{
-            max-width: 1540px;
+            width: 100%;
+            max-width: none;
             margin: 0 auto;
         }}
 
@@ -1099,19 +1105,25 @@ def export_model_comparison_html(
         }}
 
         .hero {{
-            padding: 30px;
-            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
         }}
 
         .hero h1 {{
-            margin: 0 0 8px;
-            font-size: clamp(2rem, 3vw, 3rem);
+            margin: 0 0 4px;
+            font-size: clamp(1.15rem, 1.8vw, 1.65rem);
         }}
 
         .hero p {{
             margin: 0;
             color: var(--muted);
             max-width: 980px;
+            font-size: 0.88rem;
+            line-height: 1.35;
         }}
 
         .run-card {{
@@ -1130,29 +1142,30 @@ def export_model_comparison_html(
         }}
 
         .carousel-shell {{
-            margin-bottom: 22px;
-            padding: 16px;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.72);
-            box-shadow: var(--shadow);
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
         }}
 
         .carousel-controls {{
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 14px;
+            gap: 10px;
         }}
 
         .carousel-button {{
             appearance: none;
             border: 1px solid var(--border);
             border-radius: 999px;
-            padding: 10px 16px;
+            padding: 8px 12px;
             background: var(--surface-strong);
             color: var(--text);
             font: inherit;
+            font-size: 0.9rem;
             font-weight: 800;
             cursor: pointer;
             transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
@@ -1168,10 +1181,12 @@ def export_model_comparison_html(
             color: var(--muted);
             font-weight: 800;
             text-align: center;
+            min-width: 118px;
+            white-space: nowrap;
         }}
 
         .carousel-dots {{
-            display: flex;
+            display: none;
             justify-content: center;
             gap: 8px;
             margin-top: 14px;
@@ -1267,6 +1282,37 @@ def export_model_comparison_html(
 
         .metric-value {{ font-size: 1.45rem; }}
 
+        .run-content-layout {{
+            display: grid;
+            grid-template-columns: minmax(620px, 1.35fr) minmax(420px, 0.85fr);
+            gap: 18px;
+            align-items: start;
+        }}
+
+        .run-tables-column,
+        .run-charts-column {{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 0;
+        }}
+
+        .run-tables-column .metric-grid {{
+            margin: 0;
+        }}
+
+        .run-tables-column .nested-section,
+        .run-charts-column .nested-section {{
+            margin-top: 0;
+        }}
+
+        .table-pair-grid {{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 16px;
+            align-items: start;
+        }}
+
         .two-column {{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -1338,10 +1384,56 @@ def export_model_comparison_html(
             gap: 18px;
         }}
 
+        .chart-stack {{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }}
+
         .pr-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 16px;
+        }}
+
+        .run-tables-column .pr-grid {{
+            grid-template-columns: repeat(3, minmax(170px, 1fr));
+            gap: 10px;
+        }}
+
+        .class-charts-section {{
+            padding: 12px;
+        }}
+
+        .class-charts-section .nested-header {{
+            margin-bottom: 8px;
+        }}
+
+        .class-charts-section .nested-header h3 {{
+            font-size: 0.98rem;
+        }}
+
+        .class-charts-section .nested-header p {{
+            font-size: 0.82rem;
+        }}
+
+        .class-charts-section .pr-card {{
+            padding: 8px;
+            border-radius: 12px;
+        }}
+
+        .class-charts-section .pr-card-header {{
+            margin-bottom: 4px;
+            gap: 6px;
+        }}
+
+        .class-charts-section .pr-card-header h3,
+        .class-charts-section .pr-card-header p {{
+            font-size: 0.78rem;
+        }}
+
+        .class-charts-section .pr-chart {{
+            height: 142px;
         }}
 
         .pr-card {{
@@ -1439,6 +1531,17 @@ def export_model_comparison_html(
             .run-card {{ border-radius: 16px; }}
             .run-card,
             .hero {{ padding: 18px; }}
+            .run-content-layout {{
+                grid-template-columns: 1fr;
+            }}
+            .table-pair-grid,
+            .run-tables-column .pr-grid {{
+                grid-template-columns: 1fr;
+            }}
+            .hero {{
+                align-items: stretch;
+                flex-direction: column;
+            }}
             .carousel-controls {{
                 display: grid;
                 grid-template-columns: 1fr;
@@ -1450,21 +1553,16 @@ def export_model_comparison_html(
     <div class="page">
         <section class="hero">
             <h1>{escape(title)}</h1>
-            <p>
-                Comparacion cronologica de {len(comparison_runs)} corrida(s) de runs_manifest.
-                Criterio principal: validacion.
-                {escape(f'Modelo seleccionado por {selection_reason}.' if selection_reason else '')}
-            </p>
-        </section>
-        <section class="carousel-shell" aria-label="Navegacion de pruebas">
-            <div class="carousel-controls">
-                <button class="carousel-button" id="prev-slide" type="button">← Anterior</button>
-                <span class="carousel-counter" id="slide-counter">Prueba 1 de {len(comparison_runs)}</span>
-                <button class="carousel-button" id="next-slide" type="button">Siguiente →</button>
-            </div>
-            <div class="carousel-dots" aria-label="Selector de pruebas">
-                {carousel_dots_html}
-            </div>
+            <section class="carousel-shell" aria-label="Navegacion de pruebas">
+                <div class="carousel-controls">
+                    <button class="carousel-button" id="prev-slide" type="button">← Anterior</button>
+                    <span class="carousel-counter" id="slide-counter">Prueba 1 de {len(comparison_runs)}</span>
+                    <button class="carousel-button" id="next-slide" type="button">Siguiente →</button>
+                </div>
+                <div class="carousel-dots" aria-label="Selector de pruebas">
+                    {carousel_dots_html}
+                </div>
+            </section>
         </section>
         {''.join(run_sections)}
         {summary_table_html}

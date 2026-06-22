@@ -272,6 +272,21 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertIn("slide-counter", html_content)
         self.assertIn('data-slide-index="0"', html_content)
         self.assertIn('data-slide-index="1"', html_content)
+        self.assertIn("run-content-layout", html_content)
+        self.assertIn("run-tables-column", html_content)
+        self.assertIn("run-charts-column", html_content)
+        self.assertIn("chart-stack", html_content)
+        self.assertIn("class-charts-section", html_content)
+        self.assertIn("table-pair-grid", html_content)
+        self.assertIn("run-tables-column .pr-grid", html_content)
+        self.assertIn("repeat(3, minmax(170px, 1fr))", html_content)
+        self.assertIn("height: 142px", html_content)
+        self.assertLess(
+            html_content.index('class="carousel-shell"'),
+            html_content.index('data-slide-index="0"'),
+        )
+        self.assertLess(html_content.index("<h1>"), html_content.index('class="carousel-shell"'))
+        self.assertLess(html_content.index('class="carousel-shell"'), html_content.index("</section>"))
         self.assertIn("Tabla resumen", html_content)
         self.assertIn("Nombre experimento", html_content)
         self.assertIn("best_mAP", html_content)
@@ -280,10 +295,10 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertIn("oversample_crop", html_content)
         self.assertEqual(len(re.findall(r'<section class="run-card[^"]*"', html_content)), 2)
         self.assertEqual(len(re.findall(r'<section class="run-card[^"]*is-active[^"]*"', html_content)), 1)
-        self.assertIn("Faster R-CNN ResNet50 FPN · SGD · 2 capas del backbone entrenables · Flip horizontal", html_content)
+        self.assertIn("Faster R-CNN ResNet50 FPN · SGD · 2 capas del backbone entrenables", html_content)
         self.assertIn(
             "Faster R-CNN MobileNet V3 Large FPN · SGD · 2 capas del backbone entrenables · "
-            "Flip horizontal + Object crop + Oversampling dent/scratch",
+            "Object crop + Oversampling dent/scratch",
             html_content,
         )
         self.assertIn("Dataset y transforms", html_content)
@@ -295,7 +310,7 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertIn("history-chart", html_content)
         self.assertIn("Sensibilidad a NMS del modelo seleccionado", html_content)
         self.assertIn("NMS threshold", html_content)
-        self.assertIn("El barrido de NMS apenas mueve el mAP global.", html_content)
+        self.assertNotIn("El barrido de NMS apenas mueve el mAP global.", html_content)
         self.assertNotIn("Run ID", html_content)
         self.assertNotIn("Fecha", html_content)
         self.assertNotIn("mAR@100", html_content)
@@ -307,9 +322,11 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertNotIn("<td>Dataset</td>", html_content)
         self.assertNotIn("<td>CarDD_COCO</td>", html_content)
         self.assertNotIn("Transform validacion", html_content)
+        self.assertNotIn("Transform entrenamiento base", html_content)
         self.assertNotIn("<td>ToTensorDetection</td>", html_content)
         self.assertNotIn("ToTensorDetection + RandomHorizontalFlipDetection", html_content)
-        self.assertIn("RandomHorizontalFlipDetection(p=0.5)", html_content)
+        self.assertNotIn("RandomHorizontalFlipDetection(p=0.5)", html_content)
+        self.assertNotIn("Flip horizontal", html_content)
 
     def test_is_detection_test_report_complete_detects_missing_sections(self):
         complete_report = {
