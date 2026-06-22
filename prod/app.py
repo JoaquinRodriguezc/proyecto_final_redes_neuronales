@@ -29,6 +29,7 @@ from prod.utils import (  # noqa: E402
     estimate_impact_report,
     load_evaluation_summary,
     load_model,
+    load_model_metadata,
     run_inference,
     run_inference_two_pass,
     run_inference_tiled,
@@ -576,6 +577,14 @@ def format_usd(value: int | float) -> str:
     return f"USD {int(round(value)):,}"
 
 
+def get_model_display_name() -> str:
+    try:
+        metadata = load_model_metadata()
+    except Exception:
+        return MODEL_NAME
+    return str(metadata.get("display_name") or MODEL_NAME)
+
+
 def compute_signature(image_bytes: bytes) -> str:
     return hashlib.md5(image_bytes).hexdigest()
 
@@ -919,7 +928,7 @@ def render_sidebar(evaluation_result: dict) -> dict:
 
         st.space("small")
         st.markdown("#### :material/query_stats: Ficha tecnica")
-        st.caption(MODEL_NAME)
+        st.caption(get_model_display_name())
         st.markdown(
             f"""
             :blue-badge[CarDD COCO] :green-badge[6 clases]  
@@ -1622,7 +1631,7 @@ def render_project_story() -> None:
         with st.container(border=True):
             st.markdown("**Base del sistema**")
             st.write("Dataset: CarDD COCO.")
-            st.write("Modelo: Faster R-CNN MobileNet V3 Large FPN.")
+            st.write(f"Modelo: {get_model_display_name()}.")
             st.write("Clases: dent, scratch, crack, glass shatter, lamp broken, tire flat.")
         with st.container(border=True):
             st.markdown("**Flujo**")

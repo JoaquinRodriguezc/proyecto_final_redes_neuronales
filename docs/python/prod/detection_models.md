@@ -44,16 +44,16 @@ Se usa para unificar la creacion de modelos distintos bajo la misma interfaz.
 
 ## Creacion de modelos
 
-### `_create_model(model_name: str, num_classes: int, trainable_backbone_layers: int = 3, min_size=None, max_size=None)`
+### `_create_model(model_name: str, num_classes: int, trainable_backbone_layers: int = 3, min_size=None, max_size=None, pretrained: bool = True)`
 
 Funcion interna que:
 
 1. resuelve la factory correcta desde `_MODEL_REGISTRY`
-2. usa los pesos `DEFAULT` del modelo
+2. usa los pesos `DEFAULT` del modelo cuando `pretrained=True`, o `weights=None` y `weights_backbone=None` cuando `pretrained=False`
 3. crea el modelo con argumentos comunes
 4. reemplaza la cabeza final para ajustarla al dataset
 
-### `create_model_from_config(config: dict)`
+### `create_model_from_config(config: dict, pretrained: bool = True)`
 
 Punto de entrada principal del modulo.
 
@@ -66,6 +66,8 @@ Espera un diccionario de configuracion con campos como:
 - `max_size`
 
 Valida que `model_name` sea soportado y devuelve el modelo listo para entrenar.
+
+Para inferencia en la app, `pretrained=False` permite reconstruir la arquitectura sin descargar pesos externos antes de cargar `dev/modelo.pth`.
 
 ## Conteo de parametros
 

@@ -9,9 +9,9 @@ import gdown
 import streamlit as st
 import torch
 from PIL import Image, ImageDraw, ImageFont
-from torchvision.models.detection import fasterrcnn_mobilenet_v3_large_fpn
-from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.transforms.functional import to_tensor
+
+from prod.detection_models import create_model_from_config
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -21,9 +21,17 @@ CACHED_CHECKPOINT_PATH = Path(tempfile.gettempdir()) / "cardd_modelo.pth"
 MIN_CHECKPOINT_BYTES = 50 * 1024 * 1024
 
 NUM_CLASSES = 7
-MODEL_NAME = "Faster R-CNN MobileNet V3 Large FPN"
+MODEL_NAME = "Modelo final CarDD"
 MODEL_DRIVE_ID_ENV = "MODEL_GDRIVE_ID"
 MODEL_DRIVE_URL_ENV = "MODEL_GDRIVE_URL"
+
+MODEL_DISPLAY_NAMES = {
+    "fasterrcnn": "Faster R-CNN ResNet50 FPN",
+    "fasterrcnn_mobilenet_v3_large_fpn": "Faster R-CNN MobileNet V3 Large FPN",
+    "fasterrcnn_mobilenet_v3_large_320_fpn": "Faster R-CNN MobileNet V3 Large 320 FPN",
+    "retinanet": "RetinaNet ResNet50 FPN",
+    "fcos": "FCOS ResNet50 FPN",
+}
 
 CLASS_NAMES: dict[int, str] = {
     1: "dent",
@@ -504,23 +512,109 @@ def ensure_checkpoint() -> Path:
     return CACHED_CHECKPOINT_PATH
 
 
+def _torch_load_checkpoint(path: Path) -> dict:
+    try:
+        checkpoint = torch.load(path, map_location="cpu", weights_only=False)
+    except TypeError:
+        checkpoint = torch.load(path, map_location="cpu")
+
+    if not isinstance(checkpoint, dict):
+        raise RuntimeError(f"El checkpoint no tiene el formato esperado: {path}")
+    return checkpoint
+
+
+def _resolve_project_path(path_value: str | os.PathLike) -> Path:
+    path = Path(path_value)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / path
+    return path.resolve()
+
+
+def _normalize_model_config(config: dict) -> dict:
+    normalized = dict(config)
+    if "model_name" not in normalized:
+        raise RuntimeError("La metadata del modelo no incluye 'model_name'.")
+    if "num_classes" not in normalized:
+        normalized["num_classes"] = NUM_CLASSES
+
+    image_size = normalized.get("image_size")
+    if image_size is not None:
+        if not isinstance(image_size, (list, tuple)) or len(image_size) != 2:
+            raise RuntimeError(f"image_size invalido en metadata: {image_size!r}")
+        normalized["image_size"] = (int(image_size[0]), int(image_size[1]))
+
+    normalized["resize"] = bool(normalized.get("resize", False))
+    return normalized
+
+
+@st.cache_data(show_spinner=False)
+def load_model_metadata(test_result_path: str | None = None) -> dict:
+    result_path = Path(test_result_path) if test_result_path else TEST_RESULT_PATH
+    if not result_path.exists():
+        raise RuntimeError(
+            "No se encontro dev/best_test_result.json. "
+            "La UI necesita ese archivo para saber con que metadata reconstruir el modelo."
+        )
+
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    checkpoint_value = result.get("checkpoint_path")
+    if not checkpoint_value:
+        raise RuntimeError(
+            "dev/best_test_result.json no incluye 'checkpoint_path'. "
+            "La UI lo necesita para leer la metadata del modelo ganador."
+        )
+
+    metadata_checkpoint_path = _resolve_project_path(checkpoint_value)
+    if not metadata_checkpoint_path.exists():
+        raise RuntimeError(
+            "El checkpoint declarado en dev/best_test_result.json no existe: "
+            f"{metadata_checkpoint_path}"
+        )
+
+    metadata_checkpoint = _torch_load_checkpoint(metadata_checkpoint_path)
+    config = metadata_checkpoint.get("config")
+    if not isinstance(config, dict):
+        raise RuntimeError(
+            "El checkpoint declarado en dev/best_test_result.json no incluye un 'config' valido."
+        )
+
+    model_config = _normalize_model_config(config)
+    model_name = model_config.get("model_name", "")
+    return {
+        "run_id": result.get("run_id"),
+        "best_experiment": result.get("best_experiment") or metadata_checkpoint.get("experiment_name"),
+        "checkpoint_path": str(metadata_checkpoint_path),
+        "config": model_config,
+        "display_name": MODEL_DISPLAY_NAMES.get(model_name, str(model_name)),
+    }
+
+
 @st.cache_resource(show_spinner=False)
 def load_model(checkpoint_path: str | None = None):
     resolved_path = Path(checkpoint_path) if checkpoint_path else ensure_checkpoint()
-    # La app solo reconstruye la arquitectura de inferencia necesaria para cargar
-    # el checkpoint entrenado. No reentrena ni modifica los pesos.
-    model = fasterrcnn_mobilenet_v3_large_fpn(weights=None, weights_backbone=None)
-    in_features = model.roi_heads.box_predictor.cls_score.in_features
-    model.roi_heads.box_predictor = FastRCNNPredictor(in_features, NUM_CLASSES)
+    metadata = load_model_metadata()
+    model_config = metadata["config"]
+    model = create_model_from_config(model_config, pretrained=False)
+
+    checkpoint = _torch_load_checkpoint(resolved_path)
+    state_dict = checkpoint.get("model_state_dict")
+    if state_dict is None:
+        raise RuntimeError(f"El checkpoint de pesos no incluye 'model_state_dict': {resolved_path}")
 
     try:
-        checkpoint = torch.load(resolved_path, map_location="cpu", weights_only=False)
-    except TypeError:
-        checkpoint = torch.load(resolved_path, map_location="cpu")
-    model.load_state_dict(checkpoint["model_state_dict"])
+        model.load_state_dict(state_dict)
+    except RuntimeError as exc:
+        raise RuntimeError(
+            "El archivo dev/modelo.pth no coincide con la metadata del modelo ganador "
+            "registrada en dev/best_test_result.json. Actualiza dev/modelo.pth con los pesos "
+            "del checkpoint ganador o regenera best_test_result.json para que apunte al modelo correcto."
+        ) from exc
+
     for parameter in model.parameters():
         parameter.requires_grad_(False)
     model.eval()
+    model.cardd_config = model_config
+    model.cardd_metadata = metadata
     return model
 
 
@@ -534,6 +628,46 @@ def load_evaluation_summary(path: str | None = None) -> dict:
 
 def preprocess_image(pil_image: Image.Image) -> torch.Tensor:
     return to_tensor(pil_image.convert("RGB"))
+
+
+def _prepare_inference_image(model, pil_image: Image.Image) -> tuple[Image.Image, float, float]:
+    config = getattr(model, "cardd_config", {}) or {}
+    image_size = config.get("image_size")
+    if not config.get("resize") or image_size is None:
+        return pil_image, 1.0, 1.0
+
+    target_height, target_width = image_size
+    original_width, original_height = pil_image.size
+    if original_width == target_width and original_height == target_height:
+        return pil_image, 1.0, 1.0
+
+    resized_image = pil_image.resize((target_width, target_height), Image.BILINEAR)
+    return (
+        resized_image,
+        original_width / target_width,
+        original_height / target_height,
+    )
+
+
+def _scale_box_to_original(
+    box: torch.Tensor,
+    scale_x: float,
+    scale_y: float,
+    image_size: tuple[int, int],
+) -> list[int]:
+    image_width, image_height = image_size
+    x0, y0, x1, y1 = box.tolist()
+    scaled = [
+        int(round(x0 * scale_x)),
+        int(round(y0 * scale_y)),
+        int(round(x1 * scale_x)),
+        int(round(y1 * scale_y)),
+    ]
+    scaled[0] = max(0, min(scaled[0], image_width))
+    scaled[2] = max(0, min(scaled[2], image_width))
+    scaled[1] = max(0, min(scaled[1], image_height))
+    scaled[3] = max(0, min(scaled[3], image_height))
+    return scaled
 
 
 def _enrich_detection(det: dict, image_size: tuple[int, int]) -> dict:
@@ -560,7 +694,8 @@ def run_inference(
     pil_image: Image.Image,
     score_threshold: float = 0.4,
 ) -> list[dict]:
-    tensor = preprocess_image(pil_image)
+    inference_image, scale_x, scale_y = _prepare_inference_image(model, pil_image)
+    tensor = preprocess_image(inference_image)
 
     with torch.inference_mode():
         outputs = model([tensor])
@@ -577,7 +712,7 @@ def run_inference(
             continue
         label_id = int(label.item())
         det = {
-            "box": [int(round(v)) for v in box.tolist()],
+            "box": _scale_box_to_original(box, scale_x, scale_y, pil_image.size),
             "label": label_id,
             "class_name": CLASS_NAMES.get(label_id, f"clase {label_id}"),
             "score": round(score_value, 4),

@@ -78,13 +78,17 @@ def _create_model(
     trainable_backbone_layers: int = 3,
     min_size=None,
     max_size=None,
+    pretrained: bool = True,
 ):
     factory, weight_enum, replace_head = _MODEL_REGISTRY[model_name]
 
     model_kwargs = {
-        "weights": weight_enum.DEFAULT,
-        "trainable_backbone_layers": trainable_backbone_layers,
+        "weights": weight_enum.DEFAULT if pretrained else None,
     }
+    if pretrained:
+        model_kwargs["trainable_backbone_layers"] = trainable_backbone_layers
+    else:
+        model_kwargs["weights_backbone"] = None
     if min_size is not None:
         model_kwargs["min_size"] = min_size
     if max_size is not None:
@@ -94,7 +98,7 @@ def _create_model(
 
 
 # Traduce una configuración serializable a una instancia concreta del modelo.
-def create_model_from_config(config: dict):
+def create_model_from_config(config: dict, pretrained: bool = True):
     model_name = config.get("model_name", "fasterrcnn")
     if model_name not in _MODEL_REGISTRY:
         raise ValueError(f"Modelo no soportado todavia: {model_name}")
@@ -104,6 +108,7 @@ def create_model_from_config(config: dict):
         trainable_backbone_layers=config.get("trainable_backbone_layers", 3),
         min_size=config.get("min_size"),
         max_size=config.get("max_size"),
+        pretrained=pretrained,
     )
 
 

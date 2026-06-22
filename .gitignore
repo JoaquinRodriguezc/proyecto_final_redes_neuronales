@@ -30,6 +30,7 @@ tests/*
 !tests/test_detection_training.py
 !tests/test_detection_dataset.py
 !tests/test_detection_metrics.py
+!tests/test_app_inference_utils.py
 
 dev/experiments/*
 !dev/experiments/*.pth
