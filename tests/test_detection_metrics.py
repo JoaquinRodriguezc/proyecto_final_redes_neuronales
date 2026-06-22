@@ -143,6 +143,32 @@ class CollectDetectionReportTest(unittest.TestCase):
 
         json.dumps(report)
 
+    def test_collect_detection_report_can_skip_nms_sensitivity(self):
+        dataset = _DummyDetectionDataset()
+        dataloader = DataLoader(
+            dataset,
+            batch_size=2,
+            shuffle=False,
+            num_workers=0,
+            collate_fn=collate_fn,
+        )
+        model = _DummyDetectionModel()
+
+        report = collect_detection_report(
+            model=model,
+            dataloader=dataloader,
+            device="cpu",
+            dataset=dataset,
+            idx_to_class=dataset.idx_to_class,
+            include_nms_sensitivity=False,
+        )
+
+        self.assertIn("summary", report)
+        self.assertEqual(len(report["class_metrics"]), 6)
+        self.assertEqual(len(report["pr_curves"]), 6)
+        self.assertTrue(report["nms_sensitivity"]["skipped"])
+        self.assertEqual(report["nms_sensitivity"]["results"], [])
+
 
 if __name__ == "__main__":
     unittest.main()

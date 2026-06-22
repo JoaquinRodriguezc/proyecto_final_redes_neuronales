@@ -414,6 +414,7 @@ def collect_detection_report(
     idx_to_class: dict | None = None,
     dataset=None,
     nms_thresholds=(0.3, 0.5, 0.7),
+    include_nms_sensitivity: bool = True,
     pr_iou: float = 0.5,
     pr_area: str = "all",
     pr_max_dets: int = 100,
@@ -444,6 +445,25 @@ def collect_detection_report(
         "mar_100": summarized_results.get("mar_100"),
     }
 
+    nms_sensitivity = (
+        _build_nms_sensitivity(
+            model=model,
+            dataloader=dataloader,
+            device=device,
+            idx_to_class=idx_to_class,
+            nms_thresholds=nms_thresholds,
+            max_batches=max_batches,
+        )
+        if include_nms_sensitivity
+        else {
+            "supported": False,
+            "skipped": True,
+            "thresholds": [float(value) for value in nms_thresholds],
+            "results": [],
+            "conclusion": "Barrido de NMS omitido para esta evaluacion.",
+        }
+    )
+
     return {
         "summary": summary,
         "class_metrics": _build_class_metrics_rows(summarized_results, idx_to_class=idx_to_class),
@@ -457,14 +477,7 @@ def collect_detection_report(
             pr_max_dets=pr_max_dets,
         ),
         "dataset_diagnostics": _build_dataset_diagnostics(dataset),
-        "nms_sensitivity": _build_nms_sensitivity(
-            model=model,
-            dataloader=dataloader,
-            device=device,
-            idx_to_class=idx_to_class,
-            nms_thresholds=nms_thresholds,
-            max_batches=max_batches,
-        ),
+        "nms_sensitivity": nms_sensitivity,
     }
 
 

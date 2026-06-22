@@ -57,7 +57,7 @@ Flujo:
 
 Devuelve un diccionario con metricas agregadas de deteccion.
 
-### `collect_detection_report(model, dataloader, device, idx_to_class=None, dataset=None, nms_thresholds=(0.3, 0.5, 0.7), pr_iou=0.5, pr_area="all", pr_max_dets=100, max_batches=None)`
+### `collect_detection_report(model, dataloader, device, idx_to_class=None, dataset=None, nms_thresholds=(0.3, 0.5, 0.7), include_nms_sensitivity=True, pr_iou=0.5, pr_area="all", pr_max_dets=100, max_batches=None)`
 
 Construye un reporte final de evaluacion mas rico que el usado epoca a epoca.
 
@@ -68,6 +68,8 @@ Ademas de las metricas principales, devuelve:
 - `pr_curves`: una curva precision-recall por clase a `IoU=0.50`
 - `dataset_diagnostics`: conteos y tamanos relativos de bounding boxes por clase
 - `nms_sensitivity`: barrido de `NMS` con varias `thresholds` sobre el mismo checkpoint
+
+Cuando `include_nms_sensitivity=False`, el reporte mantiene la clave `nms_sensitivity`, pero marca el barrido como omitido. Esto permite generar comparaciones detalladas para muchas corridas sin repetir evaluaciones extra por cada umbral de NMS.
 
 Se usa para explicar mejor por que algunas clases salen mucho mejor o peor que otras sin tocar el flujo rapido de validacion durante entrenamiento.
 
