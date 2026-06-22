@@ -157,6 +157,7 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
                 "created_at": "2026-06-12T12:00:00",
                 "name": "fasterrcnn_baseline",
                 "optimizer_name": "sgd",
+                "trainable_backbone_layers": 5,
                 "best_epoch": 2,
                 "checkpoint_path": "dev/experiments/run_001_best.pth",
                 "training_duration_seconds": 120.0,
@@ -164,6 +165,7 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
                     "model_name": "fasterrcnn",
                     "optimizer_name": "sgd",
                     "num_epochs": 2,
+                    "trainable_backbone_layers": 2,
                     "resize": False,
                     "image_size": None,
                 },
@@ -203,6 +205,7 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
                     "model_name": "fasterrcnn_mobilenet_v3_large_fpn",
                     "optimizer_name": "sgd",
                     "num_epochs": 3,
+                    "trainable_backbone_layers": 2,
                     "resize": True,
                     "image_size": [640, 640],
                     "use_object_crop": True,
@@ -262,9 +265,17 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertIn("Prueba 1", html_content)
         self.assertIn("Prueba 2", html_content)
         self.assertLess(html_content.index("Prueba 1"), html_content.index("Prueba 2"))
+        self.assertIn("Faster R-CNN ResNet50 FPN · SGD · 2 capas del backbone entrenables · Flip horizontal", html_content)
+        self.assertIn(
+            "Faster R-CNN MobileNet V3 Large FPN · SGD · 2 capas del backbone entrenables · "
+            "Flip horizontal + Object crop + Oversampling dent/scratch",
+            html_content,
+        )
         self.assertIn("Dataset y transforms", html_content)
         self.assertIn("RandomObjectCropDetection", html_content)
         self.assertIn("mAP por clase en validacion", html_content)
+        self.assertIn("Abolladura (dent)", html_content)
+        self.assertIn("Rayón (scratch)", html_content)
         self.assertIn("Curvas precision-recall por clase", html_content)
         self.assertIn("history-chart", html_content)
         self.assertIn("Sensibilidad a NMS del modelo seleccionado", html_content)
@@ -278,6 +289,12 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertNotIn("Split de comparacion", html_content)
         self.assertNotIn("Comparacion en val", html_content)
         self.assertNotIn("Resumen global", html_content)
+        self.assertNotIn("<td>Dataset</td>", html_content)
+        self.assertNotIn("<td>CarDD_COCO</td>", html_content)
+        self.assertNotIn("Transform validacion", html_content)
+        self.assertNotIn("<td>ToTensorDetection</td>", html_content)
+        self.assertNotIn("ToTensorDetection + RandomHorizontalFlipDetection", html_content)
+        self.assertIn("RandomHorizontalFlipDetection(p=0.5)", html_content)
 
     def test_is_detection_test_report_complete_detects_missing_sections(self):
         complete_report = {

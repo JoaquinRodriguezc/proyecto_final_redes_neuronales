@@ -487,6 +487,31 @@ def _build_html_table(data, columns=None, classes="results-table"):
     return frame.to_html(index=False, classes=classes, border=0)
 
 
+def _localize_class_name(class_name) -> str:
+    english_name = str(class_name or "").strip()
+    spanish_names = {
+        "dent": "Abolladura",
+        "scratch": "Rayón",
+        "crack": "Grieta",
+        "glass shatter": "Vidrio roto",
+        "lamp broken": "Faro roto",
+        "tire flat": "Neumático pinchado",
+    }
+    spanish_name = spanish_names.get(english_name)
+    if not spanish_name:
+        return english_name
+    return f"{spanish_name} ({english_name})"
+
+
+def _localize_class_metric_rows(class_metrics) -> list[dict]:
+    rows = []
+    for row in class_metrics or []:
+        localized_row = dict(row)
+        localized_row["class_name"] = _localize_class_name(row.get("class_name"))
+        rows.append(localized_row)
+    return rows
+
+
 def _safe_float(value):
     if value is None or pd.isna(value):
         return None
@@ -618,8 +643,8 @@ def _make_multi_series_svg(
 def _build_dataset_transform_rows(config: dict, comparison_split: str = "val") -> list[dict]:
     config = config or {}
     use_object_crop = bool(config.get("use_object_crop", False))
-    oversample_target_factor = config.get("oversample_target_factor")
-    has_oversampling = oversample_target_factor is not None and float(oversample_target_factor) > 1.0
+    oversample_target_factor = _safe_float(config.get("oversample_target_factor"))
+    has_oversampling = oversample_target_factor is not None and oversample_target_factor > 1.0
     target_classes = config.get("target_classes") or []
     if isinstance(target_classes, (list, tuple)):
         target_classes_value = ", ".join(str(value) for value in target_classes) or "No aplica"
@@ -627,9 +652,7 @@ def _build_dataset_transform_rows(config: dict, comparison_split: str = "val") -
         target_classes_value = str(target_classes)
 
     return [
-        {"item": "Dataset", "valor": "CarDD_COCO"},
-        {"item": "Transform validacion", "valor": "ToTensorDetection"},
-        {"item": "Transform entrenamiento base", "valor": "ToTensorDetection + RandomHorizontalFlipDetection(p=0.5)"},
+        {"item": "Transform entrenamiento base", "valor": "RandomHorizontalFlipDetection(p=0.5)"},
         {"item": "resize", "valor": config.get("resize")},
         {"item": "image_size", "valor": config.get("image_size")},
         {
@@ -650,6 +673,78 @@ def _build_dataset_transform_rows(config: dict, comparison_split: str = "val") -
         },
         {"item": "Clases objetivo augmentation", "valor": target_classes_value},
     ]
+
+
+def _humanize_detection_model_name(model_name) -> str:
+    model_name = str(model_name or "").strip()
+    readable_names = {
+        "fcos": "FCOS ResNet50 FPN",
+        "retinanet": "RetinaNet ResNet50 FPN",
+        "fasterrcnn": "Faster R-CNN ResNet50 FPN",
+        "fasterrcnn_mobilenet_v3_large_fpn": "Faster R-CNN MobileNet V3 Large FPN",
+        "fasterrcnn_mobilenet_v3_large_320_fpn": "Faster R-CNN MobileNet V3 Large 320 FPN",
+    }
+    return readable_names.get(model_name, model_name or "Modelo")
+
+
+def _format_optimizer_name(optimizer_name) -> str:
+    optimizer_name = str(optimizer_name or "").strip().lower()
+    readable_names = {
+        "sgd": "SGD",
+        "adam": "Adam",
+        "adamw": "AdamW",
+    }
+    return readable_names.get(optimizer_name, optimizer_name.upper() if optimizer_name else "Optimizer")
+
+
+def _format_trainable_layers_label(trainable_layers) -> str:
+    if trainable_layers is None or pd.isna(trainable_layers):
+        return "capas del backbone entrenables no especificadas"
+    try:
+        trainable_layers = int(trainable_layers)
+    except (TypeError, ValueError):
+        return f"{trainable_layers} capas del backbone entrenables"
+    layer_word = "capa" if trainable_layers == 1 else "capas"
+    return f"{trainable_layers} {layer_word} del backbone entrenables"
+
+
+def _format_target_classes_label(target_classes) -> str:
+    if not target_classes:
+        return ""
+    if isinstance(target_classes, (list, tuple)):
+        return "/".join(str(value) for value in target_classes)
+    return str(target_classes)
+
+
+def _build_augmentation_title_parts(config: dict) -> list[str]:
+    config = config or {}
+    augmentation_parts = ["Flip horizontal"]
+
+    if config.get("use_object_crop", False):
+        augmentation_parts.append("Object crop")
+
+    oversample_target_factor = config.get("oversample_target_factor")
+    has_oversampling = oversample_target_factor is not None and float(oversample_target_factor) > 1.0
+    if has_oversampling:
+        target_classes_label = _format_target_classes_label(config.get("target_classes"))
+        oversampling_label = "Oversampling"
+        if target_classes_label:
+            oversampling_label = f"{oversampling_label} {target_classes_label}"
+        augmentation_parts.append(oversampling_label)
+
+    return augmentation_parts
+
+
+def _build_comparison_run_title(run: dict) -> str:
+    run = run or {}
+    config = run.get("config") or {}
+    model_label = _humanize_detection_model_name(config.get("model_name"))
+    optimizer_label = _format_optimizer_name(run.get("optimizer_name") or config.get("optimizer_name"))
+    layers_label = _format_trainable_layers_label(
+        config.get("trainable_backbone_layers", run.get("trainable_backbone_layers"))
+    )
+    augmentations_label = " + ".join(_build_augmentation_title_parts(config))
+    return f"{model_label} · {optimizer_label} · {layers_label} · {augmentations_label}"
 
 
 def _make_pr_curve_svg(curve: dict, width: int = 420, height: int = 260) -> str:
@@ -793,6 +888,7 @@ def export_model_comparison_html(
         run_id = str(run.get("run_id", ""))
         is_selected = bool(selected_run_id and run_id == selected_run_id)
         duration_hms = _format_duration_hms(run.get("training_duration_seconds"))
+        run_title = _build_comparison_run_title(run)
 
         run_meta_rows = [
             {"item": "Experimento", "valor": run.get("name")},
@@ -808,7 +904,7 @@ def export_model_comparison_html(
             columns=["item", "valor"],
         )
         class_metrics_html = _build_html_table(
-            class_metrics,
+            _localize_class_metric_rows(class_metrics),
             columns=["class_id", "class_name", "map_per_class"],
         )
         loss_chart_html = _make_multi_series_svg(
@@ -847,7 +943,7 @@ def export_model_comparison_html(
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba {run_index}</p>
-                        <h2>{escape(str(run.get('name') or 'Experimento'))}</h2>
+                        <h2>{escape(run_title)}</h2>
                     </div>
                     {selected_badge}
                 </div>
@@ -1250,7 +1346,7 @@ def export_detection_test_report_html(
     nms_sensitivity = report.get("nms_sensitivity") or {}
 
     class_metrics_html = _build_html_table(
-        class_metrics,
+        _localize_class_metric_rows(class_metrics),
         columns=["class_id", "class_name", "map_per_class", "mar_100_per_class"],
     )
     dataset_diagnostics_html = _build_html_table(
