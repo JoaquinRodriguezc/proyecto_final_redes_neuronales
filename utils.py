@@ -862,6 +862,42 @@ def _build_nms_section_html(nms_sensitivity: dict) -> str:
     """
 
 
+def _build_model_comparison_summary_rows(comparison_runs: list[dict]) -> list[dict]:
+    summary_rows = []
+    for run_index, run in enumerate(comparison_runs or [], start=1):
+        report = run.get("validation_report") or run.get("comparison_report") or {}
+        summary = report.get("summary") or {}
+        summary_rows.append(
+            {
+                "Prueba": run_index,
+                "Nombre experimento": run.get("name"),
+                "best_mAP": _format_metric_4_decimals(
+                    run.get("best_map", summary.get("map"))
+                ),
+                "mAP@50": _format_metric_4_decimals(
+                    run.get("best_map_50", summary.get("map_50"))
+                ),
+            }
+        )
+    return summary_rows
+
+
+def _build_model_comparison_summary_html(comparison_runs: list[dict]) -> str:
+    summary_table_html = _build_html_table(
+        _build_model_comparison_summary_rows(comparison_runs),
+        columns=["Prueba", "Nombre experimento", "best_mAP", "mAP@50"],
+    )
+    return f"""
+    <section class="summary-section" id="tabla-resumen">
+        <div class="nested-header">
+            <h2>Tabla resumen</h2>
+            <p>Resumen final por prueba, usando las metricas ya guardadas para cada corrida.</p>
+        </div>
+        <div class="table-wrap">{summary_table_html}</div>
+    </section>
+    """
+
+
 def export_model_comparison_html(
     comparison_runs: list[dict],
     output_path,
@@ -937,9 +973,12 @@ def export_model_comparison_html(
             else ""
         )
 
+        active_class = " is-active" if run_index == 1 else ""
+        selected_class = " selected-run" if is_selected else ""
+        dot_active_class = " is-active" if run_index == 1 else ""
         run_sections.append(
             f"""
-            <section class="run-card{' selected-run' if is_selected else ''}">
+            <section class="run-card{active_class}{selected_class}" data-slide-index="{run_index - 1}">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba {run_index}</p>
@@ -997,6 +1036,19 @@ def export_model_comparison_html(
             """
         )
 
+    carousel_dots_html = "".join(
+        f"""
+        <button
+            class="carousel-dot{' is-active' if index == 0 else ''}"
+            type="button"
+            data-slide-target="{index}"
+            aria-label="Ir a prueba {index + 1}"
+        ></button>
+        """
+        for index in range(len(comparison_runs))
+    )
+    summary_table_html = _build_model_comparison_summary_html(comparison_runs)
+
     html_content = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1037,7 +1089,8 @@ def export_model_comparison_html(
         }}
 
         .hero,
-        .run-card {{
+        .run-card,
+        .summary-section {{
             border: 1px solid var(--border);
             border-radius: 22px;
             background: var(--surface);
@@ -1064,6 +1117,84 @@ def export_model_comparison_html(
         .run-card {{
             padding: 24px;
             margin-bottom: 24px;
+        }}
+
+        .summary-section {{
+            padding: 24px;
+            margin-top: 24px;
+        }}
+
+        .summary-section h2 {{
+            margin: 0 0 4px;
+            font-size: clamp(1.3rem, 2vw, 1.9rem);
+        }}
+
+        .carousel-shell {{
+            margin-bottom: 22px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: var(--shadow);
+        }}
+
+        .carousel-controls {{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }}
+
+        .carousel-button {{
+            appearance: none;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 16px;
+            background: var(--surface-strong);
+            color: var(--text);
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+        }}
+
+        .carousel-button:hover {{
+            transform: translateY(-1px);
+            background: rgba(21, 101, 192, 0.08);
+            border-color: rgba(21, 101, 192, 0.35);
+        }}
+
+        .carousel-counter {{
+            color: var(--muted);
+            font-weight: 800;
+            text-align: center;
+        }}
+
+        .carousel-dots {{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }}
+
+        .carousel-dot {{
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border: 0;
+            border-radius: 999px;
+            background: rgba(17, 39, 54, 0.25);
+            cursor: pointer;
+        }}
+
+        .carousel-dot.is-active {{
+            width: 28px;
+            background: var(--accent);
+        }}
+
+        .run-card:not(.is-active) {{
+            display: none;
         }}
 
         .selected-run {{
@@ -1308,6 +1439,10 @@ def export_model_comparison_html(
             .run-card {{ border-radius: 16px; }}
             .run-card,
             .hero {{ padding: 18px; }}
+            .carousel-controls {{
+                display: grid;
+                grid-template-columns: 1fr;
+            }}
         }}
     </style>
 </head>
@@ -1321,8 +1456,62 @@ def export_model_comparison_html(
                 {escape(f'Modelo seleccionado por {selection_reason}.' if selection_reason else '')}
             </p>
         </section>
+        <section class="carousel-shell" aria-label="Navegacion de pruebas">
+            <div class="carousel-controls">
+                <button class="carousel-button" id="prev-slide" type="button">← Anterior</button>
+                <span class="carousel-counter" id="slide-counter">Prueba 1 de {len(comparison_runs)}</span>
+                <button class="carousel-button" id="next-slide" type="button">Siguiente →</button>
+            </div>
+            <div class="carousel-dots" aria-label="Selector de pruebas">
+                {carousel_dots_html}
+            </div>
+        </section>
         {''.join(run_sections)}
+        {summary_table_html}
     </div>
+    <script>
+        (() => {{
+            const slides = Array.from(document.querySelectorAll('.run-card[data-slide-index]'));
+            const dots = Array.from(document.querySelectorAll('.carousel-dot[data-slide-target]'));
+            const counter = document.getElementById('slide-counter');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {{
+                if (!slides.length) {{
+                    return;
+                }}
+                currentSlide = (index + slides.length) % slides.length;
+                slides.forEach((slide, slideIndex) => {{
+                    slide.classList.toggle('is-active', slideIndex === currentSlide);
+                }});
+                dots.forEach((dot, dotIndex) => {{
+                    dot.classList.toggle('is-active', dotIndex === currentSlide);
+                    dot.setAttribute('aria-current', dotIndex === currentSlide ? 'true' : 'false');
+                }});
+                if (counter) {{
+                    counter.textContent = `Prueba ${{currentSlide + 1}} de ${{slides.length}}`;
+                }}
+                window.scrollTo({{ top: 0, behavior: 'smooth' }});
+            }}
+
+            prevButton?.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextButton?.addEventListener('click', () => showSlide(currentSlide + 1));
+            dots.forEach((dot) => {{
+                dot.addEventListener('click', () => showSlide(Number(dot.dataset.slideTarget || 0)));
+            }});
+            document.addEventListener('keydown', (event) => {{
+                if (event.key === 'ArrowLeft') {{
+                    showSlide(currentSlide - 1);
+                }}
+                if (event.key === 'ArrowRight') {{
+                    showSlide(currentSlide + 1);
+                }}
+            }});
+            showSlide(0);
+        }})();
+    </script>
 </body>
 </html>
 """

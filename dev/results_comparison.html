@@ -38,7 +38,8 @@
         }
 
         .hero,
-        .run-card {
+        .run-card,
+        .summary-section {
             border: 1px solid var(--border);
             border-radius: 22px;
             background: var(--surface);
@@ -65,6 +66,85 @@
         .run-card {
             padding: 24px;
             margin-bottom: 24px;
+        }
+
+        .summary-section {
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .summary-section h2 {
+            margin: 0 0 4px;
+            font-size: clamp(1.3rem, 2vw, 1.9rem);
+        }
+
+
+        .carousel-shell {
+            margin-bottom: 22px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .carousel-button {
+            appearance: none;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 16px;
+            background: var(--surface-strong);
+            color: var(--text);
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+        }
+
+        .carousel-button:hover {
+            transform: translateY(-1px);
+            background: rgba(21, 101, 192, 0.08);
+            border-color: rgba(21, 101, 192, 0.35);
+        }
+
+        .carousel-counter {
+            color: var(--muted);
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border: 0;
+            border-radius: 999px;
+            background: rgba(17, 39, 54, 0.25);
+            cursor: pointer;
+        }
+
+        .carousel-dot.is-active {
+            width: 28px;
+            background: var(--accent);
+        }
+
+        .run-card:not(.is-active) {
+            display: none;
         }
 
         .selected-run {
@@ -309,6 +389,10 @@
             .run-card { border-radius: 16px; }
             .run-card,
             .hero { padding: 18px; }
+            .carousel-controls {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -323,7 +407,84 @@
             </p>
         </section>
 
-            <section class="run-card">
+
+        <section class="carousel-shell" aria-label="Navegacion de pruebas">
+            <div class="carousel-controls">
+                <button class="carousel-button" id="prev-slide" type="button">← Anterior</button>
+                <span class="carousel-counter" id="slide-counter">Prueba 1 de 11</span>
+                <button class="carousel-button" id="next-slide" type="button">Siguiente →</button>
+            </div>
+            <div class="carousel-dots" aria-label="Selector de pruebas">
+
+        <button
+            class="carousel-dot is-active"
+            type="button"
+            data-slide-target="0"
+            aria-label="Ir a prueba 1"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="1"
+            aria-label="Ir a prueba 2"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="2"
+            aria-label="Ir a prueba 3"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="3"
+            aria-label="Ir a prueba 4"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="4"
+            aria-label="Ir a prueba 5"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="5"
+            aria-label="Ir a prueba 6"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="6"
+            aria-label="Ir a prueba 7"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="7"
+            aria-label="Ir a prueba 8"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="8"
+            aria-label="Ir a prueba 9"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="9"
+            aria-label="Ir a prueba 10"
+        ></button>
+        <button
+            class="carousel-dot"
+            type="button"
+            data-slide-target="10"
+            aria-label="Ir a prueba 11"
+        ></button>
+            </div>
+        </section>
+        <section class="run-card is-active" data-slide-index="0">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 1</p>
@@ -658,7 +819,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="1">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 2</p>
@@ -993,7 +1154,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="2">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 3</p>
@@ -1328,7 +1489,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="3">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 4</p>
@@ -1663,7 +1824,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="4">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 5</p>
@@ -1998,7 +2159,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="5">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 6</p>
@@ -2333,7 +2494,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="6">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 7</p>
@@ -2668,7 +2829,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="7">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 8</p>
@@ -3003,7 +3164,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="8">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 9</p>
@@ -3338,7 +3499,7 @@
 
             </section>
 
-            <section class="run-card selected-run">
+            <section class="run-card selected-run" data-slide-index="9">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 10</p>
@@ -3737,7 +3898,7 @@
 
             </section>
 
-            <section class="run-card">
+            <section class="run-card" data-slide-index="10">
                 <div class="run-header">
                     <div>
                         <p class="eyebrow">Prueba 11</p>
@@ -4072,6 +4233,135 @@
 
             </section>
 
+
+    <section class="summary-section" id="tabla-resumen">
+        <div class="nested-header">
+            <h2>Tabla resumen</h2>
+            <p>Resumen final por prueba, usando las metricas ya guardadas para cada corrida.</p>
+        </div>
+        <div class="table-wrap"><table class="dataframe results-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Prueba</th>
+      <th>Nombre experimento</th>
+      <th>best_mAP</th>
+      <th>mAP@50</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>fcos_partial_backbone_fixed_size</td>
+      <td>0.4386</td>
+      <td>0.5767</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>retinanet_partial_backbone_fixed_size</td>
+      <td>0.3705</td>
+      <td>0.4747</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>fcos_partial_backbone_fixed_size</td>
+      <td>0.0105</td>
+      <td>0.0419</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>retinanet_partial_backbone_fixed_size</td>
+      <td>0.0000</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td>
+      <td>0.3308</td>
+      <td>0.5084</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>fasterrcnn_mobilenet_v3_large_partial_backbone</td>
+      <td>0.4375</td>
+      <td>0.6243</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td>
+      <td>0.3889</td>
+      <td>0.5715</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>fasterrcnn_mobilenet_v3_large_partial_backbone</td>
+      <td>0.4411</td>
+      <td>0.6298</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>fasterrcnn_mobilenet_v3_large_320_partial_backbone</td>
+      <td>0.3953</td>
+      <td>0.5782</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>fasterrcnn_mobilenet_v3_large_dent_scratch_oversample_crop</td>
+      <td>0.4267</td>
+      <td>0.6225</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>fasterrcnn_partial_backbone</td>
+      <td>0.4506</td>
+      <td>0.6362</td>
+    </tr>
+  </tbody>
+</table></div>
+    </section>
+
     </div>
+    <script>
+        (() => {
+            const slides = Array.from(document.querySelectorAll('.run-card[data-slide-index]'));
+            const dots = Array.from(document.querySelectorAll('.carousel-dot[data-slide-target]'));
+            const counter = document.getElementById('slide-counter');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                if (!slides.length) {
+                    return;
+                }
+                currentSlide = (index + slides.length) % slides.length;
+                slides.forEach((slide, slideIndex) => {
+                    slide.classList.toggle('is-active', slideIndex === currentSlide);
+                });
+                dots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle('is-active', dotIndex === currentSlide);
+                    dot.setAttribute('aria-current', dotIndex === currentSlide ? 'true' : 'false');
+                });
+                if (counter) {
+                    counter.textContent = `Prueba ${currentSlide + 1} de ${slides.length}`;
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            prevButton?.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextButton?.addEventListener('click', () => showSlide(currentSlide + 1));
+            dots.forEach((dot) => {
+                dot.addEventListener('click', () => showSlide(Number(dot.dataset.slideTarget || 0)));
+            });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') {
+                    showSlide(currentSlide - 1);
+                }
+                if (event.key === 'ArrowRight') {
+                    showSlide(currentSlide + 1);
+                }
+            });
+            showSlide(0);
+        })();
+    </script>
 </body>
 </html>

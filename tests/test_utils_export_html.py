@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -265,6 +266,20 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertIn("Prueba 1", html_content)
         self.assertIn("Prueba 2", html_content)
         self.assertLess(html_content.index("Prueba 1"), html_content.index("Prueba 2"))
+        self.assertIn("carousel-controls", html_content)
+        self.assertIn("prev-slide", html_content)
+        self.assertIn("next-slide", html_content)
+        self.assertIn("slide-counter", html_content)
+        self.assertIn('data-slide-index="0"', html_content)
+        self.assertIn('data-slide-index="1"', html_content)
+        self.assertIn("Tabla resumen", html_content)
+        self.assertIn("Nombre experimento", html_content)
+        self.assertIn("best_mAP", html_content)
+        self.assertIn("mAP@50", html_content)
+        self.assertIn("fasterrcnn_baseline", html_content)
+        self.assertIn("oversample_crop", html_content)
+        self.assertEqual(len(re.findall(r'<section class="run-card[^"]*"', html_content)), 2)
+        self.assertEqual(len(re.findall(r'<section class="run-card[^"]*is-active[^"]*"', html_content)), 1)
         self.assertIn("Faster R-CNN ResNet50 FPN · SGD · 2 capas del backbone entrenables · Flip horizontal", html_content)
         self.assertIn(
             "Faster R-CNN MobileNet V3 Large FPN · SGD · 2 capas del backbone entrenables · "
