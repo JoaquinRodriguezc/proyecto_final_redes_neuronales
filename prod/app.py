@@ -822,9 +822,36 @@ def render_hero(evaluation_result: dict) -> None:
     )
 
 
-def render_sidebar(evaluation_result: dict) -> tuple[float, bool]:
+def auto_select_scan_config(pil_image: Image.Image) -> tuple[str, int, float, bool]:
+    """Elige modo y grilla automaticamente segun resolucion.
+
+    Siempre usa high-detail y umbral 0.55. La grilla escala con el tamano:
+    imagen chica -> Estandar, media -> Tiled 2x2, grande -> Tiled 3x3.
+    """
+    width, height = pil_image.size
+    megapixels = (width * height) / 1_000_000
+    score_threshold = 0.55
+    high_detail = True
+    if megapixels <= 1.0:
+        return "Estandar", 2, score_threshold, high_detail
+    if megapixels <= 4.0:
+        return "Tiled", 2, score_threshold, high_detail
+    return "Tiled", 3, score_threshold, high_detail
+
+
+def render_sidebar(evaluation_result: dict) -> dict:
     summary = evaluation_result.get("summary", {})
     with st.sidebar:
+        technical_console = st.toggle(
+            "Consola tecnica",
+            value=False,
+            help="Controles avanzados de umbral y modo de escaneo. Apagado: el sistema elige todo automaticamente.",
+        )
+        if not technical_console:
+            st.caption("Modo automatico: subi una imagen y el sistema elige la mejor configuracion.")
+            return {"technical_console": False}
+
+        st.space("small")
         st.markdown("### :material/tune: Consola tecnica")
         st.caption("Controles globales.")
 
@@ -913,7 +940,13 @@ def render_sidebar(evaluation_result: dict) -> tuple[float, bool]:
             st.markdown(f'<div class="chip-row">{"".join(class_chips)}</div>', unsafe_allow_html=True)
 
 
-    return score_threshold, scan_mode, high_detail, grid_size
+    return {
+        "technical_console": True,
+        "score_threshold": score_threshold,
+        "scan_mode": scan_mode,
+        "high_detail": high_detail,
+        "grid_size": grid_size,
+    }
 
 
 def render_empty_state() -> None:
@@ -1208,7 +1241,7 @@ def run_analysis_flow(
     return detections, result_image, summary
 
 
-def render_inspection_tab(score_threshold: float, scan_mode: str, high_detail: bool, grid_size: int) -> None:
+def render_inspection_tab(sidebar_config: dict) -> None:
     render_section_header(
         ":material/car_crash: Analizar imagen",
         "Carga una imagen, ejecuta el detector y revisa los hallazgos encontrados.",
@@ -1225,6 +1258,15 @@ def render_inspection_tab(score_threshold: float, scan_mode: str, high_detail: b
         if st.session_state.get("inspection_error"):
             st.caption(f"Ultimo error registrado: {st.session_state['inspection_error']}")
         return
+
+    if sidebar_config.get("technical_console"):
+        score_threshold = sidebar_config["score_threshold"]
+        scan_mode = sidebar_config["scan_mode"]
+        high_detail = sidebar_config["high_detail"]
+        grid_size = sidebar_config["grid_size"]
+    else:
+        scan_mode, grid_size, score_threshold, high_detail = auto_select_scan_config(pil_image)
+        st.caption("Configuracion automatica aplicada segun la imagen.")
 
     try:
         detections, result_image, summary = run_analysis_flow(
@@ -1541,7 +1583,10 @@ def render_model_metrics(evaluation_result: dict) -> None:
             st.caption("Comparacion de precision media y recall medio por tipo de dano.")
             metrics_view = class_metrics.copy()
             metrics_view["Clase"] = metrics_view["class_name"].map(class_name_map).fillna(metrics_view["class_name"])
-            st.bar_chart(metrics_view.set_index("Clase")[["map_per_class", "mar_100_per_class"]])
+            st.bar_chart(
+                metrics_view.set_index("Clase")[["map_per_class", "mar_100_per_class"]],
+                stack=False,
+            )
 
     st.caption(
         "Estas metricas provienen del conjunto de test. Glass shatter y tire flat tienden a rendir mejor; crack, dent y scratch suelen ser mas dificiles."
@@ -1622,7 +1667,7 @@ def main() -> None:
     inject_custom_css()
     ensure_session_defaults()
     evaluation_result = load_evaluation_summary()
-    score_threshold, scan_mode, high_detail, grid_size = render_sidebar(evaluation_result)
+    sidebar_config = render_sidebar(evaluation_result)
     render_hero(evaluation_result)
     st.space("small")
 
@@ -1635,7 +1680,7 @@ def main() -> None:
     )
 
     with inspection_tab:
-        render_inspection_tab(score_threshold, scan_mode, high_detail, grid_size)
+        render_inspection_tab(sidebar_config)
     with performance_tab:
         render_model_metrics(evaluation_result)
     with project_tab:
