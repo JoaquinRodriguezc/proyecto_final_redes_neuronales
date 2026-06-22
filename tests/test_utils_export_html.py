@@ -11,6 +11,7 @@ from utils import (
     build_detection_test_results_comparison_df,
     detection_test_result_paths,
     export_detection_test_report_html,
+    export_model_comparison_html,
     export_results_comparison_html,
     is_detection_test_report_complete,
     save_detection_test_result_artifacts,
@@ -148,6 +149,135 @@ class ExportResultsComparisonHtmlTest(unittest.TestCase):
         self.assertIn("glass shatter", html_content)
         self.assertIn("crack", html_content)
         self.assertIn("pr-chart", html_content)
+
+    def test_export_model_comparison_html_renders_runs_transforms_pr_and_selected_nms(self):
+        comparison_runs = [
+            {
+                "run_id": "run_001",
+                "created_at": "2026-06-12T12:00:00",
+                "name": "fasterrcnn_baseline",
+                "optimizer_name": "sgd",
+                "best_epoch": 2,
+                "checkpoint_path": "dev/experiments/run_001_best.pth",
+                "training_duration_seconds": 120.0,
+                "config": {
+                    "model_name": "fasterrcnn",
+                    "optimizer_name": "sgd",
+                    "num_epochs": 2,
+                    "resize": False,
+                    "image_size": None,
+                },
+                "history": [
+                    {"epoch": 1, "train_loss": 1.0, "val_loss": 1.1, "map": 0.1, "map_50": 0.2},
+                    {"epoch": 2, "train_loss": 0.8, "val_loss": 0.9, "map": 0.3, "map_50": 0.4},
+                ],
+                "validation_report": {
+                    "summary": {"map": 0.3, "map_50": 0.4, "map_75": 0.25, "mar_100": 0.5},
+                    "class_metrics": [
+                        {"class_id": 1, "class_name": "dent", "map_per_class": 0.2, "mar_100_per_class": 0.4},
+                    ],
+                    "pr_curves": [
+                        {
+                            "class_id": 1,
+                            "class_name": "dent",
+                            "iou": 0.5,
+                            "area": "all",
+                            "max_dets": 100,
+                            "recall": [0.0, 1.0],
+                            "precision": [1.0, 0.5],
+                            "ap_50": 0.75,
+                        }
+                    ],
+                    "nms_sensitivity": {"skipped": True, "results": []},
+                },
+            },
+            {
+                "run_id": "run_002",
+                "created_at": "2026-06-12T13:00:00",
+                "name": "oversample_crop",
+                "optimizer_name": "sgd",
+                "best_epoch": 3,
+                "checkpoint_path": "dev/experiments/run_002_best.pth",
+                "training_duration_seconds": 180.0,
+                "config": {
+                    "model_name": "fasterrcnn_mobilenet_v3_large_fpn",
+                    "optimizer_name": "sgd",
+                    "num_epochs": 3,
+                    "resize": True,
+                    "image_size": [640, 640],
+                    "use_object_crop": True,
+                    "object_crop_probability": 0.5,
+                    "oversample_target_factor": 2.5,
+                    "target_classes": ["dent", "scratch"],
+                },
+                "history": [
+                    {"epoch": 1, "train_loss": 1.2, "val_loss": 1.0, "map": 0.2, "map_50": 0.3},
+                    {"epoch": 2, "train_loss": 0.9, "val_loss": 0.8, "map": 0.35, "map_50": 0.45},
+                    {"epoch": 3, "train_loss": 0.7, "val_loss": 0.75, "map": 0.38, "map_50": 0.5},
+                ],
+                "validation_report": {
+                    "summary": {"map": 0.38, "map_50": 0.5, "map_75": 0.3, "mar_100": 0.55},
+                    "class_metrics": [
+                        {"class_id": 2, "class_name": "scratch", "map_per_class": 0.25, "mar_100_per_class": 0.45},
+                    ],
+                    "pr_curves": [
+                        {
+                            "class_id": 2,
+                            "class_name": "scratch",
+                            "iou": 0.5,
+                            "area": "all",
+                            "max_dets": 100,
+                            "recall": [0.0, 1.0],
+                            "precision": [0.9, 0.4],
+                            "ap_50": 0.65,
+                        }
+                    ],
+                    "nms_sensitivity": {
+                        "supported": True,
+                        "baseline_nms_threshold": 0.5,
+                        "score_threshold": 0.05,
+                        "detections_per_img": 100,
+                        "conclusion": "El barrido de NMS apenas mueve el mAP global.",
+                        "results": [
+                            {"nms_threshold": 0.3, "map": 0.37, "map_50": 0.49, "map_75": 0.29, "mar_100": 0.53},
+                            {"nms_threshold": 0.5, "map": 0.38, "map_50": 0.50, "map_75": 0.30, "mar_100": 0.55},
+                            {"nms_threshold": 0.7, "map": 0.37, "map_50": 0.48, "map_75": 0.31, "mar_100": 0.57},
+                        ],
+                    },
+                },
+            },
+        ]
+
+        output_path = Path(__file__).resolve().parent / "artifacts" / "model_comparison.html"
+        generated_path = export_model_comparison_html(
+            comparison_runs,
+            output_path,
+            selected_run_id="run_002",
+            selection_reason="mock",
+            comparison_split="val",
+        )
+
+        self.assertEqual(generated_path, output_path)
+        html_content = output_path.read_text(encoding="utf-8")
+        self.assertIn("Prueba 1", html_content)
+        self.assertIn("Prueba 2", html_content)
+        self.assertLess(html_content.index("Prueba 1"), html_content.index("Prueba 2"))
+        self.assertIn("Dataset y transforms", html_content)
+        self.assertIn("RandomObjectCropDetection", html_content)
+        self.assertIn("mAP por clase en validacion", html_content)
+        self.assertIn("Curvas precision-recall por clase", html_content)
+        self.assertIn("history-chart", html_content)
+        self.assertIn("Sensibilidad a NMS del modelo seleccionado", html_content)
+        self.assertIn("NMS threshold", html_content)
+        self.assertIn("El barrido de NMS apenas mueve el mAP global.", html_content)
+        self.assertNotIn("Run ID", html_content)
+        self.assertNotIn("Fecha", html_content)
+        self.assertNotIn("mAR@100", html_content)
+        self.assertNotIn("mar_100", html_content)
+        self.assertNotIn("Checkpoint", html_content)
+        self.assertNotIn("Split de comparacion", html_content)
+        self.assertNotIn("Comparacion en val", html_content)
+        self.assertNotIn("Resumen global", html_content)
 
     def test_is_detection_test_report_complete_detects_missing_sections(self):
         complete_report = {

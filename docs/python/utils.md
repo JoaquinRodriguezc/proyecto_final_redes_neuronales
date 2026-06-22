@@ -86,6 +86,21 @@ Exporta un `DataFrame` a una tabla HTML estilizada, con contenedor responsive, e
 
 Cuando existe `training_duration_seconds`, la exportacion agrega una columna visible `duration_hms` en formato `HH:MM:SS` y prioriza esa vista compacta para la tabla comparativa.
 
+### `export_model_comparison_html(comparison_runs, output_path, title="Comparacion modelo vs modelo", selected_run_id=None, selection_reason=None, comparison_split="val")`
+
+Genera el HTML detallado `modelo vs modelo` usado por el notebook de entrenamiento.
+
+El reporte muestra las corridas en orden cronologico e incluye, por prueba:
+
+- configuracion general de la corrida
+- dataset y transforms usados
+- metricas globales de validacion
+- mAP por clase
+- curvas de loss y mAP por epoca
+- curvas precision-recall por clase
+
+Si la corrida coincide con `selected_run_id`, tambien renderiza la tabla y grafica de sensibilidad a `NMS`.
+
 ### `is_detection_test_report_complete(report)`
 
 Valida si un JSON de `best_test_result` ya tiene todas las secciones requeridas por el nuevo reporte final:

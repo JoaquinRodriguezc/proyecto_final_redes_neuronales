@@ -461,13 +461,195 @@ def _build_info_cards_html(summary: dict) -> str:
     )
 
 
+def _build_comparison_metric_cards_html(summary: dict) -> str:
+    cards = [
+        ("mAP@50:95", _format_metric_4_decimals(summary.get("map"))),
+        ("mAP@50", _format_metric_4_decimals(summary.get("map_50"))),
+        ("mAP@75", _format_metric_4_decimals(summary.get("map_75"))),
+    ]
+    return "".join(
+        f"""
+        <article class="metric-card">
+            <span class="metric-label">{escape(label)}</span>
+            <strong class="metric-value">{escape(value)}</strong>
+        </article>
+        """
+        for label, value in cards
+    )
+
+
 def _build_html_table(data, columns=None, classes="results-table"):
     frame = pd.DataFrame(data)
     if columns is not None and not frame.empty:
-        frame = frame[columns]
+        frame = frame.reindex(columns=columns)
     if frame.empty:
         return '<p class="empty-state">No hay datos disponibles para esta seccion.</p>'
     return frame.to_html(index=False, classes=classes, border=0)
+
+
+def _safe_float(value):
+    if value is None or pd.isna(value):
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _make_multi_series_svg(
+    records,
+    x_key: str,
+    series_defs,
+    width: int = 580,
+    height: int = 290,
+    y_min=None,
+    y_max=None,
+    x_label: str = "Epoca",
+    y_label: str = "Valor",
+) -> str:
+    records = list(records or [])
+    series_defs = list(series_defs or [])
+    points_by_series = []
+    x_values = []
+    y_values = []
+
+    for key, label, css_class in series_defs:
+        points = []
+        for record in records:
+            x_value = _safe_float(record.get(x_key))
+            y_value = _safe_float(record.get(key))
+            if x_value is None or y_value is None:
+                continue
+            points.append((x_value, y_value))
+            x_values.append(x_value)
+            y_values.append(y_value)
+        if points:
+            points_by_series.append((label, css_class, points))
+
+    if not points_by_series:
+        return '<div class="empty-state">Sin puntos suficientes para graficar.</div>'
+
+    padding_left = 54
+    padding_right = 24
+    padding_top = 26
+    padding_bottom = 44
+    plot_width = width - padding_left - padding_right
+    plot_height = height - padding_top - padding_bottom
+
+    x_min = min(x_values)
+    x_max = max(x_values)
+    if x_min == x_max:
+        x_min -= 0.5
+        x_max += 0.5
+
+    computed_y_min = min(y_values)
+    computed_y_max = max(y_values)
+    y_min = computed_y_min if y_min is None else float(y_min)
+    y_max = computed_y_max if y_max is None else float(y_max)
+    if y_min == y_max:
+        y_min -= 0.05
+        y_max += 0.05
+    else:
+        y_padding = (y_max - y_min) * 0.08
+        y_min -= y_padding
+        y_max += y_padding
+
+    def scale_x(value):
+        return padding_left + ((float(value) - x_min) / (x_max - x_min)) * plot_width
+
+    def scale_y(value):
+        return padding_top + (1.0 - ((float(value) - y_min) / (y_max - y_min))) * plot_height
+
+    grid_lines = []
+    tick_labels = []
+    for tick_index in range(5):
+        ratio = tick_index / 4
+        x_value = x_min + ((x_max - x_min) * ratio)
+        y_value = y_min + ((y_max - y_min) * ratio)
+        x = scale_x(x_value)
+        y = scale_y(y_value)
+        grid_lines.append(
+            f'<line x1="{x:.2f}" y1="{padding_top}" x2="{x:.2f}" y2="{padding_top + plot_height}" class="grid-line" />'
+        )
+        grid_lines.append(
+            f'<line x1="{padding_left}" y1="{y:.2f}" x2="{padding_left + plot_width}" y2="{y:.2f}" class="grid-line" />'
+        )
+        tick_labels.append(
+            f'<text x="{x:.2f}" y="{height - 17}" class="axis-label" text-anchor="middle">{x_value:.2g}</text>'
+        )
+        tick_labels.append(
+            f'<text x="{padding_left - 10}" y="{y + 4:.2f}" class="axis-label" text-anchor="end">{y_value:.3g}</text>'
+        )
+
+    line_paths = []
+    legend_items = []
+    for index, (label, css_class, points) in enumerate(points_by_series):
+        polyline_points = " ".join(
+            f"{scale_x(x_value):.2f},{scale_y(y_value):.2f}"
+            for x_value, y_value in points
+        )
+        class_name = css_class or f"series-line-{index}"
+        line_paths.append(f'<polyline points="{polyline_points}" class="series-line {class_name}" />')
+        legend_x = padding_left + (index * 170)
+        legend_items.append(
+            f"""
+            <g class="chart-legend-item">
+                <line x1="{legend_x:.2f}" y1="16" x2="{legend_x + 24:.2f}" y2="16" class="series-line {class_name}" />
+                <text x="{legend_x + 30:.2f}" y="20" class="axis-label">{escape(str(label))}</text>
+            </g>
+            """
+        )
+
+    return f"""
+    <svg class="history-chart" viewBox="0 0 {width} {height}" role="img" aria-label="{escape(y_label)}">
+        <rect x="0" y="0" width="{width}" height="{height}" rx="16" ry="16" class="chart-bg" />
+        {''.join(grid_lines)}
+        <line x1="{padding_left}" y1="{padding_top + plot_height}" x2="{padding_left + plot_width}" y2="{padding_top + plot_height}" class="axis-line" />
+        <line x1="{padding_left}" y1="{padding_top}" x2="{padding_left}" y2="{padding_top + plot_height}" class="axis-line" />
+        {''.join(line_paths)}
+        {''.join(tick_labels)}
+        {''.join(legend_items)}
+        <text x="{padding_left + (plot_width / 2):.2f}" y="{height - 4}" class="axis-title" text-anchor="middle">{escape(x_label)}</text>
+        <text x="18" y="{padding_top + (plot_height / 2):.2f}" class="axis-title" text-anchor="middle" transform="rotate(-90 18 {padding_top + (plot_height / 2):.2f})">{escape(y_label)}</text>
+    </svg>
+    """
+
+
+def _build_dataset_transform_rows(config: dict, comparison_split: str = "val") -> list[dict]:
+    config = config or {}
+    use_object_crop = bool(config.get("use_object_crop", False))
+    oversample_target_factor = config.get("oversample_target_factor")
+    has_oversampling = oversample_target_factor is not None and float(oversample_target_factor) > 1.0
+    target_classes = config.get("target_classes") or []
+    if isinstance(target_classes, (list, tuple)):
+        target_classes_value = ", ".join(str(value) for value in target_classes) or "No aplica"
+    else:
+        target_classes_value = str(target_classes)
+
+    return [
+        {"item": "Dataset", "valor": "CarDD_COCO"},
+        {"item": "Transform validacion", "valor": "ToTensorDetection"},
+        {"item": "Transform entrenamiento base", "valor": "ToTensorDetection + RandomHorizontalFlipDetection(p=0.5)"},
+        {"item": "resize", "valor": config.get("resize")},
+        {"item": "image_size", "valor": config.get("image_size")},
+        {
+            "item": "RandomObjectCropDetection",
+            "valor": (
+                f"Si, p={config.get('object_crop_probability', 0.5)}"
+                if use_object_crop
+                else "No"
+            ),
+        },
+        {
+            "item": "Oversampling",
+            "valor": (
+                f"Si, factor={oversample_target_factor}"
+                if has_oversampling
+                else "No"
+            ),
+        },
+        {"item": "Clases objetivo augmentation", "valor": target_classes_value},
+    ]
 
 
 def _make_pr_curve_svg(curve: dict, width: int = 420, height: int = 260) -> str:
@@ -526,6 +708,533 @@ def _make_pr_curve_svg(curve: dict, width: int = 420, height: int = 260) -> str:
     """
 
 
+def _build_pr_cards_html(pr_curves) -> str:
+    return "".join(
+        f"""
+        <article class="pr-card">
+            <div class="pr-card-header">
+                <h3>{escape(curve.get('class_name', 'Clase'))}</h3>
+                <p>AP@50={_format_metric_4_decimals(curve.get('ap_50'))}</p>
+            </div>
+            {_make_pr_curve_svg(curve)}
+        </article>
+        """
+        for curve in (pr_curves or [])
+    )
+
+
+def _build_nms_section_html(nms_sensitivity: dict) -> str:
+    nms_sensitivity = nms_sensitivity or {}
+    nms_results = nms_sensitivity.get("results") or []
+    nms_table_rows = [
+        {
+            "nms_threshold": row.get("nms_threshold"),
+            "map": row.get("map"),
+            "map_50": row.get("map_50"),
+            "map_75": row.get("map_75"),
+        }
+        for row in nms_results
+    ]
+    nms_html = _build_html_table(
+        nms_table_rows,
+        columns=["nms_threshold", "map", "map_50", "map_75"],
+    )
+    nms_chart_html = _make_multi_series_svg(
+        nms_results,
+        x_key="nms_threshold",
+        series_defs=[("map", "mAP@50:95", "line-primary")],
+        x_label="NMS threshold",
+        y_label="mAP@50:95",
+    )
+    return f"""
+    <section class="nested-section nms-highlight">
+        <div class="nested-header">
+            <h3>Sensibilidad a NMS del modelo seleccionado</h3>
+            <p>
+                score_threshold={escape(str(nms_sensitivity.get('score_threshold')))} |
+                detections_per_img={escape(str(nms_sensitivity.get('detections_per_img')))} |
+                baseline_nms={escape(str(nms_sensitivity.get('baseline_nms_threshold')))}
+            </p>
+        </div>
+        <div class="nms-grid">
+            <div class="table-wrap">{nms_html}</div>
+            <div>{nms_chart_html}</div>
+        </div>
+        <p class="summary-note">
+            {escape(nms_sensitivity.get('conclusion') or 'Sin conclusion disponible para el barrido de NMS.')}
+        </p>
+    </section>
+    """
+
+
+def export_model_comparison_html(
+    comparison_runs: list[dict],
+    output_path,
+    title: str = "Comparacion modelo vs modelo",
+    selected_run_id: str | None = None,
+    selection_reason: str | None = None,
+    comparison_split: str = "val",
+) -> Path:
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    comparison_runs = list(comparison_runs or [])
+    selected_run_id = str(selected_run_id) if selected_run_id is not None else None
+
+    run_sections = []
+    for run_index, run in enumerate(comparison_runs, start=1):
+        config = run.get("config") or {}
+        history = run.get("history") or []
+        report = run.get("validation_report") or run.get("comparison_report") or {}
+        summary = report.get("summary") or {}
+        class_metrics = report.get("class_metrics") or []
+        pr_curves = report.get("pr_curves") or []
+        nms_sensitivity = report.get("nms_sensitivity") or {}
+        run_id = str(run.get("run_id", ""))
+        is_selected = bool(selected_run_id and run_id == selected_run_id)
+        duration_hms = _format_duration_hms(run.get("training_duration_seconds"))
+
+        run_meta_rows = [
+            {"item": "Experimento", "valor": run.get("name")},
+            {"item": "Modelo", "valor": config.get("model_name")},
+            {"item": "Optimizer", "valor": run.get("optimizer_name") or config.get("optimizer_name")},
+            {"item": "Epocas configuradas", "valor": run.get("num_epochs") or config.get("num_epochs")},
+            {"item": "Mejor epoca", "valor": run.get("best_epoch")},
+            {"item": "Duracion", "valor": duration_hms},
+        ]
+        run_meta_html = _build_html_table(run_meta_rows, columns=["item", "valor"])
+        transforms_html = _build_html_table(
+            _build_dataset_transform_rows(config, comparison_split=comparison_split),
+            columns=["item", "valor"],
+        )
+        class_metrics_html = _build_html_table(
+            class_metrics,
+            columns=["class_id", "class_name", "map_per_class"],
+        )
+        loss_chart_html = _make_multi_series_svg(
+            history,
+            x_key="epoch",
+            series_defs=[
+                ("train_loss", "train_loss", "line-primary"),
+                ("val_loss", "val_loss", "line-secondary"),
+            ],
+            x_label="Epoca",
+            y_label="Loss",
+        )
+        map_chart_html = _make_multi_series_svg(
+            history,
+            x_key="epoch",
+            series_defs=[
+                ("map", "mAP@50:95", "line-primary"),
+                ("map_50", "mAP@50", "line-secondary"),
+            ],
+            y_min=0.0,
+            y_max=1.0,
+            x_label="Epoca",
+            y_label="mAP",
+        )
+        pr_cards_html = _build_pr_cards_html(pr_curves)
+        selected_badge = '<span class="selected-badge">Modelo seleccionado</span>' if is_selected else ""
+        nms_section_html = (
+            _build_nms_section_html(nms_sensitivity)
+            if is_selected and nms_sensitivity.get("results")
+            else ""
+        )
+
+        run_sections.append(
+            f"""
+            <section class="run-card{' selected-run' if is_selected else ''}">
+                <div class="run-header">
+                    <div>
+                        <p class="eyebrow">Prueba {run_index}</p>
+                        <h2>{escape(str(run.get('name') or 'Experimento'))}</h2>
+                    </div>
+                    {selected_badge}
+                </div>
+                <div class="metric-grid">
+                    {_build_comparison_metric_cards_html(summary)}
+                </div>
+                <div class="two-column">
+                    <section class="nested-section">
+                        <div class="nested-header">
+                            <h3>Configuracion de la corrida</h3>
+                            <p>Arquitectura, optimizador y duracion del entrenamiento.</p>
+                        </div>
+                        <div class="table-wrap">{run_meta_html}</div>
+                    </section>
+                    <section class="nested-section">
+                        <div class="nested-header">
+                            <h3>Dataset y transforms</h3>
+                            <p>Las augmentations listadas corresponden a entrenamiento.</p>
+                        </div>
+                        <div class="table-wrap">{transforms_html}</div>
+                    </section>
+                </div>
+                <section class="nested-section">
+                    <div class="nested-header">
+                        <h3>mAP por clase en validacion</h3>
+                        <p>Metricas por clase del checkpoint de esta prueba.</p>
+                    </div>
+                    <div class="table-wrap">{class_metrics_html}</div>
+                </section>
+                <section class="nested-section">
+                    <div class="nested-header">
+                        <h3>Curvas de entrenamiento</h3>
+                        <p>Las mismas curvas usadas en el notebook para leer la dinamica por epoca.</p>
+                    </div>
+                    <div class="chart-grid">
+                        <article>{loss_chart_html}</article>
+                        <article>{map_chart_html}</article>
+                    </div>
+                </section>
+                <section class="nested-section">
+                    <div class="nested-header">
+                        <h3>Curvas precision-recall por clase</h3>
+                        <p>Calculadas sobre validacion a IoU=0.50, area=all y max_dets=100.</p>
+                    </div>
+                    <div class="pr-grid">
+                        {pr_cards_html or '<p class="empty-state">No se generaron curvas precision-recall.</p>'}
+                    </div>
+                </section>
+                {nms_section_html}
+            </section>
+            """
+        )
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{escape(title)}</title>
+    <style>
+        :root {{
+            color-scheme: light;
+            --bg: #f4f7f9;
+            --surface: rgba(255, 255, 255, 0.92);
+            --surface-strong: #ffffff;
+            --border: rgba(17, 39, 54, 0.12);
+            --text: #112736;
+            --muted: #5b6b77;
+            --accent: #1565c0;
+            --accent-2: #0f8b8d;
+            --warning: #f59e0b;
+            --accent-soft: rgba(21, 101, 192, 0.1);
+            --shadow: 0 18px 40px rgba(17, 39, 54, 0.09);
+        }}
+
+        * {{ box-sizing: border-box; }}
+
+        body {{
+            margin: 0;
+            padding: 32px 20px 48px;
+            font-family: Aptos, Manrope, "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, rgba(255, 255, 255, 0) 32%),
+                linear-gradient(135deg, #eef3f6 0%, #dfe8ed 100%);
+        }}
+
+        .page {{
+            max-width: 1540px;
+            margin: 0 auto;
+        }}
+
+        .hero,
+        .run-card {{
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
+        }}
+
+        .hero {{
+            padding: 30px;
+            margin-bottom: 22px;
+        }}
+
+        .hero h1 {{
+            margin: 0 0 8px;
+            font-size: clamp(2rem, 3vw, 3rem);
+        }}
+
+        .hero p {{
+            margin: 0;
+            color: var(--muted);
+            max-width: 980px;
+        }}
+
+        .run-card {{
+            padding: 24px;
+            margin-bottom: 24px;
+        }}
+
+        .selected-run {{
+            border-color: rgba(245, 158, 11, 0.55);
+            box-shadow: 0 20px 48px rgba(245, 158, 11, 0.15);
+        }}
+
+        .run-header {{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }}
+
+        .eyebrow {{
+            margin: 0 0 6px;
+            color: var(--accent);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }}
+
+        .run-header h2 {{
+            margin: 0;
+            font-size: clamp(1.35rem, 2vw, 2rem);
+        }}
+
+        .run-subtitle {{
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+            word-break: break-all;
+        }}
+
+        .selected-badge {{
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.16);
+            color: #92400e;
+            font-weight: 800;
+            white-space: nowrap;
+        }}
+
+        .metric-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 14px;
+            margin: 18px 0;
+        }}
+
+        .metric-card {{
+            padding: 16px;
+            border-radius: 16px;
+            background: var(--surface-strong);
+            border: 1px solid var(--border);
+        }}
+
+        .metric-label {{
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }}
+
+        .metric-value {{ font-size: 1.45rem; }}
+
+        .two-column {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 16px;
+        }}
+
+        .nested-section {{
+            margin-top: 16px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.72);
+        }}
+
+        .nested-header {{
+            margin-bottom: 12px;
+        }}
+
+        .nested-header h3 {{
+            margin: 0 0 4px;
+            font-size: 1.08rem;
+        }}
+
+        .nested-header p {{
+            margin: 0;
+            color: var(--muted);
+        }}
+
+        .table-wrap {{ overflow: auto; }}
+
+        table.results-table {{
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--surface-strong);
+            border-radius: 14px;
+            overflow: hidden;
+        }}
+
+        .results-table thead th {{
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            padding: 12px 14px;
+            text-align: left;
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            background: rgba(240, 245, 249, 0.98);
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }}
+
+        .results-table tbody td {{
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(17, 39, 54, 0.08);
+            vertical-align: top;
+        }}
+
+        .results-table tbody tr:nth-child(even) {{
+            background: rgba(244, 248, 250, 0.84);
+        }}
+
+        .chart-grid,
+        .nms-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 18px;
+        }}
+
+        .pr-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }}
+
+        .pr-card {{
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--surface-strong);
+            padding: 16px;
+        }}
+
+        .pr-card-header {{
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }}
+
+        .pr-card-header h3 {{
+            margin: 0;
+            font-size: 1rem;
+        }}
+
+        .pr-card-header p {{
+            margin: 0;
+            color: var(--muted);
+            white-space: nowrap;
+        }}
+
+        .pr-chart,
+        .history-chart {{
+            width: 100%;
+            height: auto;
+        }}
+
+        .chart-bg {{
+            fill: #f7fbff;
+            stroke: rgba(21, 101, 192, 0.08);
+        }}
+
+        .grid-line {{
+            stroke: rgba(17, 39, 54, 0.08);
+            stroke-width: 1;
+        }}
+
+        .axis-line {{
+            stroke: rgba(17, 39, 54, 0.25);
+            stroke-width: 1.4;
+        }}
+
+        .pr-line,
+        .series-line {{
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }}
+
+        .pr-line,
+        .line-primary {{ stroke: var(--accent); }}
+
+        .line-secondary {{ stroke: var(--accent-2); }}
+
+        .series-line-0 {{ stroke: var(--accent); }}
+
+        .series-line-1 {{ stroke: var(--accent-2); }}
+
+        .axis-label,
+        .axis-title {{
+            fill: var(--muted);
+            font-size: 11px;
+        }}
+
+        .nms-highlight {{
+            border-color: rgba(245, 158, 11, 0.5);
+            background: rgba(255, 251, 235, 0.72);
+        }}
+
+        .empty-state,
+        .summary-note {{
+            margin: 0;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: var(--accent-soft);
+            color: var(--muted);
+        }}
+
+        .summary-note {{
+            margin-top: 14px;
+            color: var(--text);
+        }}
+
+        @media (max-width: 900px) {{
+            body {{ padding: 18px 12px 28px; }}
+            .hero,
+            .run-card {{ border-radius: 16px; }}
+            .run-card,
+            .hero {{ padding: 18px; }}
+        }}
+    </style>
+</head>
+<body>
+    <div class="page">
+        <section class="hero">
+            <h1>{escape(title)}</h1>
+            <p>
+                Comparacion cronologica de {len(comparison_runs)} corrida(s) de runs_manifest.
+                Criterio principal: validacion.
+                {escape(f'Modelo seleccionado por {selection_reason}.' if selection_reason else '')}
+            </p>
+        </section>
+        {''.join(run_sections)}
+    </div>
+</body>
+</html>
+"""
+
+    output_path.write_text(html_content, encoding="utf-8")
+    return output_path
+
+
 def export_detection_test_report_html(
     report: dict,
     output_path,
@@ -573,18 +1282,7 @@ def export_detection_test_report_html(
         columns=["nms_threshold", "map", "map_50", "map_75", "mar_100"],
     )
 
-    pr_cards_html = "".join(
-        f"""
-        <article class="pr-card">
-            <div class="pr-card-header">
-                <h3>{escape(curve.get('class_name', 'Clase'))}</h3>
-                <p>AP@50={_format_metric_4_decimals(curve.get('ap_50'))}</p>
-            </div>
-            {_make_pr_curve_svg(curve)}
-        </article>
-        """
-        for curve in pr_curves
-    )
+    pr_cards_html = _build_pr_cards_html(pr_curves)
 
     html_content = f"""<!DOCTYPE html>
 <html lang="es">
