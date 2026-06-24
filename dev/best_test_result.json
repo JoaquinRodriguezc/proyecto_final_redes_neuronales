@@ -1,7 +1,7 @@
 {
   "run_id": "20260619_234604_fasterrcnn_partial_backbone_sgd",
   "best_experiment": "fasterrcnn_partial_backbone",
-  "checkpoint_path": "dev/experiments/20260619_234604_fasterrcnn_partial_backbone_sgd_best.pth",
+  "checkpoint_path": "dev/modelo.pth",
   "test_map": 0.4620476961135864,
   "test_map_50": 0.6657205820083618,
   "test_map_75": 0.49102020263671875,
