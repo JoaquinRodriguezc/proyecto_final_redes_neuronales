@@ -4,7 +4,7 @@
 
 Este repositorio es la base de un proyecto final de redes neuronales para deteccion de danos en autos usando el dataset CarDD.
 
-El foco actual del repo no es una app final ni un pipeline de entrenamiento completo. El foco actual es dejar lista la capa de datos para una tarea de deteccion de objetos en PyTorch:
+El foco actual del repo no es una app final ni un producto terminado. El foco actual es dejar lista una base reproducible para deteccion de objetos en PyTorch:
 
 - descarga y deteccion automatica del dataset
 - lectura de anotaciones COCO
@@ -12,25 +12,78 @@ El foco actual del repo no es una app final ni un pipeline de entrenamiento comp
 - definicion de un `Dataset` custom para deteccion
 - definicion de transforms compatibles con bounding boxes
 - construccion de `DataLoader`s para train, val y test
+- base de entrenamiento para modelos de deteccion de `torchvision`
+- evaluacion con `mAP@50:95` y `mAP@50`
 - visualizacion y verificacion manual de batches y augmentations
 
-Hoy, la fuente principal de verdad sigue siendo el notebook `dev/01_dataset_preparation.ipynb`, pero la implementacion reutilizable de datos ya se extrajo a `prod/detection_dataset.py`.
+Hoy, la fuente principal de verdad sigue siendo el notebook `dev/01_dataset_preparation.ipynb`, pero la implementacion reutilizable de datos, modelos, entrenamiento y metricas ya se extrajo a `prod/`.
 
 ## Estado actual
 
-- El notebook principal esta implementado y documenta el flujo de preparacion del dataset.
-- `README.md` explica el objetivo general y como reproducir el entorno.
+- `README.md` explica el objetivo general, el setup y como reproducir el entorno.
 - `data/README.md` explica el dataset y la estructura esperada.
+- `docs/` contiene la documentacion operativa y tecnica agregada.
 - `app.py` esta vacio.
 - `utils.py` esta vacio.
-- `prod/detection_dataset.py` contiene ahora la implementacion reutilizable del dataset de deteccion, transforms y `collate_fn`.
-- No hay entrenamiento de modelo implementado en archivos Python versionados.
+- `prod/detection_dataset.py` contiene la implementacion reutilizable del dataset de deteccion, transforms y `collate_fn`.
+- `prod/detection_models.py`, `prod/detection_training.py` y `prod/detection_metrics.py` contienen la base reutilizable para entrenamiento y evaluacion.
 - No hay tests automaticos versionados.
-- El repo menciona `data/train.csv`, `data/val.csv` y `data/test.csv`, pero en el estado actual esos archivos no estan presentes y el notebook tampoco los persiste a disco todavia.
+- El notebook construye `csv_manifest_df`, pero no persiste `data/train.csv`, `data/val.csv` ni `data/test.csv` a disco en el estado actual.
+
+## Entorno recomendado
+
+### Python
+
+- Version recomendada: `Python 3.11`
+- Tambien puede funcionar `Python 3.12`
+- No se recomienda `Python 3.14` como primera opcion para este repo por compatibilidad practica de paquetes de ML
+
+### Windows
+
+En Windows conviene usar el launcher `py` para seleccionar la version de Python correcta.
+
+Instalacion sugerida si falta Python 3.11:
+
+```powershell
+winget install -e --id Python.Python.3.11
+```
+
+Creacion del entorno virtual:
+
+```powershell
+py -3.11 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
+
+Instalacion base del repo:
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+Instalacion recomendada de PyTorch GPU:
+
+```powershell
+python -m pip install --upgrade --force-reinstall torch torchvision --index-url https://download.pytorch.org/whl/cu132
+```
+
+Alternativa:
+
+```powershell
+python -m pip install --upgrade --force-reinstall torch torchvision --index-url https://download.pytorch.org/whl/cu121
+```
+
+Validacion de GPU:
+
+```powershell
+python -c "import torch; print(torch.__version__); print(torch.version.cuda); print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'sin GPU')"
+```
 
 ## Objetivo tecnico actual
 
-Preparar un pipeline reproducible para deteccion de danos en vehiculos usando CarDD en formato COCO, de forma que luego sea sencillo conectar un modelo de deteccion de PyTorch como Faster R-CNN, RetinaNet o similar.
+Preparar un pipeline reproducible para deteccion de danos en vehiculos usando CarDD en formato COCO, de forma que luego sea sencillo conectar y comparar modelos como Faster R-CNN, RetinaNet o FCOS.
 
 ## Dataset usado
 
@@ -40,13 +93,13 @@ Preparar un pipeline reproducible para deteccion de danos en vehiculos usando Ca
 - Descarga directa usada por el notebook: Google Drive via `gdown`
 - Clases de dano detectadas en las anotaciones actuales: `dent`, `scratch`, `crack`, `glass shatter`, `lamp broken`, `tire flat`
 
-El notebook arma tambien la clase `background` con indice `0` para compatibilidad con pipelines de deteccion.
+El pipeline arma tambien la clase `background` con indice `0` para compatibilidad con pipelines de deteccion.
 
 ## Estructura del repositorio
 
 ### Raiz
 
-- `README.md`: overview del proyecto, stack, reproducibilidad local y Colab.
+- `README.md`: overview del proyecto, setup local, `venv` y PyTorch GPU.
 - `CLAUDE.md`: contexto general del repo, arquitectura actual y mapa funcional.
 - `AGENTS.md`: guia operativa para agentes y contribuidores automatizados.
 - `requirements.txt`: dependencias Python minimas del proyecto.
@@ -56,39 +109,31 @@ El notebook arma tambien la clase `background` con indice `0` para compatibilida
 
 ### `dev/`
 
-- `01_dataset_preparation.ipynb`: activo principal del repo.
-- Este notebook contiene toda la logica real del proyecto hoy.
-- Si queres entender el pipeline de datos, arranca aca.
+- `01_dataset_preparation.ipynb`: activo principal del repo para datos.
+- `02_model_training.ipynb`: notebook base de entrenamiento para semana 3.
 
 ### `data/`
 
-- `README.md`: explica el dataset, como se descarga y cual es la estructura esperada.
+- `README.md`: explica el dataset, la descarga y la estructura esperada.
 - `CarDD_release/`: copia local del dataset detectada en este workspace.
-- `CarDD_release/CarDD_COCO/annotations/`: JSON COCO usados por el notebook como fuente de verdad.
-- `CarDD_release/CarDD_SOD/`: otra variante del dataset que hoy no se usa en el pipeline implementado.
-- Las imagenes pesadas no deberian versionarse en Git.
+- `CarDD_release/CarDD_COCO/annotations/`: JSON COCO usados como fuente de verdad.
+- `CarDD_release/CarDD_SOD/`: otra variante del dataset que hoy no se usa.
 
 ### `prod/`
 
-- Carpeta para codigo reutilizable fuera del notebook.
-- `detection_dataset.py`: dataset de deteccion, transforms y `collate_fn` reutilizables.
-- `__init__.py`: exporta los componentes principales del modulo.
+- `detection_dataset.py`: dataset de deteccion, transforms, utilidades de descarga y `collate_fn`.
+- `detection_models.py`: factory y variantes de modelos de deteccion.
+- `detection_training.py`: entrenamiento, validacion y checkpoints.
+- `detection_metrics.py`: evaluacion con mAP.
+- `__init__.py`: API reexportada del paquete.
 
-## Que va en cada carpeta
+### `docs/`
 
-### `dev/`
+- `README.md`: indice general de la documentacion.
+- `setup_windows_gpu.md`: guia de entorno local en Windows.
+- `python/`: documentacion por archivo Python del repo.
 
-Zona de exploracion, notebooks, prototipos y validacion interactiva. Todo lo que todavia este en etapa experimental o de descubrimiento deberia vivir primero aca.
-
-### `prod/`
-
-Zona pensada para pasar logica estabilizada desde notebooks a modulos Python reutilizables. Si en el futuro se extrae la logica del notebook a scripts o paquetes, este es el lugar mas natural.
-
-### `data/`
-
-Zona del dataset local, manifests y documentacion de datos. No deberia llenarse con artefactos innecesarios ni con imagenes versionadas en Git. La documentacion de datos debe mantenerse aca.
-
-## Fuente de verdad: donde buscar cada cosa
+## Donde buscar cada cosa
 
 ### Si queres entender de que va el proyecto
 
@@ -103,129 +148,82 @@ Zona del dataset local, manifests y documentacion de datos. No deberia llenarse 
 ### Si queres entender la logica real del pipeline
 
 - Leer `dev/01_dataset_preparation.ipynb`.
-- Leer `prod/detection_dataset.py` para la version reutilizable del dataset.
+- Leer `prod/detection_dataset.py` para la version reutilizable.
+- Leer `dev/02_model_training.ipynb`, `prod/detection_models.py`, `prod/detection_training.py` y `prod/detection_metrics.py`.
 
-### Si queres saber como se detecta o descarga el dataset
+### Si queres documentacion tecnica por modulo
 
-- Buscar en el notebook las funciones `ensure_gdown`, `download_cardd_zip`, `extract_cardd_zip` y `find_dataset_root`.
+- Leer `docs/README.md`.
+- Leer `docs/python/prod/detection_dataset.md`.
+- Leer `docs/python/prod/detection_models.md`.
+- Leer `docs/python/prod/detection_training.md`.
+- Leer `docs/python/prod/detection_metrics.md`.
 
-### Si queres saber como se transforman las anotaciones COCO
+## Flujo del pipeline
 
-- Ir a la seccion `## 4. Preparacion de anotaciones COCO para deteccion` del notebook.
-- Ahi se parsean categorias, imagenes y annotations, y se convierten boxes de `XYWH` a `XYXY`.
+### Entrada
 
-### Si queres saber como se separan train, val y test
+- JSON COCO de train, val y test
+- imagenes correspondientes en `train2017`, `val2017` y `test2017`
 
-- Ir a la seccion `## 5. Uso de splits oficiales train / val / test`.
-- Ahi se construyen `train_records`, `val_records` y `test_records` desde `split_records`.
+### Transformacion
 
-### Si queres saber como funciona el `Dataset` de PyTorch
+- lectura de categorias, imagenes y annotations
+- agrupacion por `image_id`
+- conversion de boxes de `XYWH` a `XYXY`
+- armado de `records` por imagen en notebook
+- creacion de `target` compatible con `torchvision`
 
-- Ir a la clase `CarDamageDetectionDataset` en `prod/detection_dataset.py`.
-- El notebook la importa y la usa en la seccion de `DataLoaders`.
+### Salida actual
 
-### Si queres saber como funcionan las transforms y augmentations
-
-- Ir a `ComposeDetection`, `ToTensorDetection` y `RandomHorizontalFlipDetection` en `prod/detection_dataset.py`.
-
-### Si queres saber como se construyen los `DataLoader`s
-
-- Ir a la seccion `## 9. DataLoaders` del notebook y a `collate_fn` en `prod/detection_dataset.py`.
-
-### Si queres inspeccionar visualmente samples y boxes
-
-- Ir a `draw_boxes`, `show_augmentations` y `show_batch`.
-
-## Flujo del notebook principal
-
-### 1. Imports y configuracion
-
-Define seeds, detecta si corre en local o Colab, crea `DATA_DIR`, `RAW_DIR` y `PROCESSED_DIR`.
-
-### 2. Descarga / ubicacion del dataset
-
-Busca el dataset en varias rutas conocidas. Si no lo encuentra, intenta descargar `CarDD_release.zip` con `gdown` y extraerlo automaticamente.
-
-### 3. Exploracion de estructura
-
-Valida la estructura de carpetas y cuenta imagenes de la parte COCO.
-
-### 4. Preparacion de anotaciones COCO
-
-Lee `instances_train2017.json`, `instances_val2017.json` e `instances_test2017.json`, mapea categorias a indices, agrupa anotaciones por imagen y construye registros por imagen con:
-
-- `image_path`
-- `image_id`
-- `boxes`
-- `labels`
-- `label_names`
-- `area`
-- `iscrowd`
-- `split`
-- `width`
-- `height`
-
-Tambien arma dos estructuras auxiliares:
-
-- `detection_df`: resumen tabular para inspeccion
-- `csv_manifest_df`: manifiesto liviano por imagen, hoy solo en memoria
-
-### 5. Distribucion de clases y splits
-
-Calcula frecuencias por clase y por split. Tambien expone conteos de imagenes y boxes para train, val y test.
-
-### 6. Definicion de transforms y `Dataset`
-
-Se definen wrappers simples para deteccion con soporte para boxes:
-
-- `ComposeDetection`
-- `ToTensorDetection`
-- `RandomHorizontalFlipDetection`
-- `CarDamageDetectionDataset`
-
-### 7. Construccion de `DataLoader`s
-
-Se crean `train_loader`, `val_loader` y `test_loader` usando `collate_fn` para batches con numero variable de boxes por imagen.
-
-### 8. Verificacion visual y estructural
-
-Se dibujan boxes sobre imagenes transformadas y se inspecciona un batch real para verificar shapes, rangos y consistencia.
+- datasets de PyTorch para deteccion
+- `DataLoader`s listos para entrenamiento y evaluacion
+- metricas mAP
+- checkpoints opcionales
+- visualizaciones y debugging en notebook
 
 ## Funciones y clases principales
 
-### Descarga y localizacion
+### Dataset y descarga
 
 - `ensure_gdown()`: garantiza que `gdown` este instalado.
 - `download_cardd_zip(...)`: descarga el ZIP del dataset desde Google Drive.
 - `extract_cardd_zip(...)`: extrae el ZIP en `data/`.
-- `find_dataset_root()`: busca el dataset en rutas esperadas y devuelve la primera ruta valida.
+- `find_dataset_root(...)`: busca el dataset en rutas esperadas.
+- `find_coco_root(...)`: localiza especificamente `CarDD_COCO`.
+- `ensure_cardd_dataset(...)`: combina deteccion local con descarga/extraccion automatica.
+- `CarDamageDetectionDataset`: dataset principal compatible con modelos de deteccion de `torchvision`.
 
-### Construccion de datos de deteccion
+### Transforms
 
-- Bloque de parsing COCO de la seccion 4: convierte JSON COCO en registros consumibles por PyTorch.
-- `box_count_table(records)`: resume cantidad de boxes por clase.
+- `ComposeDetection`: encadena transforms que operan sobre `(image, target)`.
+- `ToTensorDetection`: convierte la imagen a tensor.
+- `RandomHorizontalFlipDetection`: aplica flip horizontal y corrige boxes.
 
-### Transforms y dataset
+### Modelos
 
-- `ComposeDetection`: encadena transforms que reciben `(image, target)`.
-- `ToTensorDetection`: convierte la imagen a tensor y mantiene el target.
-- `RandomHorizontalFlipDetection`: aplica flip horizontal y corrige coordenadas de boxes.
-- `CarDamageDetectionDataset`: abre imagenes, construye `target` y aplica transforms.
+- `create_model_from_config(...)`: crea un modelo desde un diccionario de configuracion.
+- `build_fasterrcnn_variants(...)`: devuelve configuraciones base para tres variantes de Faster R-CNN.
+- `build_optimizer(...)`: crea optimizadores `SGD`, `Adam` o `AdamW`.
 
-### Data loading y visualizacion
+### Entrenamiento
 
-- `collate_fn(batch)`: devuelve listas de imagenes y targets para deteccion.
-- `draw_boxes(...)`: dibuja boxes y labels sobre una imagen.
-- `show_augmentations(...)`: muestra augmentations aplicadas sobre una misma muestra.
-- `show_batch(...)`: visualiza un batch real del `DataLoader`.
+- `train_one_epoch(...)`: ejecuta una epoca de entrenamiento.
+- `evaluate_detection_loss(...)`: calcula loss de validacion.
+- `run_detection_experiment(...)`: orquesta entrenamiento completo, evaluacion y checkpoints.
+- `load_checkpoint(...)`: restaura pesos guardados.
 
-## Estructura de datos interna importante
+### Metricas
+
+- `create_map_metric(...)`: crea el acumulador de `torchmetrics`.
+- `evaluate_map(...)`: calcula mAP sobre un dataloader.
+- `extract_main_map_metrics(...)`: extrae las metricas principales de un resultado ya calculado.
+
+## Estructura de datos importante
 
 ### `record`
 
-La unidad central del pipeline es un diccionario por imagen. Si en el futuro se migra el notebook a scripts, esta estructura debe preservarse o documentarse claramente.
-
-Campos actuales del `record`:
+En el notebook, cada muestra se representa como un diccionario con:
 
 - `image_path`
 - `image_id`
@@ -254,6 +252,7 @@ El `target` que devuelve el dataset esta alineado con el formato comun de detecc
 
 - `torch`
 - `torchvision`
+- `torchmetrics`
 - `pandas`
 - `numpy`
 - `matplotlib`
@@ -262,42 +261,22 @@ El `target` que devuelve el dataset esta alineado con el formato comun de detecc
 - `jupyter`
 - `kaggle`
 - `gdown`
+- `faster-coco-eval`
 
-`kaggle` esta instalado pero no forma parte del flujo principal implementado hoy. `gdown` si se usa activamente para descarga automatica.
-
-## Comandos utiles
-
-Instalar dependencias:
-
-```bash
-pip install -r requirements.txt
-```
-
-Abrir el notebook principal:
-
-```bash
-jupyter notebook dev/01_dataset_preparation.ipynb
-```
+`kaggle` no forma parte del flujo principal implementado hoy. `gdown` si se usa activamente para descarga automatica. `torchmetrics` y `faster-coco-eval` se usan para evaluacion de deteccion con mAP.
 
 ## Inconsistencias y huecos actuales
 
-- `README.md` y `data/README.md` mencionan CSVs versionados que hoy no estan presentes.
-- El notebook construye `csv_manifest_df`, pero no hace `to_csv(...)`.
 - `app.py` y `utils.py` existen pero no concentran logica real todavia.
-- La logica reutilizable de datos ya vive en `prod/detection_dataset.py`, pero el entrenamiento de modelos todavia no esta modularizado.
 - El dataset local presente en este workspace incluye anotaciones y archivos auxiliares, pero las imagenes no estan versionadas en Git.
-
-## Recomendaciones para evolucionar el repo
-
-- Mantener `dev/01_dataset_preparation.ipynb` como referencia funcional y `prod/detection_dataset.py` como implementacion reutilizable actual.
-- Cuando una parte adicional del notebook quede estable, moverla a modulos reutilizables, idealmente en `prod/`.
-- Si se agregan scripts de entrenamiento, separar claramente preparacion de datos, definicion de modelo, entrenamiento, evaluacion e inferencia.
+- La logica reutilizable ya vive en `prod/`, mientras que la exploracion y verificacion visual siguen centralizadas en notebooks.
 
 ## Regla practica para cualquiera que entre al repo
 
 Si necesitas entender algo rapido:
 
-1. Lee `README.md` para el panorama general.
+1. Lee `README.md` para el panorama general y el setup.
 2. Lee `data/README.md` para el dataset.
-3. Lee `dev/01_dataset_preparation.ipynb` para la implementacion real.
-4. Asumi que `app.py` y `utils.py` todavia no son la fuente principal de verdad, pero que `prod/detection_dataset.py` ya concentra la implementacion reutilizable del pipeline de datos.
+3. Lee `docs/README.md` para ubicar la documentacion tecnica.
+4. Lee `dev/01_dataset_preparation.ipynb` para la implementacion real de datos.
+5. Asumi que `app.py` y `utils.py` todavia no son la fuente principal de verdad, y que la implementacion reutilizable actual vive en `prod/`.
